@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('auth.login');
 })->middleware(['auth'])->name('login');
 
-Route::get('/dashboard', function () {
-    return view('dashboard.dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::group(['middleware' => ['auth']], function (){
+    Route::resource('/dashboard','App\Http\Controllers\DashBoardController')->name('dashboard');
+});
 
 require __DIR__.'/auth.php';
