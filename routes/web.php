@@ -17,8 +17,10 @@ Route::get('/', function () {
     return view('auth.login');
 })->middleware(['auth'])->name('login');
 
+//DashBoard Controller Routes
+use App\Http\Controllers\DashBoardController;
 Route::group(['middleware' => ['auth']], function (){
-    Route::resource('/dashboard','App\Http\Controllers\DashBoardController')->name('dashboard');
+    Route::resource('/dashboard',DashBoardController::class)->name('*','dashboard');
 });
 
 require __DIR__.'/auth.php';
