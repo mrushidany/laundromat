@@ -45,7 +45,7 @@
                                         <ul id="ui" class="iq-submenu sub-scrll collapse" data-parent="#iq-sidebar-toggle">
                                             <li class=" ">
                                                 <a href="">
-                                                    <i class="las la-user-circle"></i><span>Appointments</span>
+                                                    <i class="lab la-app-store"></i><span>Appointments</span>
                                                 </a>
                                             </li>
                                             <li class=" ">
@@ -55,7 +55,7 @@
                                             </li>
                                             <li class=" ">
                                                 <a href="">
-                                                    <i class="lab la-atlassian"></i><span>Bookingd</span>
+                                                    <i class="las la-book-open"></i><span>Bookings</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -68,17 +68,17 @@
                                         <ul id="auth" class="iq-submenu sub-scrll collapse" data-parent="#iq-sidebar-toggle">
                                             <li class=" ">
                                                 <a href="">
-                                                    <i class="las la-sign-in-alt"></i><span>Sales & Revenue</span>
+                                                    <i class="las la-wallet"></i><span>Sales & Revenue</span>
                                                 </a>
                                             </li>
                                             <li class=" ">
                                                 <a href="">
-                                                    <i class="las la-sign-out-alt"></i><span>Expenses</span>
+                                                    <i class="lab la-amazon-pay"></i><span>Expenses</span>
                                                 </a>
                                             </li>
                                             <li class=" ">
                                                 <a href="">
-                                                    <i class="las la-unlock-alt"></i><span>Cash Flow</span>
+                                                    <i class="las la-balance-scale"></i><span>Cash Flow</span>
                                                 </a>
                                             </li>
                                         </ul>
