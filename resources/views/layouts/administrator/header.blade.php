@@ -322,13 +322,11 @@
                                         </div>
                                     </li>
                                     <li class="nav-item lang">
-                                        <a class="search-toggle language-title dropdown-toggle" id="dropdownMenuButton4"
-                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                           href="#"><span class="ripple rippleEffect"
-                                                          style="width: 98px; height: 98px; top: -15px; left: 56.2969px;"></span><img
-                                                src="../assets/images/small/flag-01.png" alt="img-flaf"
-                                                class="img-fluid mr-1" style="height: 16px; width: 16px; min-width: 16px"> EN <i
-                                                class="ri-arrow-down-s-line"></i></a>
+                                        <a class="search-toggle language-title dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                                            <span class="ripple rippleEffect" style="width: 98px; height: 98px; top: -15px; left: 56.2969px;"></span>
+                                                <img src="../assets/images/small/flag-01.png" alt="img-flaf" class="img-fluid mr-1" style="height: 16px; width: 16px; min-width: 16px"> EN
+                                                    <i class="ri-arrow-down-s-line"></i>
+                                        </a>
                                         <div class="iq-sub-dropdown dropdown-menu"
                                              aria-labelledby="dropdownMenuButton4">
                                             <div class="p-3">
@@ -526,8 +524,7 @@
                                                 class="ri-fullscreen-line"></i></a></li>
                                     <li class="caption-content">
                                         <a href="#" class="iq-user-toggle">
-                                            <img src="../assets/images/user/02.jpg" class="img-fluid rounded"
-                                                 alt="user">
+                                            <img src="{{asset('assets/images/user/04.jpg')}}" class="img-fluid rounded" alt="user">
                                         </a>
                                         <div class="iq-user-dropdown">
                                             <div class="card">

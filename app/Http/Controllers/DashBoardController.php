@@ -17,7 +17,8 @@ class DashBoardController extends Controller
     public function index()
     {
         if(Auth::user()->hasRole('administrator')) {
-            return view('dashboard.administrator.administrator_dashboard');
+            $data = ['company_name' => 'CompTech Company Limited'];
+            return view('dashboard.administrator.administrator_dashboard')->with($data);
         }elseif(Auth::user()->hasRole('manager')){
             return view();
         }elseif(Auth::user()->hasRole('dry_man')){
