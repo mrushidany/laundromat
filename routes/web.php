@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('auth.login');
-})->middleware(['auth'])->name('login');
+})->name('login');
 
 //DashBoard Controller Routes
 use App\Http\Controllers\DashBoardController;
