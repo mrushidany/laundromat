@@ -13,14 +13,11 @@ class DashBoardController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct(){
-        $this->middleware('auth');
-    }
 
     public function index()
     {
         if(Auth::user()->hasRole('administrator')) {
-            return view();
+            return view('dashboard.administrator.administrator_dashboard');
         }elseif(Auth::user()->hasRole('manager')){
             return view();
         }elseif(Auth::user()->hasRole('dry_man')){
