@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item">Laundromat</li>
+                    <li class="list-inline-item">{{config('app.name')}}</li>
                 </ul>
             </div>
             <div class="col-lg-6 text-right">

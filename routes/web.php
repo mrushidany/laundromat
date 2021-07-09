@@ -20,7 +20,7 @@ Route::get('/', function () {
 //DashBoard Controller Routes
 use App\Http\Controllers\DashBoardController;
 Route::group(['middleware' => ['auth']], function (){
-    Route::resource('/dashboard',DashBoardController::class)->name('*','dashboard');
+    Route::get('/dashboard',[DashBoardController::class,'index'])->middleware(['auth'])->name('dashboard');
 });
 
 require __DIR__.'/auth.php';

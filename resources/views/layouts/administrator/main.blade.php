@@ -18,7 +18,8 @@
     <link rel='stylesheet' href="{{asset('assets/vendor/fullcalendar/daygrid/main.css')}}" />
     <link rel='stylesheet' href="{{asset('assets/vendor/fullcalendar/timegrid/main.css')}}" />
     <link rel='stylesheet' href="{{asset('assets/vendor/fullcalendar/list/main.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendor/mapbox/mapbox-gl.css')}}"></head>
+    <link rel="stylesheet" href="{{asset('assets/vendor/mapbox/mapbox-gl.css')}}">
+</head>
 
 <body class="salon-2-saidbar-main  ">
 <!-- loader Start -->

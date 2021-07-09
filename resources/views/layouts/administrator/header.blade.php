@@ -6,15 +6,7 @@
                     <div class="iq-navbar-custom d-flex align-items-center justify-content-between">
                         <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
                             <i class="ri-menu-line wrapper-menu"></i>
-                            <a href="index.html" class="header-logo">
-                                <img src="{{asset('assets/images/logo.png')}}" class="img-fluid rounded-normal" alt="logo">
-                            </a>
-                            <form class="salon-search d-none d-lg-block ml-3">
-                                <div class="position-relative">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <span class="icon-search"><i class="las la-search"></i></span>
-                                </div>
-                            </form>
+
                         </div>
                         <div class="iq-menu-horizontal">
                             <nav class="iq-sidebar-menu">
@@ -285,18 +277,7 @@
                             </nav>
                         </div>
                         <nav class="navbar navbar-expand-lg navbar-light px-0 salon-navbar">
-                            <div class="nav-item nav-icon change-mode">
-                                <div class="custom-control custom-switch custom-switch-icon custom-control-inline">
-                                    <div class="custom-switch-inner">
-                                        <p class="mb-0"> </p>
-                                        <input type="checkbox" class="custom-control-input" id="dark-mode" data-active="true">
-                                        <label class="custom-control-label" for="dark-mode" data-mode="toggle">
-                                            <span class="switch-icon-left"><i class="a-left"></i></span>
-                                            <span class="switch-icon-right"><i class="a-right"></i></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                     aria-label="Toggle navigation">
@@ -319,129 +300,6 @@
                                                     <a href="#" class="search-link"><i class="las la-search"></i></a>
                                                 </div>
                                             </form>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item lang">
-                                        <a class="search-toggle language-title dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
-                                            <span class="ripple rippleEffect" style="width: 98px; height: 98px; top: -15px; left: 56.2969px;"></span>
-                                                <img src="../assets/images/small/flag-01.png" alt="img-flaf" class="img-fluid mr-1" style="height: 16px; width: 16px; min-width: 16px"> EN
-                                                    <i class="ri-arrow-down-s-line"></i>
-                                        </a>
-                                        <div class="iq-sub-dropdown dropdown-menu"
-                                             aria-labelledby="dropdownMenuButton4">
-                                            <div class="p-3">
-                                                <a class="iq-sub-card" href="#"><img
-                                                        src="../assets/images/small/flag-02.png" alt="img-flaf"
-                                                        class="img-fluid mr-2">French</a>
-                                                <a class="iq-sub-card" href="#"><img
-                                                        src="../assets/images/small/flag-03.png" alt="img-flaf"
-                                                        class="img-fluid mr-2">Spanish</a>
-                                                <a class="iq-sub-card" href="#"><img
-                                                        src="../assets/images/small/flag-04.png" alt="img-flaf"
-                                                        class="img-fluid mr-2">Italian</a>
-                                                <a class="iq-sub-card" href="#"><img
-                                                        src="../assets/images/small/flag-05.png" alt="img-flaf"
-                                                        class="img-fluid mr-2">German</a>
-                                                <a class="iq-sub-card" href="#"><img
-                                                        src="../assets/images/small/flag-06.png" alt="img-flaf"
-                                                        class="img-fluid mr-2">Japanese</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item nav-icon dropdown">
-                                        <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton2"
-                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="ri-mail-line"></i>
-                                            <span class="bg-white dots"></span>
-                                        </a>
-                                        <div class="iq-sub-dropdown dropdown-menu"
-                                             aria-labelledby="dropdownMenuButton2">
-                                            <div class="card shadow-none m-0">
-                                                <div class="card-body p-0 ">
-                                                    <div class="cust-title p-3">
-                                                        <h5 class="mb-0">All Messages</h5>
-                                                    </div>
-                                                    <div class="p-3">
-                                                        <a href="#" class="iq-sub-card">
-                                                            <div class="media align-items-center">
-                                                                <div class="">
-                                                                    <img class="avatar-40 rounded-small"
-                                                                         src="../assets/images/user/01.jpg" alt="">
-                                                                </div>
-                                                                <div class="media-body ml-3">
-                                                                    <h6 class="mb-0">Barry Emma Watson <small
-                                                                            class="badge badge-success float-right">New</small>
-                                                                    </h6>
-                                                                    <small class="float-left font-size-12">12:00
-                                                                        PM</small>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                        <a href="#" class="iq-sub-card">
-                                                            <div class="media align-items-center">
-                                                                <div class="">
-                                                                    <img class="avatar-40 rounded-small"
-                                                                         src="../assets/images/user/02.jpg" alt="">
-                                                                </div>
-                                                                <div class="media-body ml-3">
-                                                                    <h6 class="mb-0 ">Lorem Ipsum Watson</h6>
-                                                                    <small class="float-left font-size-12">20
-                                                                        Apr</small>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                        <a href="#" class="iq-sub-card">
-                                                            <div class="media align-items-center">
-                                                                <div class="">
-                                                                    <img class="avatar-40 rounded-small"
-                                                                         src="../assets/images/user/03.jpg" alt="">
-                                                                </div>
-                                                                <div class="media-body ml-3">
-                                                                    <h6 class="mb-0 ">Why do we use it? <small
-                                                                            class="badge badge-success float-right">New</small>
-                                                                    </h6>
-                                                                    <small class="float-left font-size-12">1:24
-                                                                        PM</small>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                        <a href="#" class="iq-sub-card">
-                                                            <div class="media align-items-center">
-                                                                <div class="">
-                                                                    <img class="avatar-40 rounded-small"
-                                                                         src="../assets/images/user/04.jpg" alt="">
-                                                                </div>
-                                                                <div class="media-body ml-3">
-                                                                    <h6 class="mb-0">Variations Passages <small
-                                                                            class="badge badge-success float-right">New</small>
-                                                                    </h6>
-                                                                    <small class="float-left font-size-12">5:45
-                                                                        PM</small>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                        <a href="#" class="iq-sub-card">
-                                                            <div class="media align-items-center">
-                                                                <div class="">
-                                                                    <img class="avatar-40 rounded-small"
-                                                                         src="../assets/images/user/05.jpg" alt="">
-                                                                </div>
-                                                                <div class="media-body ml-3">
-                                                                    <h6 class="mb-0 ">Lorem Ipsum generators</h6>
-                                                                    <small class="float-left font-size-12">1 day
-                                                                        ago</small>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <a class="right-ic btn btn-primary btn-block position-relative p-2"
-                                                       href="#" role="button">
-                                                        <div class="dd-icon"><i class="las la-arrow-right mr-0"></i>
-                                                        </div>
-                                                        View All
-                                                    </a>
-                                                </div>
-                                            </div>
                                         </div>
                                     </li>
                                     <li class="nav-item nav-icon dropdown">
@@ -544,11 +402,17 @@
                                                                 <img src="../assets/images/user/02.jpg" alt="profile-bg"
                                                                      class="rounded-circle img-fluid avatar-80">
                                                                 <div class="profile-detail mt-3">
-                                                                    <h3>Barry Tech</h3>
-                                                                    <p class="mb-1">Web designer</p>
+                                                                    <h3>{{Auth::user()->name}}</h3>
+                                                                    <p class="mb-1">{{$role}}</p>
                                                                 </div>
-                                                                <a href="auth-sign-in.html" class="btn btn-primary">Sign
-                                                                    Out</a>
+{{--                                                                <a href="auth-sign-in.html" class="btn btn-primary">Sign--}}
+{{--                                                                    Out</a>--}}
+                                                                <form method="POST" action="{{ route('logout') }}">
+                                                                    @csrf
+                                                                    <x-responsive-nav-link :href="route('logout')" class="btn btn-primary" onclick="event.preventDefault(); this.closest('form').submit();">
+                                                                        {{ __('Log Out') }}
+                                                                    </x-responsive-nav-link>
+                                                                </form>
                                                             </div>
                                                             <div class="profile-details my-4">
                                                                 <a href="../app/user-profile.html"
@@ -564,96 +428,6 @@
                                                                         </div>
                                                                     </div>
                                                                 </a>
-                                                                <a href="../app/user-profile-edit.html"
-                                                                   class="iq-sub-card bg-danger-light rounded-small p-2">
-                                                                    <div class="media align-items-center">
-                                                                        <div class="rounded iq-card-icon-small">
-                                                                            <i class="ri-profile-line"></i>
-                                                                        </div>
-                                                                        <div class="media-body ml-3">
-                                                                            <h6 class="mb-0 ">Edit Profile</h6>
-                                                                            <p class="mb-0 font-size-12">Modify your
-                                                                                personal details.</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a href="../app/user-account-setting.html"
-                                                                   class="iq-sub-card bg-success-light rounded-small p-2">
-                                                                    <div class="media align-items-center">
-                                                                        <div class="rounded iq-card-icon-small">
-                                                                            <i class="ri-account-box-line"></i>
-                                                                        </div>
-                                                                        <div class="media-body ml-3">
-                                                                            <h6 class="mb-0 ">Account settings</h6>
-                                                                            <p class="mb-0 font-size-12">Manage your
-                                                                                account parameters.</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                                <a href="../app/user-privacy-setting.html"
-                                                                   class="iq-sub-card bg-info-light rounded-small p-2">
-                                                                    <div class="media align-items-center">
-                                                                        <div class="rounded iq-card-icon-small">
-                                                                            <i class="ri-lock-line"></i>
-                                                                        </div>
-                                                                        <div class="media-body ml-3">
-                                                                            <h6 class="mb-0 ">Privacy Settings</h6>
-                                                                            <p class="mb-0 font-size-12">Control your
-                                                                                privacy parameters.</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <div class="personal-details">
-                                                                <h5 class="card-title mb-3 mt-3">Personal Details</h5>
-                                                                <div class="row align-items-center mb-2">
-                                                                    <div class="col-sm-6">
-                                                                        <h6>Birthday</h6>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
-                                                                        <p class="mb-0">3rd March</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row align-items-center mb-2">
-                                                                    <div class="col-sm-6">
-                                                                        <h6>Address</h6>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
-                                                                        <p class="mb-0">Landon</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row align-items-center mb-2">
-                                                                    <div class="col-sm-6">
-                                                                        <h6>Phone</h6>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
-                                                                        <p class="mb-0">(010)987 543 201</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row align-items-center mb-2">
-                                                                    <div class="col-sm-6">
-                                                                        <h6>Email</h6>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
-                                                                        <p class="mb-0">Barry@example.com</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row align-items-center mb-2">
-                                                                    <div class="col-sm-6">
-                                                                        <h6>Twitter</h6>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
-                                                                        <p class="mb-0">@Barry</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row align-items-center mb-2">
-                                                                    <div class="col-sm-6">
-                                                                        <h6>Facebook</h6>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
-                                                                        <p class="mb-0">@Barry_Tech</p>
-                                                                    </div>
-                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="p-3"></div>
