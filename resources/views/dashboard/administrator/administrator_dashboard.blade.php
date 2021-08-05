@@ -276,18 +276,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="card card-block card-stretch card-height">
-                        <div class="card-header">
-                            <div class="header-title">
-                                <h4 class="card-title">By Gender</h4>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div id="salon2-chart-08" style="max-height: 250px;"></div>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="col-xl-3 col-lg-6 col-md-6">--}}
+{{--                    <div class="card card-block card-stretch card-height">--}}
+{{--                        <div class="card-header">--}}
+{{--                            <div class="header-title">--}}
+{{--                                <h4 class="card-title">By Gender</h4>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="card-body">--}}
+{{--                            <div id="salon2-chart-08" style="max-height: 250px;"></div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <div class="col-xl-3 col-lg-6 col-md-6">
                     <div class="card card-block card-stretch card-height">
                         <div class="card-header">
@@ -300,7 +300,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="col-xl-5 col-lg-6 col-md-6">
                     <div class="card card-block card-stretch card-height">
                         <div class="card-header d-flex justify-content-between">
                             <div class="header-title">
@@ -365,7 +365,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="col-xl-7 col-lg-6 col-md-6">
                     <div class="card card-block card-stretch card-height">
                         <div class="card-header d-flex justify-content-between">
                             <div class="header-title">
@@ -438,7 +438,7 @@
                                             <span>Male</span>
                                         </td>
                                         <td>
-                                            <span>Hair Spa</span>
+                                            <span>Washing Mashine</span>
                                         </td>
                                         <td>
                                             <span>Smith Jackson</span>
@@ -474,7 +474,7 @@
                                             <span>Female</span>
                                         </td>
                                         <td>
-                                            <span>Hair Cut</span>
+                                            <span>Dryer</span>
                                         </td>
                                         <td>
                                             <span>Smith Jackson</span>
@@ -510,7 +510,7 @@
                                             <span>Female</span>
                                         </td>
                                         <td>
-                                            <span>Hair Cut</span>
+                                            <span>Appointment</span>
                                         </td>
                                         <td>
                                             <span>Smith Jackson</span>
@@ -538,7 +538,7 @@
                     <div class="card card-block card-stretch card-height">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-4">
-                                <img src="../assets/images/user/08.jpg" class="img-fluid avatar-90 rounded-normal"
+                                <img src="{{asset('assets/images/user/12.jpg')}}" class="img-fluid avatar-90 rounded-normal"
                                      alt="image">
                                 <div class="d-flex doc-social ml-4">
                                     <a href="#"><i class="lab la-facebook-f text-primary font-size-20"></i></a>
@@ -546,7 +546,7 @@
                                     <a href="#"><i class="lab la-instagram mr-2 text-danger font-size-20"></i></a>
                                 </div>
                             </div>
-                            <h4 class="text-uppercase">Chris P. Bacon</h4>
+                            <h4 class="text-uppercase">{{Auth::user()->name}}</h4>
                             <p class="font-size-16">Top Expert</p>
                             <div class="d-flex align-items-center pt-3">
                                     <span class="bg-warning-light rounded-small iq-card-icon-small mr-3">
@@ -558,13 +558,13 @@
                                     <span class="bg-success-light rounded-small iq-card-icon-small mr-3">
                                         <i class="las la-envelope"></i>
                                     </span>
-                                <h5>charis@salon.com</h5>
+                                <h5>{{Auth::user()->email}}</h5>
                             </div>
                             <div class="d-flex align-items-center pt-3">
                                     <span class="bg-primary-light rounded-small iq-card-icon-small mr-3">
                                         <i class="lab la-twitter"></i>
                                     </span>
-                                <h5>social@salon.com</h5>
+                                <h5>social@laundromat.com</h5>
                             </div>
                         </div>
                     </div>

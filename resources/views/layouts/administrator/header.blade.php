@@ -213,7 +213,7 @@
                                                                      class="rounded-circle img-fluid avatar-80">
                                                                 <div class="profile-detail mt-3">
                                                                     <h3>{{Auth::user()->name}}</h3>
-                                                                    <p class="mb-1">{{$role}}</p>
+                                                                    <p class="mb-1">{{$role ?? ''}}</p>
                                                                 </div>
 {{--                                                                <a href="auth-sign-in.html" class="btn btn-primary">Sign--}}
 {{--                                                                    Out</a>--}}
@@ -225,7 +225,7 @@
                                                                 </form>
                                                             </div>
                                                             <div class="profile-details my-4">
-                                                                <a href="../app/user-profile.html"
+                                                                <a href="{{route('administrator_profile')}}"
                                                                    class="iq-sub-card bg-primary-light rounded-small p-2">
                                                                     <div class="media align-items-center">
                                                                         <div class="rounded iq-card-icon-small">

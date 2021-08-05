@@ -21,6 +21,8 @@ Route::get('/', function () {
 use App\Http\Controllers\DashBoardController;
 Route::group(['middleware' => ['auth']], function (){
     Route::get('/dashboard',[DashBoardController::class,'index'])->middleware(['auth'])->name('dashboard');
+    Route::get('/administrator_profile',[DashBoardController::class, 'administrator_profile'])->middleware(['auth'])->name('administrator_profile');
 });
+
 
 require __DIR__.'/auth.php';

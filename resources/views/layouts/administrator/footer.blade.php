@@ -7,7 +7,7 @@
                 </ul>
             </div>
             <div class="col-lg-6 text-right">
-                &copy; <a href="">{{$company_name}}</a>. {{date('Y')}}
+                &copy; <a href="">{{$company_name ?? 'CompTech Company Limited'}}</a>. {{date('Y')}}
             </div>
         </div>
     </div>
