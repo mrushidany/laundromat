@@ -58,7 +58,7 @@
                             <div class="row">
                                 <div class="col-lg-7">
                                     <div class="mt-4 mb-4">
-                                        <h4>Good Morning </h4>
+                                        <h4>{{$greeting}} </h4>
                                         <h1 class="mt-5">Mr. {{Auth::user()->name}}</h1>
                                         <h5 class="mt-3">27 October 2020 - 10:00 AM</h5>
                                     </div>
