@@ -60,7 +60,7 @@
                                     <div class="mt-4 mb-4">
                                         <h4>{{$greeting}} </h4>
                                         <h1 class="mt-5">Mr. {{Auth::user()->name}}</h1>
-                                        <h5 class="mt-3">27 October 2020 - 10:00 AM</h5>
+                                        <h5 class="mt-3">{{date('j F Y - g:i a')}}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
