@@ -23,8 +23,8 @@
                    @if (Auth::user()->hasRole('manager'))
                         <li>
                             <div class="d-flex align-items-center">
-                                <a href="" class="collapsed" data-toggle="collapse" aria-expanded="false"><i class="las la-home iq-arrow-left"></i><span>Dashboard</span></a>
-                                <a href="{{route('laundry.index')}}" class="collapsed active" data-toggle="collapse" aria-expanded="true" onclick="event.preventDefault(); test_link()"><i class="dripicons dripicons-basket"></i><span>Laundry</span></a>
+                                <a href="{{route('dashboard')}}" class="collapsed"  aria-expanded="false"><i class="las la-home iq-arrow-left"></i><span>Dashboard</span></a>
+                                <a href="{{route('laundry.index')}}" class="collapsed active"  aria-expanded="true"><i class="dripicons dripicons-basket"></i><span>Laundry</span></a>
                             </div>
                         </li>
                         <li>
@@ -57,8 +57,3 @@
     </div>
 </div>
 
-<script type="application/javascript">
-    function test_link(){
-        alert('Button Laundry Clicked!');
-    }
-</script>

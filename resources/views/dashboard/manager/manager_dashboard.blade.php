@@ -8,6 +8,10 @@
 
             </div>
         </div>
+
+        <div class="container-fluid laundry_collapse">
+
+        </div>
     </div>
 
 

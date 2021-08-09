@@ -18,8 +18,6 @@ class DashBoardController extends Controller
 
     public function index()
     {
-
-
         if(Auth::user()->hasRole('admin')) {
             $role = DB::table('roles')->where('name','=','admin')->first();
             $data = [
