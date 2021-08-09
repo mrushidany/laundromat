@@ -29,7 +29,9 @@ class DashBoardController extends Controller
             ];
             return view('dashboard.administrator.administrator_dashboard')->with($data);
         }elseif(Auth::user()->hasRole('manager')){
-            return view();
+            $role = DB::table('roles')->where('name','=','manager')->first();
+            $data = ['role'=> $role->display_name];
+            return view('dashboard.manager.manager_dashboard')->with($data);
         }elseif(Auth::user()->hasRole('dry_man')){
             return view();
         }elseif(Auth::user()->hasRole('wash_man')){

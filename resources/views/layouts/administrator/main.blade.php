@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-@include('layouts.administrator.stylesheet_link')
+@include('layouts.stylesheet_link')
 
 <body class="salon-2-saidbar-main  ">
 <!-- loader Start -->
@@ -21,7 +21,7 @@
 </div>
 <!-- Wrapper End-->
 @include('layouts.administrator.footer')
-@include('layouts.administrator.scripts_link')
+@include('layouts.scripts_link')
 </body>
 
 </html>
