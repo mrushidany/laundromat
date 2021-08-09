@@ -19,10 +19,17 @@ Route::get('/', function () {
 
 //DashBoard Controller Routes
 use App\Http\Controllers\DashBoardController;
+use App\Http\Controllers\LaundryController;
 Route::group(['middleware' => ['auth']], function (){
-    Route::get('/dashboard',[DashBoardController::class,'index'])->middleware(['auth'])->name('dashboard');
-    Route::get('/administrator_profile',[DashBoardController::class, 'administrator_profile'])->middleware(['auth'])->name('administrator_profile');
+//    DashBoard Controller Routes
+    Route::get('/dashboard',[DashBoardController::class,'index'])->name('dashboard');
+    Route::get('/administrator_profile',[DashBoardController::class, 'administrator_profile'])->name('administrator_profile');
+
+//Laundry Controller Routes
+    Route::resource('/laundry',LaundryController::class)->name('*', 'laundry' );
 });
+
+
 
 
 require __DIR__.'/auth.php';
