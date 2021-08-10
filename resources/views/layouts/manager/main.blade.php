@@ -5,7 +5,7 @@
 
 <body class="sidebar-double-icon  ">
 <div id="main_modal" role="dialog" class="modal fade" data-backdrop="static">
-    <div class="modal-dialog">
+    <div class="modal-dialog ">
         <div class="modal-content"></div>
     </div>
 </div>
