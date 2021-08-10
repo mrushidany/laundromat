@@ -13,7 +13,10 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+        @include('layouts.stylesheet_link')
+
         <!-- Scripts -->
+        @include('layouts.scripts_link')
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
