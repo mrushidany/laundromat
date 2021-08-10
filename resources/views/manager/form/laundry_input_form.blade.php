@@ -1,4 +1,3 @@
-    <div class="modal-content">
         <div  class="card">
             <div class="card-body">
                 <div class="modal-header">
@@ -50,5 +49,5 @@
                 </form>
         </div>
     </div>
-    </div>
+
 

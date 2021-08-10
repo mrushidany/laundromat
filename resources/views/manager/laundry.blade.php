@@ -14,12 +14,8 @@
                         </nav>
                     </div>
                     <div class="btn-group btn-group-toggle">
-                        <button type="button" class="btn btn-primary btn-sm mr-2" data-toggle="modal" data-target=".add_laundry"><i class="ri-add-line m-0"></i> Add New Laundry</button>
-                        <div class="modal fade add_laundry" tabindex="-1" role="dialog"  style="display: none" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                            @include('manager.form.laundry_input_form')
-                            </div>
-                        </div>
+                        <button  class="button btn btn-primary btn-sm  mr-2" onclick="create('{{route('laundry.create')}}')"><i class="ri-add-line m-0"></i> Add New Laundry</button>
+
                     </div>
                 </div>
             </div>

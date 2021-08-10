@@ -23,7 +23,7 @@ class LaundryController extends Controller
      */
     public function create()
     {
-        //
+        return view('manager.form.laundry_input_form');
     }
 
     /**

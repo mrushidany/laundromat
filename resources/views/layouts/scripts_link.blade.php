@@ -37,5 +37,8 @@
 <!-- slider JavaScript -->
 <script src="{{asset('assets/js/slider.js')}}"></script>
 
+<!-- Select2 -->
+<script src="{{asset('select2/js/select2.min.js')}}"></script>
+
 <!-- app JavaScript -->
 <script src="{{asset('assets/js/app.js')}}"></script>

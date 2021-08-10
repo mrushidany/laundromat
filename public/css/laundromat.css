@@ -1,0 +1,40 @@
+.laundromat_table thead tr th {
+    font-size: 12px;
+    /*font-weight: 600;*/
+}
+.laundromat_table  tbody tr td {
+    font-size: 12px;
+    /*font-weight: 600;*/
+}
+
+.laundromat_table  tbody tr:hover, tr.selected {
+    background-color: #eeeeee;
+    color: #50a5c5;
+    font-weight: 600;
+}
+
+.card{
+    font-size: 12px;
+}
+
+.select2-dropdown {
+    z-index:99999;
+}
+
+.card{
+    padding-top: 10px
+}
+
+#top-tab-list li {
+    list-style-type: none;
+    font-size: 12px;
+    width: 20%;
+    float: left;
+    text-align: left;
+    position: relative;
+    font-weight: 400
+}
+
+.modal-dialog{
+    max-width: 90% !important;
+}

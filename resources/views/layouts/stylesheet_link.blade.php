@@ -17,4 +17,11 @@
     <link rel='stylesheet' href="{{asset('assets/vendor/fullcalendar/timegrid/main.css')}}" />
     <link rel='stylesheet' href="{{asset('assets/vendor/fullcalendar/list/main.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/vendor/mapbox/mapbox-gl.css')}}">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset('select2/css/select2.min.css')}}">
+
+    <link rel="stylesheet" href="{{ asset('css/laundromat.css') }}">
+
+    <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js' )}}"></script>
 </head>
