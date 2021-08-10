@@ -17,6 +17,7 @@
     <link rel='stylesheet' href="{{asset('assets/vendor/fullcalendar/timegrid/main.css')}}" />
     <link rel='stylesheet' href="{{asset('assets/vendor/fullcalendar/list/main.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/vendor/mapbox/mapbox-gl.css')}}">
+    <link rel="stylesheet" href="{{ asset('toastr/build/toastr.min.css') }}">
 
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset('select2/css/select2.min.css')}}">
