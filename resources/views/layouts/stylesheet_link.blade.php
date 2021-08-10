@@ -4,7 +4,7 @@
     <title>{{config('app.name')}}</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{asset('assets/images/easywash_logo.jpeg')}}" />
 
     <link rel="stylesheet" href="{{asset('assets/css/backend.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}">

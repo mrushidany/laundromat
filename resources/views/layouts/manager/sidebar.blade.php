@@ -1,7 +1,7 @@
 <div class="iq-sidebar sidebar-double-icon">
     <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-        <a href="index.html" class="header-logo mx-auto">
-            <img src="{{asset('assets/images/logo.png')}}" class="img-fluid rounded-normal" alt="logo">
+        <a href="" class="header-logo mx-auto">
+            <img src="{{asset('assets/images/easywash_logo.jpeg')}}" class="img-fluid rounded-normal" alt="logo">
         </a>
         <div class="iq-menu-bt-sidebar">
             <i class="las la-bars wrapper-menu"></i>
