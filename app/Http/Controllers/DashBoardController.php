@@ -26,15 +26,19 @@ class DashBoardController extends Controller
                 'greeting' => $this->greeting()
             ];
             return view('dashboard.administrator.administrator_dashboard')->with($data);
-        }elseif(Auth::user()->hasRole('manager')){
+        }
+        elseif(Auth::user()->hasRole('manager')){
             $role = DB::table('roles')->where('name','=','manager')->first();
             $data = ['role'=> $role->display_name];
             return view('dashboard.manager.manager_dashboard')->with($data);
-        }elseif(Auth::user()->hasRole('dry_man')){
+        }
+        elseif(Auth::user()->hasRole('dry_man')){
             return view();
-        }elseif(Auth::user()->hasRole('wash_man')){
+        }
+        elseif(Auth::user()->hasRole('wash_man')){
             return view();
-        }elseif(Auth::user()->hasRole('owner')){
+        }
+        elseif(Auth::user()->hasRole('owner')){
             $role = DB::table('roles')->where('name','=','owner')->first();
             $data = [
                 'company_name' => 'CompTech Company Limited',
