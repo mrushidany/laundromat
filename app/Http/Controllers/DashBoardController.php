@@ -38,7 +38,8 @@ class DashBoardController extends Controller
             $role = DB::table('roles')->where('name','=','owner')->first();
             $data = [
                 'company_name' => 'CompTech Company Limited',
-                'role' => $role->display_name
+                'role' => $role->display_name,
+                'greeting' => $this->greeting()
             ];
             return view('dashboard.administrator.administrator_dashboard')->with($data);
         }

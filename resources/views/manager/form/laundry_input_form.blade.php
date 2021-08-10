@@ -1,4 +1,3 @@
-<div class="modal-dialog modal-lg">
     <div class="modal-content">
         <div  class="card">
             <div class="card-body">
@@ -13,18 +12,18 @@
                     @method('POST')
                     <div class="modal-body">
                         <div class="row">
-                            <div class="form-group col-md-4">
-                                <label for="client_name" class="control-label">Client Name</label>
-                                <input name="client_name" type="text" class="form-control">
+                            <div class="form-group col-md-6">
+                                <label for="client_name" class="control-label">Client Full Name</label>
+                                <input name="full_name" type="text" class="form-control">
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="input_type" class="control-label">Agricultural Input Type</label>
-                                <select name="agricultural_input_type" class="form-control" >
-                                    <option></option>
-                                    <option value="Manure">Manure</option>
-                                    <option value="PestiCide">PestiCide</option>
-
-                                </select>
+                            <div class="form-group col-md-6">
+                                <label for="input_type" class="control-label">Phone Number</label>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">+255</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="xxxxxxxxx" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="issued_by" class="control-label">Issued By</label>
@@ -47,9 +46,9 @@
                         <button type="reset" class="btn btn-warning">Reset</button>
                         <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save </button>
                     </div>
-                </form>
             </div>
+                </form>
         </div>
     </div>
-</div>
+    </div>
 
