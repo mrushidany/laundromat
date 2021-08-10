@@ -1,7 +1,7 @@
 <div class="iq-sidebar sidebar-double-icon">
     <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
         <a href="" class="header-logo mx-auto">
-            <img src="{{asset('assets/images/easywash_logo.jpeg')}}" class="img-fluid rounded-normal" alt="logo">
+            <img src="{{asset('assets/images/easywash_logo.jpeg')}}" class="img-fluid rounded-lg" alt="logo">
         </a>
         <div class="iq-menu-bt-sidebar">
             <i class="las la-bars wrapper-menu"></i>
@@ -20,20 +20,23 @@
         <div class="double-icon-height">
             <nav class="iq-sidebar-menu">
                 <ul id="iq-sidebar-toggle" class="iq-menu">
-                   @if (Auth::user()->hasRole('manager'))
+
                         <li>
                             <div class="d-flex align-items-center">
                                 <a href="{{route('dashboard')}}" class="collapsed"  aria-expanded="false"><i class="las la-home iq-arrow-left"></i><span>Dashboard</span></a>
                                 <a href="{{route('laundry.index')}}" class="collapsed active"  aria-expanded="true"><i class="dripicons dripicons-basket"></i><span>Laundry</span></a>
                             </div>
                         </li>
+                        @if (Auth::user()->hasRole('manager'))
                         <li>
                             <div class="d-flex align-items-center">
                                 <a href="#" class="collapsed" data-toggle="collapse" aria-expanded="false"><i class="las la-file-invoice-dollar"></i><span>Payment</span></a>
 
                             </div>
                         </li>
-                   @endif
+                        @endif
+
+
 
 
                 </ul>
