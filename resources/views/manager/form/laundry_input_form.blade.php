@@ -60,21 +60,26 @@
 
  <script type="application/javascript">
      $(document).ready(function (){
-         var price = 4000;
+
+
+
          $('#washing_machine').on('change', function (){
-             if ($(this).prop('checked', true)){
-                 $('#total_cost').val(total_cost(price));
+             if ($(this).prop('checked', true) ){
+                 var washing_price = 4000;
+                 $('#total_cost').val(total_cost(washing_price,0));
              }
          });
          $('#drying_machine').on('change', function (){
              if ($(this).prop('checked', true)){
-                 $('#total_cost').val(total_cost(price));
+                 var drying_price = 4000;
+                 $('#total_cost').val(total_cost(0,drying_price));
              }
          });
      });
 
-     function total_cost(price){
-        var total = price + ' ' + '/=';
+     function total_cost(washing_price,drying_price){
+        var total = add(washing_price, drying_price) +  ' ' + '/=';
+
         return total
      }
  </script>
