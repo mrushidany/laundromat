@@ -22,6 +22,29 @@
         </div>
 
     </div>
+    <div class="row col-md-12">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table  class="table data-table table-striped table-bordered dataTable laundromat_table" role="grid" aria-describedby="datatable_info">
+                            <thead>
+                            <tr role="row">
+                                <th>Client Name</th>
+                                <th>Phone Number</th>
+                                <th>Quantity</th>
+                                <th>Machine</th>
+                                <th>Total Cost</th>
+                                <th>Registered On</th>
+                                <th>Pickup Date</th>
+                                <th></th>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     @endsection

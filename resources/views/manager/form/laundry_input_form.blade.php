@@ -6,7 +6,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="" method="POST" autocomplete="off">
+                <form action="{{route('laundry.store')}}" method="POST" autocomplete="off">
                     @csrf()
                     @method('POST')
                     <div class="modal-body">
@@ -19,28 +19,36 @@
                                 <label for="input_type" class="control-label">Phone Number</label>
                                 <div class="input-group mb-4">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1">+255</span>
+                                        <span class="input-group-text text-blue" id="basic-addon1">+255</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="xxxxxxxxx" aria-label="Username" aria-describedby="basic-addon1">
+                                    <input type="text" class="form-control" placeholder="xxxxxxxxx" name="phone_number" aria-describedby="basic-addon1">
                                 </div>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="washing_machine" class="control-label">Select Machine</label>
-                                <div class="input-group mb-4">
-                                    <div class="form-check form-check-inline form-control">
-                                        <input class="form-check-input" type="checkbox" id="washing_machine" value="">
-                                        <label class="form-check-label control-label" onclick="event.preventDefault()" for="washing_machine">Washing Machine</label>
+                                <div class="input-group mb-4 select_machine">
+                                    <div class="form-check form-check-inline">
+                                        <select class="form-control mb-3 select2search" name="washing_machine">
+                                            <option disabled selected>Select the Washing Machine</option>
+                                            <option value="1" >Washing Machine 1</option>
+                                            <option value="1">Washing Machine 2</option>
+                                            <option value="1">Washing Machine 3</option>
+                                        </select>
                                     </div>
-                                    <div class="form-check form-check-inline form-control">
-                                        <input class="form-check-input" type="checkbox" id="drying_machine" value="">
-                                        <label class="form-check-label control-label" for="drying_machine">Drying Machine</label>
+                                    <div class="form-check form-check-inline">
+                                        <select class="form-control mb-3 select2search" name="drying_machine">
+                                            <option disabled selected>Select the Drying Machine</option>
+                                            <option value="2" >Drying Machine 1</option>
+                                            <option value="2">Drying Machine 2</option>
+                                            <option value="2">Drying Machine 3</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="laundry_quantity">Laundry Quantity in Kg</label>
-                                <input type="number" min="8" step="8" class="form-control" id="laundry_quantity" value="">
+                                <input type="number" min="8" step="8" name="laundry_quantity" class="form-control" id="laundry_quantity" value="">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="total_cost">Total Cost</label>
@@ -60,28 +68,25 @@
 
  <script type="application/javascript">
      $(document).ready(function (){
-
-
-
          $('#washing_machine').on('change', function (){
-             if ($(this).prop('checked', true) ){
-                 var washing_price = 4000;
-                 $('#total_cost').val(total_cost(washing_price,0));
-             }
+            if($(this).attr('checked', true)){
+                var price = 4000;
+                $('#total_cost').val(total_cost(price));
+            }
          });
-         $('#drying_machine').on('change', function (){
-             if ($(this).prop('checked', true)){
-                 var drying_price = 4000;
-                 $('#total_cost').val(total_cost(0,drying_price));
-             }
-         });
-     });
 
-     function total_cost(washing_price,drying_price){
-        var total = add(washing_price, drying_price) +  ' ' + '/=';
+         function total_cost(price){
+             var total = 0 + price + ' ' + '/=';
+             var quantity = $('#laundry_quantity').val();
+             var check = $('.select_machine').find('attr','checked');
 
-        return total
-     }
+             check.each(function (){
+                 total += quantity * price;
+             })
+
+             return total;
+         }
+     })
  </script>
 
 

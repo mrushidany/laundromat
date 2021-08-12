@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LaundryDetail;
+use App\Models\RoutineClient;
+use Carbon\Carbon;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LaundryController extends Controller
 {
@@ -34,7 +39,29 @@ class LaundryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::beginTransaction();
+        try{
+            $routine_client = RoutineClient::create([
+               'full_name' => $request->full_name,
+               'phone' => $request->phone_number,
+            ]);
+            if($routine_client->id){
+                $laundry_details = LaundryDetail::create([
+                   'routine_client_id' => $routine_client->id,
+                   'quantity' => $request->laundry_quantity.' '.' Kgs',
+                   'pickup_date' => Carbon::now()->format('Y-m-d'),
+                   'issued_by' => Auth::user()->id
+                ]);
+            } if ($laundry_details->id) {
+                if(!null($request->washine_machine) && !null($request->drying_machine)){
+
+                }
+            }
+
+
+        }catch (QueryException $queryException){
+
+        }
     }
 
     /**
