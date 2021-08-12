@@ -3,7 +3,7 @@
         <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
             <i class="ri-menu-line wrapper-menu"></i>
             <a href="index.html" class="header-logo">
-                <img src="../assets/images/logo.png" class="img-fluid rounded-normal" alt="logo">
+                <img src="{{asset('assets/images/easywash_logo.jpeg')}}" class="img-fluid rounded-normal" alt="logo">
             </a>
         </div>
 
@@ -51,79 +51,6 @@
                                     <a href="#" class="search-link"><i class="ri-search-line"></i></a>
                                 </div>
                             </form>
-                        </div>
-                    </li>
-                    <li class="nav-item nav-icon dropdown">
-                        <a href="#" class="search-toggle dropdown-toggle"  id="dropdownMenuButton"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ri-notification-line"></i>
-                            <span class="bg-primary dots"></span>
-                        </a>
-                        <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <div class="card shadow-none m-0">
-                                <div class="card-body p-0 ">
-                                    <div class="cust-title p-3">
-                                        <h5 class="mb-0">All Notifications</h5>
-                                    </div>
-                                    <div class="p-3">
-                                        <a href="#" class="iq-sub-card">
-                                            <div class="media align-items-center">
-                                                <div class="">
-                                                    <img class="avatar-40 rounded-small"
-                                                         src="../assets/images/user/01.jpg" alt="">
-                                                </div>
-                                                <div class="media-body ml-3">
-                                                    <h6 class="mb-0">Emma Watson Barry <small
-                                                            class="badge badge-success float-right">New</small></h6>
-                                                    <p class="mb-0">95 MB</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="iq-sub-card">
-                                            <div class="media align-items-center">
-                                                <div class="">
-                                                    <img class="avatar-40 rounded-small"
-                                                         src="../assets/images/user/02.jpg" alt="">
-                                                </div>
-                                                <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">New customer is join</h6>
-                                                    <p class="mb-0">Cyst Barry</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="iq-sub-card">
-                                            <div class="media align-items-center">
-                                                <div class="">
-                                                    <img class="avatar-40 rounded-small"
-                                                         src="../assets/images/user/03.jpg" alt="">
-                                                </div>
-                                                <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">Two customer is left</h6>
-                                                    <p class="mb-0">Cyst Barry</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="iq-sub-card">
-                                            <div class="media align-items-center">
-                                                <div class="">
-                                                    <img class="avatar-40 rounded-small"
-                                                         src="../assets/images/user/04.jpg" alt="">
-                                                </div>
-                                                <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">New Mail from Fenny <small
-                                                            class="badge badge-success float-right">New</small></h6>
-                                                    <p class="mb-0">Cyst Barry</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <a class="right-ic btn btn-primary btn-block position-relative p-2" href="#"
-                                       role="button">
-                                        <div class="dd-icon"><i class="las la-arrow-right mr-0"></i></div>
-                                        View All
-                                    </a>
-                                </div>
-                            </div>
                         </div>
                     </li>
                     <li class="nav-item iq-full-screen"><a href="#" class="" id="btnFullscreen"><i
