@@ -12,8 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Default page location
 Route::get('/', function () {
+    return view('home.landing_page');
+})->name('home');
+Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
 

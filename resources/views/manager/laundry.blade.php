@@ -1,7 +1,7 @@
 @extends('layouts.manager.main')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid col-12">
         <div class="row">
             <div class="col-lg-12 mb-3">
                 <div class="d-flex align-items-center justify-content-between welcome-content">
@@ -13,7 +13,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="btn-group btn-group-toggle">
+                    <div class="btn-group btn-group-toggle col-md-12">
                         <button  class="button btn btn-primary btn-sm  mr-2" onclick="create('{{route('laundry.create')}}')"><i class="ri-add-line m-0"></i> Add New Laundry</button>
 
                     </div>
