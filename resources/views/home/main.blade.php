@@ -64,11 +64,11 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="navbar-nav ml-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
-                    <a href="pricing.html" class="nav-item nav-link">Pricing</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
+                    <a href="{{route('about')}}" class="nav-item nav-link">About</a>
+                    <a href="{{route('services')}}" class="nav-item nav-link">Services</a>
+                    <a href="{{route('pricing')}}" class="nav-item nav-link">Pricing</a>
+                    <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
                 </div>
             </div>
         </nav>
@@ -99,11 +99,11 @@
         <div class="col-lg-3 col-md-6 mb-5">
             <h4 class="text-white mb-4">Quick Links</h4>
             <div class="d-flex flex-column justify-content-start">
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Services</a>
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Pricing</a>
-                <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                <a class="text-white mb-2" href="{{route('home')}}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                <a class="text-white mb-2" href="{{route('about')}}"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                <a class="text-white mb-2" href="{{route('services')}}"><i class="fa fa-angle-right mr-2"></i>Services</a>
+                <a class="text-white mb-2" href="{{route('pricing')}}"><i class="fa fa-angle-right mr-2"></i>Pricing</a>
+                <a class="text-white" href="{{route('contact')}}"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
