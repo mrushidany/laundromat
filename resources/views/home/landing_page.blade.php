@@ -1,826 +1,421 @@
-<!doctype html>
-<html>
+@extends('home.main')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{config('app.name')}}</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/images/easywash_logo.jpeg')}}" />
-
-    <link rel="stylesheet" href="{{asset('assets/css/frontend.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css')}}">
-</head>
-
-<body class="landing-style-1 ">
-<!-- loader Start -->
-<div id="loading">
-    <div id="loading-center">
+@section('content')
+<!-- Carousel Start -->
+<div class="container-fluid p-0">
+    <div id="header-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100" src="{{asset('home/img/carousel-1.jpg')}}" alt="Image">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-md-3">Laundry & Dry Cleaning</h4>
+                        <h1 class="display-3 text-white mb-md-4">Best For Laundry Services</h1>
+                        <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="w-100" src="{{asset('home/img/carousel-2.jpg')}}" alt="Image">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-md-3">Laundry & Dry Cleaning</h4>
+                        <h1 class="display-3 text-white mb-md-4">Highly Professional Staff</h1>
+                        <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+            <div class="btn btn-secondary" style="width: 45px; height: 45px;">
+                <span class="carousel-control-prev-icon mb-n2"></span>
+            </div>
+        </a>
+        <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+            <div class="btn btn-secondary" style="width: 45px; height: 45px;">
+                <span class="carousel-control-next-icon mb-n2"></span>
+            </div>
+        </a>
     </div>
 </div>
-<!-- loader END -->
-<!-- Topbar -->
-<div class="top-bar-software position-relative">
-    <div class="container-fluid">
+<!-- Carousel End -->
+
+
+<!-- Contact Info Start -->
+<div class="container-fluid contact-info mt-5 mb-4">
+    <div class="container" style="padding: 0 30px;">
         <div class="row">
-            <div class="col-xl-8 col-lg-8 col-md-8 ">
-                <div class="number-info">
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="tel:+0123456789">
-                                <i class="fa fa-phone mr-2"></i>+0123456789</a>
-                        </li>
-                        <li class="list-inline-item"><a href="mailto:support@themes.com">
-                                <i class="fa fa-envelope mr-2"></i>support@themes.com</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4  col-md-4 pr-0">
-                <div class="social-icone">
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Topbar End -->
-<!-- Header -->
-<header class="main-header header-software">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="{{route('home')}}">
-                        <img src="{{asset('assets/images/easywash_logo.jpeg')}}" class=" sticky-logo" alt="img">
-                    </a>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto w-100 justify-content-end">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#iq-home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#iq-about">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#iq-service">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#iq-process">Process</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#iq-testimonial">Testimonials</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#iq-blog">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#iq-contact">Contact US</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="menu-btn d-inline-block" id="menu-btn">
-                                <span class="line"></span>
-                                <span class="line"></span>
-                                <span class="line"></span>
-                            </span>
-                        <span class="ion-navicon"></span>
-                    </button>
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- Header End -->
-<!-- Banner -->
-<div id="iq-home" class="iq-banner-software" style="background-image: url(../assets/images/landing-page/landing-6/bg1.png);background-color: transparent;
-		background-repeat: no-repeat;background-size: 100%;background-position: 50% 50%;">
-    <div class="container-fluid">
-        <div class="banner-text">
-            <div class="row">
-                <div class="col-lg-7 align-self-center">
-                    <div class="iq-text">
-                        <h1 class="text-capitalize wow fadeInUp" data-wow-delay=".3s">IT SOLUTIONS & SOFTWARE
-                            DEVELOPMENT SERVICES </h1>
-                        <p class="pt-3 mb-5 wow fadeInUp" data-wow-delay=".6s">Make your businesses grow with powerful
-                            and adaptable digital solutions <span>that satisfy the needs of today's market
-                                    demand.</span><span> </span></p>
-                        <div class="btn-container mt-4 wow fadeInUp" data-wow-delay=".9s">
-                            <a class="landing-button btn-primary" href="#"><span>Click Here</span><em></em></a>
-                        </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center bg-secondary mb-4 mb-lg-0" style="height: 100px;">
+                <div class="d-inline-flex">
+                    <i class="fa fa-2x fa-map-marker-alt text-white m-0 mr-3"></i>
+                    <div class="d-flex flex-column">
+                        <h5 class="text-white font-weight-medium">Our Location</h5>
+                        <p class="m-0 text-white">123 Street, New York, USA</p>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="iq-image wow fadeIn" data-wow-delay="1.2s">
-                        <img src="../assets/images/landing-page/landing-6/banner.png" class="img-fluid"
-                             alt="drive02">
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center bg-primary mb-4 mb-lg-0" style="height: 100px;">
+                <div class="d-inline-flex text-left">
+                    <i class="fa fa-2x fa-envelope text-white m-0 mr-3"></i>
+                    <div class="d-flex flex-column">
+                        <h5 class="text-white font-weight-medium">Email Us</h5>
+                        <p class="m-0 text-white">info@example.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center bg-secondary mb-4 mb-lg-0" style="height: 100px;">
+                <div class="d-inline-flex text-left">
+                    <i class="fa fa-2x fa-phone-alt text-white m-0 mr-3"></i>
+                    <div class="d-flex flex-column">
+                        <h5 class="text-white font-weight-medium">Call Us</h5>
+                        <p class="m-0 text-white">+012 345 6789</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Banner End -->
+<!-- Contact Info End -->
 
-<div class="wrapper">
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- Why Choose Us -->
-        <section id="iq-about" class="iq-section-space  iq-pb-85">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 pr-3">
-                        <div class="title-box wow fadeInUp mb-0 text-center text-lg-left border-right ">
-                            <span class="title-design">Why Choose Us</span>
-                            <h2>Why Choose <br class="d-none d-lg-block">People ProX</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 align-self-center">
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page
-                            when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                            distribution.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="iq-section-space pt-0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="prox-services  mb-0 wow fadeInUp text-center" data-wow-delay=".3s">
-                            <div class="services-detail">
-                                <img src="../assets/images/landing-page/landing-6/01.png" alt="img" />
-                                <h5 class="mb-1">Perfect Event</h5>
-                                <p class="mb-0">big data through robust that solutions the power.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="prox-services mb-0 wow fadeInUp text-center" data-wow-delay=".6s">
-                            <div class="services-detail">
-                                <img src="../assets/images/landing-page/landing-6/02.png" alt="img" />
-                                <h5 class="mb-1">Organization</h5>
-                                <p class="mb-0">big data through robust that solutions the power.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="prox-services mb-0 wow fadeInUp text-center" data-wow-delay=".9s">
-                            <div class="services-detail">
-                                <img src="../assets/images/landing-page/landing-6/03.png" alt="img" />
-                                <h5 class="mb-1">Innovation</h5>
-                                <p class="mb-0">big data through robust that solutions the power.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="prox-services mb-0 wow fadeInUp text-center" data-wow-delay="1.2s">
-                            <div class="services-detail">
-                                <img src="../assets/images/landing-page/landing-6/04.png" alt="img" />
-                                <h5 class="mb-1">Perfect Event</h5>
-                                <p class="mb-0">big data through robust that solutions the power.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Us -->
-        <section class="iq-section-space pt-0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-lg-6 mb-3 mb-lg-0 wow fadeInUp text-center" data-wow-delay=".3s">
-                        <img alt="" class="single_image-img img-fluid attachment-full" width="666" height="400"
-                             src="../assets/images/landing-page/landing-6/10.png" />
-                    </div>
-                    <div class="fadeInUp col-sm-12 col-lg-6 wow align-items-center">
-                        <div class="title-box wow fadeInUp text-left" data-wow-delay=".3s">
-                            <span class="title-design">About us</span>
-                            <h2>Focused on Actionable Insights</h2>
-                            <p>It is a long established fact that a reader will be distracted by the<br>
-                                readable content of a page when looking at its layout.It is a long established fact that a
-                                reader will be distractedMany desktop publishing packages and web page editors now use Lorem
-                                Ipsum as their default model text, and a search for
-                            </p>
-                        </div>
-                        <div class=" text-left  "><a class="landing-button btn-primary" href="#">Read More</a></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Us End-->
-        <section id="iq-service"class="iq-section-space iq-bg-over">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="custom-tab">
-                            <ul class="nav nav-pills text-center flex-column mb-5 mb-md-0" id="pills-tab" role="tablist"
-                                aria-orientation="vertical">
-                                <li class="nav-item w-inherit ">
-                                    <a class="nav-link w-100" data-toggle="pill" href="#tab-software-development" role="tab"
-                                       aria-selected="true">
-                                        <h5 class="tab-title">Software Development</h5>
-                                    </a>
-                                </li>
-                                <li class="nav-item w-inherit">
-                                    <a class="nav-link w-100" data-toggle="pill" href="#tab-application-services" role="tab"
-                                       aria-selected="false">
-                                        <h5 class="tab-title">Application Services</h5>
-                                    </a>
-                                </li>
-                                <li class="nav-item w-inherit">
-                                    <a class="nav-link w-100" data-toggle="pill" href="#tab-data-analytics" role="tab"
-                                       aria-selected="false">
-                                        <h5 class="tab-title">Data Analytics</h5>
-                                    </a>
-                                </li>
-                                <li class="nav-item w-inherit">
-                                    <a class="nav-link w-100" data-toggle="pill" href="#tab-help-desk-services" role="tab"
-                                       aria-selected="false">
-                                        <h5 class="tab-title">Help Desk Services</h5>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="tab-content ml-3">
-                            <div id="tab-software-development" class="tab-pane fade active show">
-                                <h3 class="pb-3">Choose Your Software Development Service</h3>
-                                <p>Tame your big data through robust solutions that empower data collection,
-                                    storage,processing and analysis.</p>
-                                <ul class="iq-list column-2">
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>Advance Advisory Team</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>Professional Consulting
-                                        Services</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>24/7 Support Help Center</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>Customer Service &amp;
-                                        Operations</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>There are many variations of
-                                        passages.</li>
-                                </ul>
-                            </div>
-                            <div id="tab-application-services" class="tab-pane fade ">
-                                <h3 class="pb-3">Choose Your Application Service</h3>
-                                <p>Tame your big data through robust solutions that empower data collection,
-                                    storage,processing and analysis.</p>
-                                <ul class="iq-list column-2">
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>Advance Advisory Team</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>Professional Consulting
-                                        Services</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>24/7 Support Help Center</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>Customer Service &amp;
-                                        Operations</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>There are many variations of
-                                        passages.</li>
-                                </ul>
-                            </div>
-                            <div id="tab-data-analytics" class="tab-pane fade">
-                                <h3 class="pb-3">Choose Your Data Analytics Service</h3>
-                                <p>Tame your big data through robust solutions that empower data collection,
-                                    storage,processing and analysis.</p>
-                                <ul class="iq-list column-2">
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>Advance Advisory Team</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>Professional Consulting
-                                        Services</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>24/7 Support Help Center</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>Customer Service &amp;
-                                        Operations</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>There are many variations of
-                                        passages.</li>
-                                </ul>
-                            </div>
-                            <div id="tab-help-desk-services" class="tab-pane fade">
-                                <h3 class="pb-3">Choose Your Help Desk Service</h3>
-                                <p>Tame your big data through robust solutions that empower data collection,
-                                    storage,processing and analysis.</p>
-                                <ul class="iq-list column-2">
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>Advance Advisory Team</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>Professional Consulting
-                                        Services</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>24/7 Support Help Center</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>Customer Service &amp;
-                                        Operations</li>
-                                    <li><i class="fa fa-check-circle" aria-hidden="true"></i>There are many variations of
-                                        passages.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Why Choose Us End -->
-        <section class="iq-section-space">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="iq-timer style2 mb-5  mb-md-0 mb-lg-0   text-center">
-                            <div class="iq-icon"> <i class="far fa-frown-open"></i> </div>
-                            <div class="timer-details ">
-                                <span class="timer dark-timer" data-to="1520" data-speed="5000">1520</span><span
-                                    class="timer_postfix dark-timer">M</span><i class="fa fa-percent"
-                                                                                aria-hidden="true"></i>
-                                <p class="dark-timer"> Happy Clients</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="iq-timer style2 mb-5  mb-md-0 mb-lg-0   text-center">
-                            <div class="iq-icon"> <i class="fa fa-handshake"></i> </div>
-                            <div class="timer-details ">
-                                <span class="timer dark-timer" data-to="2000" data-speed="5000">2000</span><span
-                                    class="timer_postfix dark-timer">M</span><i class="fa fa-percent"
-                                                                                aria-hidden="true"></i>
-                                <p class="dark-timer"> Completed Projects</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="iq-timer style2 mb-5  mb-md-0 mb-lg-0   text-center">
-                            <div class="iq-icon"> <i class="far fa-user-circle"></i> </div>
-                            <div class="timer-details ">
-                                <span class="timer dark-timer" data-to="150" data-speed="5000">150</span><span
-                                    class="timer_postfix dark-timer">M</span><i class="fa fa-percent"
-                                                                                aria-hidden="true"></i>
-                                <p class="dark-timer"> Team Members</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="iq-timer style2   text-center">
-                            <div class="iq-icon"> <i class="far fa-check-circle"></i> </div>
-                            <div class="timer-details ">
-                                <span class="timer dark-timer" data-to="750" data-speed="5000">750</span><span
-                                    class="timer_postfix dark-timer">M</span><i class="fa fa-percent"
-                                                                                aria-hidden="true"></i>
-                                <p class="dark-timer">Questions Answered</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Us -->
-        <section class="iq-section-space position-relative overflow-hidden iq-res-top">
-            <img src="../assets/images/landing-page/landing-6/11.png" class="about-right-box-img" alt="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 wow fadeInUp align-items-center" data-wow-delay=".3s">
-                        <div class="title-box wow fadeInUp text-left">
-                            <span class="title-design">LETS GET STARTED </span>
-                            <h2>Are you ready for a better, more productive business?</h2>
-                            <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
-                                as opposed to using 'Content here, content here', making it look like readable English.</p>
-                        </div>
-                        <div class=" text-left d-inline rmb-30 "><a class="landing-button btn-primary" href="#"><span
-                                    class="btn-effect"> Get Started Projects</span></a></div>
-                    </div>
-                    <div class="col-lg-6"> </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Us  End-->
-        <!-- PROCESS -->
-        <section id="iq-process" class="iq-section-space prox-custom-bg  iq-section-pb-70 ">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-md-12">
-                        <div class="title-box wow fadeInUp text-center" data-wow-delay=".3s">
-                            <span class="title-design">PROCESS</span>
-                            <h2>Our Software Testing Process</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row ">
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="prox-process prox-circle right wow fadeInUp text-center" data-wow-delay="0.6s">
-                            <div class="circle-effect"> <img
-                                    src="../assets/images/landing-page/landing-6/05.png" alt="fancybox">
-                            </div>
-                            <h5 class="mb-2">Planning</h5>
-                            <p class="mb-0">It is a long established fact that a reader will be distracted by the readable
-                                content of a page when looking at its layout.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 mt-4 mt-md-0">
-                        <div class="prox-process prox-circle right wow fadeInUp text-center" data-wow-delay="0.9s">
-                            <div class="circle-effect"> <img
-                                    src="../assets/images/landing-page/landing-6/06.png" alt="fancybox">
-                            </div>
-                            <h5 class="mb-2">Design and Execution</h5>
-                            <p class="mb-0">It is a long established fact that a reader will be distracted by the readable
-                                content of a page when looking at its layout.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 mt-4 mt-md-0">
-                        <div class="prox-process prox-circle wow fadeInUp text-center" data-wow-delay="1.2s">
-                            <div class="circle-effect"> <img
-                                    src="../assets/images/landing-page/landing-6/07.png" alt="fancybox">
-                            </div>
-                            <h5 class="mb-2">Report and Signout</h5>
-                            <p class="mb-0">It is a long established fact that a reader will be distracted by the readable
-                                content of a page when looking at its layout.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- PROCESS  End-->
-        <!-- TESTIMONIALS -->
-        <section id="iq-testimonial" class="iq-section-space iq-section-space prox-custom-bg iq-bg-over">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 wow fadeIn">
-                        <div class="title-box  wow fadeIn text-center" data-wow-delay=".3s">
-                            <span class="title-design">TESTIMONIALS</span>
-                            <h2>100+ Companies are Using ProX</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12  wow fadeIn">
-                        <div class="owl-carousel testimonial-style owl-loaded owl-drag" data-dots="true" data-nav="false"
-                             data-autoplay="true" data-loop="true" data-items="1" data-items-laptop="1" data-items-tab="1"
-                             data-items-mobile="1" data-items-mobile-sm="1" data-margin="30">
-                            <div class="item text-center">
-                                <div class="iq-testimonial">
-                                    <div class="testimonial-info">
-                                        <img alt="#" class="img-fluid rounded-circle"
-                                             src="../assets/images/landing-page/landing-6/37.jpg">
-                                        <div class="testimonial-name">
-                                            <h5>Jack White</h5>
-                                            <span class="sub-title">CEO</span>
-                                        </div>
-                                    </div>
-                                    <p>Richard McClintock, a Latin professor at Hampden-Sydney consectetur adip isicing
-                                        elit, sed dolore magna aliqua hampden. Latin professor at Hampden-Sydney
-                                        consectetur. </p>
-                                </div>
-                            </div>
-                            <div class="item text-center">
-                                <div class="iq-testimonial">
-                                    <div class="testimonial-info">
-                                        <img alt="#" class="img-fluid rounded-circle"
-                                             src="../assets/images/landing-page/landing-6/38.jpg">
-                                        <div class="testimonial-name">
-                                            <h5>Walhan Bobe</h5>
-                                            <span class="sub-title">Business Advisor</span>
-                                        </div>
-                                    </div>
-                                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                        incididunt ut labore et dolore Sed ut perspiciatis error. Perspiciatis unde omnis
-                                        iste."</p>
-                                </div>
-                            </div>
-                            <div class="item text-center">
-                                <div class="iq-testimonial">
-                                    <div class="testimonial-info">
-                                        <img alt="#" class="img-fluid rounded-circle"
-                                             src="../assets/images/landing-page/landing-6/39.jpg">
-                                        <div class="testimonial-name">
-                                            <h5>Mark McManus</h5>
-                                            <span class="sub-title">COO</span>
-                                        </div>
-                                    </div>
-                                    <p>“Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                        piece of classical Latin literature from 45 BC, making it over 2000 years old.” </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- TESTIMONIALS End -->
-        <!-- Blog -->
-        <section id="iq-blog" class="iq-section-space iq-section-space">
-            <div class="container">
-                <div class="row layer-fly-one ">
-                    <div class="col-md-12">
-                        <div class="title-box mb-3 wow fadeIn title-shadow  text-center">
-                            <span class="title-design">Blog</span>
-                            <h2>Recent Blog</h2>
-                        </div>
-                        <div class="prox-recentblog v1">
-                            <div class="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="false" data-items="3"
-                                 data-items-laptop="3" data-items-tab="2" data-items-mobile="1" data-items-mobile-sm="1"
-                                 data-autoplay="true" data-loop="true">
-                                <div class="item">
-                                    <div class="iq-blog-box mb-0">
-                                        <div class="iq-blog-image clearfix">
-                                            <img src="../assets/images/landing-page/landing-6/21.png"
-                                                 class="img-fluid center-block" alt="blogimage1">
-                                            <ul class="iq-blogtag">
-                                                <li><a href="blog.html">HTML</a> </li>
-                                            </ul>
-                                        </div>
-                                        <div class="iq-blog-detail">
-                                            <div class="iq-blog-meta">
-                                                <ul>
-                                                    <li class="list-inline-item">
-                                                        <a href="blog-details.html" rel="bookmark">
-                                                            <time class="entry-date published updated"
-                                                                  datetime="2019-09-26T06:49:49+00:00">September 26, 2019
-                                                            </time>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href="blog-details.html">
-                                                    <h4>Build Construction</h4>
-                                                </a>
-                                            </div>
-                                            <p>They bring to you a host of beautifully created infographics that contain the
-                                                latest digital marketing.</p>
-                                            <div class="blog-button"><a class="landing-button-link" href="blog-details.html">Read
-                                                    More<i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="iq-blog-box mb-0">
-                                        <div class="iq-blog-image clearfix">
-                                            <img src="../assets/images/landing-page/landing-6/22.png"
-                                                 class="img-fluid center-block" alt="blogimage2">
-                                            <ul class="iq-blogtag">
-                                                <li><a href="blog.html">Design</a> </li>
-                                            </ul>
-                                        </div>
-                                        <div class="iq-blog-detail">
-                                            <div class="iq-blog-meta">
-                                                <ul>
-                                                    <li class="list-inline-item">
-                                                        <a href="blog-details.html" rel="bookmark">
-                                                            <time class="entry-date published updated"
-                                                                  datetime="2019-09-26T06:49:49+00:00">September 26, 2019
-                                                            </time>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href="blog-details.html">
-                                                    <h4>Life Lack Meaning</h4>
-                                                </a>
-                                            </div>
-                                            <p>They bring to you a host of beautifully created infographics that contain the
-                                                latest digital marketing.</p>
-                                            <div class="blog-button"><a class="landing-button-link" href="blog-details.html">Read
-                                                    More<i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="iq-blog-box mb-0">
-                                        <div class="iq-blog-image clearfix">
-                                            <img src="../assets/images/landing-page/landing-6/23.png"
-                                                 class="img-fluid center-block" alt="blogimage3">
-                                            <ul class="iq-blogtag">
-                                                <li><a href="blog.html">HTML</a> </li>
-                                            </ul>
-                                        </div>
-                                        <div class="iq-blog-detail">
-                                            <div class="iq-blog-meta">
-                                                <ul>
-                                                    <li class="list-inline-item">
-                                                        <a href="blog-details.html" rel="bookmark">
-                                                            <time class="entry-date published updated"
-                                                                  datetime="2019-09-26T06:49:49+00:00">September 26, 2019
-                                                            </time>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href="blog-details.html">
-                                                    <h4>Construction industry</h4>
-                                                </a>
-                                            </div>
-                                            <p>They bring to you a host of beautifully created infographics that contain the
-                                                latest digital marketing.</p>
-                                            <div class="blog-button"><a class="landing-button-link" href="blog-details.html">Read
-                                                    More<i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="iq-blog-box mb-0">
-                                        <div class="iq-blog-image clearfix">
-                                            <img src="../assets/images/landing-page/landing-6/22.png"
-                                                 class="img-fluid center-block" alt="blogimage4">
-                                            <ul class="iq-blogtag">
-                                                <li><a href="blog.html">CSS</a> </li>
-                                            </ul>
-                                        </div>
-                                        <div class="iq-blog-detail">
-                                            <div class="iq-blog-meta">
-                                                <ul>
-                                                    <li class="list-inline-item">
-                                                        <a href="blog-details.html" rel="bookmark">
-                                                            <time class="entry-date published updated"
-                                                                  datetime="2019-09-26T06:49:49+00:00">September 26, 2019
-                                                            </time>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="blog-title">
-                                                <a href="blog-details.html">
-                                                    <h4>Content Marketing</h4>
-                                                </a>
-                                            </div>
-                                            <p>They bring to you a host of beautifully created infographics that contain the
-                                                latest digital marketing.</p>
-                                            <div class="blog-button"><a class="landing-button-link" href="blog-details.html">Read
-                                                    More<i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Blog End-->
-        <!-- Partner -->
-        <section class="iq-section-space iq-section-space pt-0 iq-clients">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="false" data-items="6"
-                             data-items-laptop="4" data-items-tab="3" data-items-mobile="2" data-items-mobile-sm="1"
-                             data-dots-mobile="true" data-autoplay="true" data-loop="true" data-margin="30">
-                            <div class="item">
-                                <div class="clients-box">
-                                    <img class="img-fluid client-img"
-                                         src="../assets/images/landing-page/landing-6/32.png" alt="image0">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="clients-box">
-                                    <img class="img-fluid client-img"
-                                         src="../assets/images/landing-page/landing-6/33.png" alt="image1">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="clients-box">
-                                    <img class="img-fluid client-img"
-                                         src="../assets/images/landing-page/landing-6/34.png" alt="image2">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="clients-box">
-                                    <img class="img-fluid client-img"
-                                         src="../assets/images/landing-page/landing-6/35.png" alt="image3">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="clients-box">
-                                    <img class="img-fluid client-img"
-                                         src="../assets/images/landing-page/landing-6/36.png" alt="image4">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="clients-box">
-                                    <img class="img-fluid client-img"
-                                         src="../assets/images/landing-page/landing-6/32.png" alt="image5">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="clients-box">
-                                    <img class="img-fluid client-img"
-                                         src="../assets/images/landing-page/landing-6/33.png" alt="image6">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="clients-box">
-                                    <img class="img-fluid client-img"
-                                         src="../assets/images/landing-page/landing-6/34.png" alt="image7">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="clients-box">
-                                    <img class="img-fluid client-img"
-                                         src="../assets/images/landing-page/landing-6/35.png" alt="image8">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="clients-box">
-                                    <img class="img-fluid client-img"
-                                         src="../assets/images/landing-page/landing-6/36.png" alt="image9">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Partner End-->
-    </div>
-    <!-- Main Content END -->
-</div>
 
-<!-- Footer -->
-<footer class="footer-analytics iq-bg-dark iq-over-dark-90" id="iq-contact">
+<!-- About Start -->
+<div class="container-fluid py-5">
+    <div class="container pt-0 pt-lg-4">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <img class="img-fluid" src="{{asset('home/img/about.jpg')}}" alt="">
+            </div>
+            <div class="col-lg-7 mt-5 mt-lg-0 pl-lg-5">
+                <h6 class="text-secondary text-uppercase font-weight-medium mb-3">Learn About Us</h6>
+                <h1 class="mb-4">We Are Quality Laundry Provider In Your City</h1>
+                <h5 class="font-weight-medium font-italic mb-4">Clita sit et ipsum sed. Volup duo sea dolor rebum ea rebum kasd stet. Dolor at duo dolor sit stet.</h5>
+                <p class="mb-2">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor</p>
+                <div class="row">
+                    <div class="col-sm-6 pt-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-check text-primary mr-2"></i>
+                            <p class="text-secondary font-weight-medium m-0">Quality Laundry Service</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 pt-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-check text-primary mr-2"></i>
+                            <p class="text-secondary font-weight-medium m-0">Express Fast Delivery</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 pt-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-check text-primary mr-2"></i>
+                            <p class="text-secondary font-weight-medium m-0">Highly Professional Staff</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 pt-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-check text-primary mr-2"></i>
+                            <p class="text-secondary font-weight-medium m-0">100% Satisfaction Gguarantee</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+<!-- Services Start -->
+<div class="container-fluid pt-5 pb-3">
     <div class="container">
-        <!-- Address -->
-        <div class="footer-top">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 ">
-                    <p class="footer-logo">
-                        <img alt="img" src="../assets/images/logo.png" width="100">
-                    </p>
-                    <p class="footer-logo">It is a long established fact that a reader will be distracted by the
-                        readable content.</p>
-                    <ul class="info-share d-inline list-inline">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-6 mt-4 mt-lg-0 mt-md-0">
-                    <h4 class="footer-title">Menu</h4>
-                    <div class="menu-footer-menu-container">
-                        <ul class="menu">
-                            <li class="menu-item"> <a href="index.html" aria-current="page">Home</a> </li>
-                            <li class="menu-item"> <a href="blog.html">Blog</a> </li>
-                            <li class="menu-item"> <a href="careers.html">Careers</a> </li>
-                            <li class="menu-item"> <a href="clients.html">Clients</a> </li>
-                            <li class="menu-item"> <a href="artificial-intelligence.html">Service</a> </li>
-                        </ul>
+        <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Our Services</h6>
+        <h1 class="display-4 text-center mb-5">What We Offer</h1>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 pb-1">
+                <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
+                        <i class="fa fa-3x fa-cloud-sun text-secondary"></i>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-6 mt-lg-0 mt-4">
-                    <h4 class="footer-title iq-rmt-30">About us</h4>
-                    <div class="menu-footer-menu-container">
-                        <ul class="menu">
-                            <li class="menu-item"> <a href="index.html" aria-current="page">Home</a> </li>
-                            <li class="menu-item"> <a href="blog.html">Blog</a> </li>
-                            <li class="menu-item"> <a href="careers.html">Careers</a> </li>
-                            <li class="menu-item"> <a href="clients.html">Clients</a> </li>
-                            <li class="menu-item"> <a href="artificial-intelligence.html">Service</a> </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
-                    <h4 class="footer-title iq-rmt-30">Contact us</h4>
-                    <ul class="iq-contact">
-                        <li> <a href="tel:+0123456789"><i class="fa fa-phone"></i><span>+0123456789</span></a> </li>
-                        <li> <a href="mailto:support@themes.com"><i
-                                    class="fa fa-envelope"></i><span>support@themes.com</span></a> </li>
-                        <li> </li>
-                        <li> <a><i class="fa fa-home"></i><span>1234 North Avenue Luke Lane, South Bend, IN
-                                        360001</span></a> </li>
-                    </ul>
+                    <h4 class="font-weight-bold m-0">Dry Cleaning</h4>
                 </div>
             </div>
-        </div>
-        <!-- Address END -->
-        <div class="copyright-footer">
-            <div class="pt-3 pb-3">
-                <div class="row flex-row-reverse justify-content-between">
-                    <div class="col-lg-12 col-md-12 text-lg-center text-md-center text-center"> <span
-                            class="copyright">Copyright 2020 <a href="index.html">ProX</a> All Rights Reserved.</span>
+            <div class="col-lg-3 col-md-6 pb-1">
+                <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
+                        <i class="fas fa-3x fa-soap text-secondary"></i>
                     </div>
+                    <h4 class="font-weight-bold m-0">Wash & Laundry</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 pb-1">
+                <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
+                        <i class="fa fa-3x fa-burn text-secondary"></i>
+                    </div>
+                    <h4 class="font-weight-bold m-0">Curtain Laundry</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 pb-1">
+                <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
+                        <i class="fa fa-3x fa-tshirt text-secondary"></i>
+                    </div>
+                    <h4 class="font-weight-bold m-0">Suits Cleaning</h4>
                 </div>
             </div>
         </div>
     </div>
-</footer>
-<!-- Footer End-->
-<!-- === back-to-top === -->
-<div id="back-to-top">
-    <a class="top" id="top" href="#top"><ion-icon name="chevron-up-outline"></ion-icon> </a>
 </div>
-<!-- Frontend Bundle JavaScript -->
-<script src="{{asset('assets/js/frontend-bundle.min.js')}}"></script>
+<!-- Services End -->
 
-<!-- ionicons JavaScript -->
-<script src="{{asset('assets/vendor/ionicons/dist/ionicons.js')}}"></script>
 
-<!-- Masonary Gallery Javascript -->
-<script src="{{asset('assets/js/masonry.pkgd.min.js')}}"></script>
-<script src="{{asset('assets/js/imagesloaded.pkgd.min.js')}}"></script>
+<!-- Features Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 m-0 my-lg-5 pt-0 pt-lg-5 pr-lg-5">
+                <h6 class="text-secondary text-uppercase font-weight-medium mb-3">Our Features</h6>
+                <h1 class="mb-4">Why Choose Us</h1>
+                <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor</p>
+                <div class="row">
+                    <div class="col-sm-6 mb-4">
+                        <h1 class="text-secondary" data-toggle="counter-up">10</h1>
+                        <h5 class="font-weight-bold">Years Expereince</h5>
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <h1 class="text-secondary" data-toggle="counter-up">250</h1>
+                        <h5 class="font-weight-bold">Expert Worker</h5>
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <h1 class="text-secondary" data-toggle="counter-up">1250</h1>
+                        <h5 class="font-weight-bold">Happy Clients</h5>
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <h1 class="text-secondary" data-toggle="counter-up">9550</h1>
+                        <h5 class="font-weight-bold">Dry Cleaning</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="d-flex flex-column align-items-center justify-content-center bg-secondary h-100 py-5 px-3">
+                    <i class="fa fa-5x fa-certificate text-white mb-5"></i>
+                    <h1 class="display-1 text-white mb-3">10+</h1>
+                    <h1 class="text-white m-0">Years Experience</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Features End -->
 
-<!-- slider JavaScript -->
-<script src="{{asset('assets/js/slider.js')}}"></script>
-<!-- semantic-ui-range JavaScript -->
-<script src="{{asset('assets/js/semantic-ui-range.js')}}"></script>
-<!-- app-landing JavaScript -->
-<script src="{{asset('assets/js/app-landing.js')}}"></script>
-<!-- app JavaScript -->
-<script src="{{asset('assets/js/app.js')}}"></script>
 
-</body>
+<!-- Working Process Start -->
+<div class="container-fluid pt-5">
+    <div class="container">
+        <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Working Process</h6>
+        <h1 class="display-4 text-center mb-5">How We Work</h1>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column align-items-center justify-content-center text-center mb-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4" style="width: 150px; height: 150px; border-width: 15px !important;">
+                        <h2 class="display-2 text-secondary m-0">1</h2>
+                    </div>
+                    <h3 class="font-weight-bold m-0 mt-2">Order Place</h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column align-items-center justify-content-center text-center mb-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4" style="width: 150px; height: 150px; border-width: 15px !important;">
+                        <h2 class="display-2 text-secondary m-0">2</h2>
+                    </div>
+                    <h3 class="font-weight-bold m-0 mt-2">Free Pick Up</h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column align-items-center justify-content-center text-center mb-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4" style="width: 150px; height: 150px; border-width: 15px !important;">
+                        <h2 class="display-2 text-secondary m-0">3</h2>
+                    </div>
+                    <h3 class="font-weight-bold m-0 mt-2">Dry Cleaning</h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column align-items-center justify-content-center text-center mb-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4" style="width: 150px; height: 150px; border-width: 15px !important;">
+                        <h2 class="display-2 text-secondary m-0">4</h2>
+                    </div>
+                    <h3 class="font-weight-bold m-0 mt-2">Free Delivery</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Working Process End -->
 
-</html>
+
+<!-- Pricing Plan Start -->
+<div class="container-fluid pt-5 pb-3">
+    <div class="container">
+        <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Our Pricing Plan</h6>
+        <h1 class="display-4 text-center mb-5">The Best Price</h1>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="bg-light text-center mb-2 pt-4">
+                    <div class="d-inline-flex flex-column align-items-center justify-content-center bg-secondary rounded-circle shadow mt-2 mb-4" style="width: 200px; height: 200px; border: 15px solid #ffffff;">
+                        <h3 class="text-white">Basic</h3>
+                        <h1 class="display-4 text-white mb-0">
+                            <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>49<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
+                        </h1>
+                    </div>
+                    <div class="d-flex flex-column align-items-center py-3">
+                        <p>HTML5 & CSS3</p>
+                        <p>Bootstrap 4</p>
+                        <p>Responsive Layout</p>
+                        <p>Compatible With All Browsers</p>
+                    </div>
+                    <a href="" class="btn btn-secondary py-2 px-4">Signup Now</a>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="bg-light text-center mb-2 pt-4">
+                    <div class="d-inline-flex flex-column align-items-center justify-content-center bg-primary rounded-circle shadow mt-2 mb-4" style="width: 200px; height: 200px; border: 15px solid #ffffff;">
+                        <h3 class="text-white">Standard</h3>
+                        <h1 class="display-4 text-white mb-0">
+                            <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>99<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
+                        </h1>
+                    </div>
+                    <div class="d-flex flex-column align-items-center py-3">
+                        <p>HTML5 & CSS3</p>
+                        <p>Bootstrap 4</p>
+                        <p>Responsive Layout</p>
+                        <p>Compatible With All Browsers</p>
+                    </div>
+                    <a href="" class="btn btn-primary py-2 px-4">Signup Now</a>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="bg-light text-center mb-2 pt-4">
+                    <div class="d-inline-flex flex-column align-items-center justify-content-center bg-secondary rounded-circle shadow mt-2 mb-4" style="width: 200px; height: 200px; border: 15px solid #ffffff;">
+                        <h3 class="text-white">Premium</h3>
+                        <h1 class="display-4 text-white mb-0">
+                            <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>149<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
+                        </h1>
+                    </div>
+                    <div class="d-flex flex-column align-items-center py-3">
+                        <p>HTML5 & CSS3</p>
+                        <p>Bootstrap 4</p>
+                        <p>Responsive Layout</p>
+                        <p>Compatible With All Browsers</p>
+                    </div>
+                    <a href="" class="btn btn-secondary py-2 px-4">Signup Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pricing Plan End -->
+
+
+<!-- Testimonial Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Testimonial</h6>
+        <h1 class="display-4 text-center mb-5">Our Clients Say</h1>
+        <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item">
+                <img class="position-relative rounded-circle bg-white shadow mx-auto" src="{{asset('home/img/testimonial-1.jpg')}}" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
+                <div class="bg-light text-center p-4 pt-0">
+                    <h5 class="font-weight-medium mt-5">Client Name</h5>
+                    <p class="text-muted font-italic">Profession</p>
+                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor ipsum clita</p>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <img class="position-relative rounded-circle bg-white shadow mx-auto" src="{{asset('home/img/testimonial-2.jpg')}}" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
+                <div class="bg-light text-center p-4 pt-0">
+                    <h5 class="font-weight-medium mt-5">Client Name</h5>
+                    <p class="text-muted font-italic">Profession</p>
+                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor ipsum clita</p>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <img class="position-relative rounded-circle bg-white shadow mx-auto" src="{{asset('home/img/testimonial-3.jpg')}}" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
+                <div class="bg-light text-center p-4 pt-0">
+                    <h5 class="font-weight-medium mt-5">Client Name</h5>
+                    <p class="text-muted font-italic">Profession</p>
+                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor ipsum clita</p>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <img class="position-relative rounded-circle bg-white shadow mx-auto" src="{{asset('home/img/testimonial-4.jpg')}}" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
+                <div class="bg-light text-center p-4 pt-0">
+                    <h5 class="font-weight-medium mt-5">Client Name</h5>
+                    <p class="text-muted font-italic">Profession</p>
+                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor ipsum clita</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+
+<!-- Blog Start -->
+<div class="container-fluid mt-5 pb-2">
+    <div class="container">
+        <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Our Blog</h6>
+        <h1 class="display-4 text-center mb-5">Latest From Blog</h1>
+        <div class="row">
+            <div class="col-lg-4 mb-2">
+                <div class="shadow mb-4">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="{{asset('home/img/blog-1.jpg')}}" alt="">
+                        <a href="" class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center   text-decoration-none p-4" style="top: 0; left: 0; background: rgba(0, 0, 0, .4);">
+                            <h4 class="text-center text-white font-weight-medium mb-3">Dolor site amet clita kasd sanct ipsum</h4>
+                            <div class="d-flex text-light">
+                                <small class="mr-2"><i class="fa fa-user text-secondary"></i> Admin</small>
+                                <small class="mr-2"><i class="fa fa-folder text-secondary"></i> Web Design</small>
+                                <small class="mr-2"><i class="fa fa-comments text-secondary"></i> 15</small>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="m-0 p-4">Amet dolores labore magna et amet tempor dolor et dolor. Et sit ipsum et eos rebum labore ea labore sea. Et sed elitr labore sed labore. Lorem et lorem amet sed sed kasd ipsum rebum</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-2">
+                <div class="shadow mb-4">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="{{asset('home/img/blog-2.jpg')}}" alt="">
+                        <a href="" class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center   text-decoration-none p-4" style="top: 0; left: 0; background: rgba(0, 0, 0, .4);">
+                            <h4 class="text-center text-white font-weight-medium mb-3">Dolor site amet clita kasd sanct ipsum</h4>
+                            <div class="d-flex text-light">
+                                <small class="mr-2"><i class="fa fa-user text-secondary"></i> Admin</small>
+                                <small class="mr-2"><i class="fa fa-folder text-secondary"></i> Web Design</small>
+                                <small class="mr-2"><i class="fa fa-comments text-secondary"></i> 15</small>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="m-0 p-4">Amet dolores labore magna et amet tempor dolor et dolor. Et sit ipsum et eos rebum labore ea labore sea. Et sed elitr labore sed labore. Lorem et lorem amet sed sed kasd ipsum rebum</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-2">
+                <div class="shadow mb-4">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="{{asset('home/img/blog-3.jpg')}}" alt="">
+                        <a href="" class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center   text-decoration-none p-4" style="top: 0; left: 0; background: rgba(0, 0, 0, .4);">
+                            <h4 class="text-center text-white font-weight-medium mb-3">Dolor site amet clita kasd sanct ipsum</h4>
+                            <div class="d-flex text-light">
+                                <small class="mr-2"><i class="fa fa-user text-secondary"></i> Admin</small>
+                                <small class="mr-2"><i class="fa fa-folder text-secondary"></i> Web Design</small>
+                                <small class="mr-2"><i class="fa fa-comments text-secondary"></i> 15</small>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="m-0 p-4">Amet dolores labore magna et amet tempor dolor et dolor. Et sit ipsum et eos rebum labore ea labore sea. Et sed elitr labore sed labore. Lorem et lorem amet sed sed kasd ipsum rebum</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
+
+@endsection
+

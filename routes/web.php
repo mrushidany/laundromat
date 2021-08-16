@@ -13,12 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Default page location
-Route::get('/', function () {
-    return view('home.landing_page');
-})->name('home');
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
+Route::get('/', function () {return view('home.landing_page');})->name('home');
+
+//Login authentication routes
+Route::get('/login', function () {return view('auth.login');})->name('login');
 
 //DashBoard Controller Routes
 use App\Http\Controllers\DashBoardController;
