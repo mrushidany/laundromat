@@ -1,5 +1,18 @@
 @extends('home.main')
 
+
+@section('navbar')
+    <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+        <div class="navbar-nav ml-auto py-0">
+            <a href="{{route('home')}}" class="nav-item nav-link ">Home</a>
+            <a href="{{route('about')}}" class="nav-item nav-link active">About</a>
+            <a href="{{route('services')}}" class="nav-item nav-link">Services</a>
+            <a href="{{route('pricing')}}" class="nav-item nav-link">Pricing</a>
+            <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
+        </div>
+    </div>
+@endsection
+
 @section('content')
     <div class="page-header container-fluid bg-secondary pt-2 pt-lg-5 pb-2 mb-5">
         <div class="container py-5">

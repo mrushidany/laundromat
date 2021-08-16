@@ -1,5 +1,17 @@
 @extends('home.main')
 
+@section('navbar')
+    <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+        <div class="navbar-nav ml-auto py-0">
+            <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
+            <a href="{{route('about')}}" class="nav-item nav-link">About</a>
+            <a href="{{route('services')}}" class="nav-item nav-link">Services</a>
+            <a href="{{route('pricing')}}" class="nav-item nav-link">Pricing</a>
+            <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
+        </div>
+    </div>
+@endsection
+
 @section('content')
 <!-- Carousel Start -->
 <div class="container-fluid p-0">
