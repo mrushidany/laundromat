@@ -30,6 +30,12 @@ Route::group(['middleware' => ['auth']], function (){
     Route::resource('/laundry',LaundryController::class)->name('*', 'laundry' );
 });
 
+//Landing page routes
+Route::get('/about', function () {return view('home.about');})->name('about');
+Route::get('/contact', function () {return view('home.contact');})->name('contact');
+Route::get('/pricing', function () {return view('home.pricing');})->name('pricing');
+Route::get('/services', function () {return view('home.services');})->name('services');
+
 
 
 
