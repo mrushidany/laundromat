@@ -80,7 +80,7 @@
                     <i class="fa fa-2x fa-phone-alt text-white m-0 mr-3"></i>
                     <div class="d-flex flex-column">
                         <h5 class="text-white font-weight-medium">Call Us</h5>
-                        <p class="m-0 text-white">+012 345 6789</p>
+                        <p class="m-0 text-white">+255 717 174734</p>
                     </div>
                 </div>
             </div>
