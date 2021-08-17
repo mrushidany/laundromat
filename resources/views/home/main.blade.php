@@ -84,9 +84,9 @@
         <div class="col-lg-3 col-md-6 mb-5">
             <h4 class="text-white mb-4">Get In Touch</h4>
             <p>Dolor clita stet nonumy clita diam vero, et et ipsum diam labore</p>
-            <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-            <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-            <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+            <p><i class="fa fa-map-marker-alt mr-2"></i>Sinza Mori Street, Dar es Salaam, Tanzania</p>
+            <p><i class="fa fa-phone-alt mr-2"></i>+255 717 174734</p>
+            <p><i class="fa fa-envelope mr-2"></i>info@easywash.co.tz</p>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
             <h4 class="text-white mb-4">Quick Links</h4>
