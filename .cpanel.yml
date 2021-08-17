@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/easywashco/public_html/
-    - /bin/cp -R laundromat $DEPLOYPATH
+
