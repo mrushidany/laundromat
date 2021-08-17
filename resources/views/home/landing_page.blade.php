@@ -62,7 +62,7 @@
                     <i class="fa fa-2x fa-map-marker-alt text-white m-0 mr-3"></i>
                     <div class="d-flex flex-column">
                         <h5 class="text-white font-weight-medium">Our Location</h5>
-                        <p class="m-0 text-white">123 Street, New York, USA</p>
+                        <p class="m-0 text-white">Sinza Mori Street, Dar es Salaam, Tanzania</p>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                     <i class="fa fa-2x fa-envelope text-white m-0 mr-3"></i>
                     <div class="d-flex flex-column">
                         <h5 class="text-white font-weight-medium">Email Us</h5>
-                        <p class="m-0 text-white">info@example.com</p>
+                        <p class="m-0 text-white">info@easywash.co.tz</p>
                     </div>
                 </div>
             </div>
