@@ -11,8 +11,8 @@
                         <div class="iq-menu-horizontal">
                             <nav class="iq-sidebar-menu">
                                 <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-                                    <a href="index.html" class="header-logo">
-                                        <img src="{{asset('assets/images/logo.png')}}" class="img-fluid rounded-normal" alt="logo">
+                                    <a href="" class="header-logo">
+                                        <img src="{{asset('assets/images/easywash_logo.jpeg')}}" class="img-fluid rounded-normal" alt="logo">
                                     </a>
                                     <div class="iq-menu-bt-sidebar">
                                         <i class="las la-bars wrapper-menu"></i>
