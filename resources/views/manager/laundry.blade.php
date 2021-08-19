@@ -13,7 +13,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="btn-group btn-group-toggle col-md-12">
+                    <div class="btn-group btn-group-toggle">
                         <button  class="button btn btn-primary btn-sm  mr-2" onclick="create('{{route('laundry.create')}}')"><i class="ri-add-line m-0"></i> Add New Laundry</button>
 
                     </div>
