@@ -34,6 +34,15 @@
                                             <option value="1" >Washing Machine 1</option>
                                             <option value="1">Washing Machine 2</option>
                                             <option value="1">Washing Machine 3</option>
+                                            <option value="1" >Washing Machine 4</option>
+                                            <option value="1">Washing Machine 5</option>
+                                            <option value="1">Washing Machine 6</option>
+                                            <option value="1" >Washing Machine 7</option>
+                                            <option value="1">Washing Machine 8</option>
+                                            <option value="1">Washing Machine 9</option>
+                                            <option value="1" >Washing Machine 10</option>
+                                            <option value="1">Washing Machine 11</option>
+                                            <option value="1">Washing Machine 12</option>
                                         </select>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -42,18 +51,31 @@
                                             <option value="2" >Drying Machine 1</option>
                                             <option value="2">Drying Machine 2</option>
                                             <option value="2">Drying Machine 3</option>
+                                            <option value="2" >Drying Machine 4</option>
+                                            <option value="2">Drying Machine 5</option>
+                                            <option value="2">Drying Machine 6</option>
+                                            <option value="2" >Drying Machine 7</option>
+                                            <option value="2">Drying Machine 8</option>
+                                            <option value="2">Drying Machine 9</option>
+                                            <option value="2" >Drying Machine 10</option>
+                                            <option value="2">Drying Machine 11</option>
+                                            <option value="2">Drying Machine 12</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="laundry_quantity">Laundry Quantity in Kg</label>
                                 <input type="number" min="8" step="8" name="laundry_quantity" class="form-control" id="laundry_quantity" value="">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="total_cost">Total Cost</label>
                                 <input type="text" class="form-control" id="total_cost" name="total_cost"  value="">
                             </div>
+                            <div class="form-group col-md-4">
+                                <label for="pickup_date">PickUp Date</label>
+                                <input type="datetime-local" class="form-control" id="pickup_date" value="">
+                            </div><
                             <div>
                         </div>
                     </div>
