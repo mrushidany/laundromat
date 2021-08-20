@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\LaundryDetail;
+use App\Models\LaundryMachineDetail;
 use App\Models\RoutineClient;
 use Carbon\Carbon;
 use Illuminate\Database\QueryException;
@@ -54,6 +55,9 @@ class LaundryController extends Controller
                 ]);
             } if ($laundry_details->id) {
                 if(!null($request->washine_machine) && !null($request->drying_machine)){
+                    $laundry_machine_details = LaundryMachineDetail::create([
+
+                    ]);
 
                 }
             }
