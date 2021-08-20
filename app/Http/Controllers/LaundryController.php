@@ -49,7 +49,7 @@ class LaundryController extends Controller
                 $laundry_details = LaundryDetail::create([
                    'routine_client_id' => $routine_client->id,
                    'quantity' => $request->laundry_quantity.' '.' Kgs',
-                   'pickup_date' => Carbon::now()->format('Y-m-d'),
+                   'pickup_date' => $request->pickup_date,
                    'issued_by' => Auth::user()->id
                 ]);
             } if ($laundry_details->id) {
