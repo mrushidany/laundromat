@@ -16,8 +16,8 @@ class MachinesTableSeeder extends Seeder
     public function run()
     {
         DB::table('machines')->insert([
-            'name'=>'Washing Machine',
-            'type' => 'washing',
+            'name'=>'Drying Machine',
+            'type' => 'drying',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
