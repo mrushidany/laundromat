@@ -36,13 +36,11 @@ class DashBoardController extends Controller
             $role = DB::table('roles')->where('name','=','dry_man')->first();
             $data = ['role'=> $role->display_name];
             return view('dashboard.manager.manager_dashboard')->with($data);
-            return view();
         }
         elseif(Auth::user()->hasRole('wash_man')){
             $role = DB::table('roles')->where('name','=','wash_man')->first();
             $data = ['role'=> $role->display_name];
             return view('dashboard.manager.manager_dashboard')->with($data);
-            return view();
         }
         elseif(Auth::user()->hasRole('owner')){
             $role = DB::table('roles')->where('name','=','owner')->first();
