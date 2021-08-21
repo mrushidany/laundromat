@@ -11,6 +11,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Yajra\DataTables\Facades\DataTables;
 
 class LaundryController extends Controller
 {
@@ -127,6 +128,26 @@ class LaundryController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+    }
+
+    public function laundry_list(){
+        $laundry_list = DB::table('laundry_details')
+                        ->leftJoin('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+                        ->leftJoin('laundry_machine_details','laundry_machine_details.laundry_details_id','=','laundry_details.id')
+                        ->leftJoin('laundry_costs','laundry_costs.laundry_details_id','=','laundry_details.id')
+                        ->select('laundry_details.id','full_name','phone','quantity','amount','pickup_date','laundry_details.created_at');
+
+
+                    return DataTables::of($laundry_list)
+                            ->addColumn('action', function ($list){
+                                $button  = '';
+                                $button .= '<a style="padding-right: 2px" href="javascript:edit(\'' . route('laundry.edit', $list->id) . '\')" class="button-icon button btn btn-sm rounded-small btn-info"><span><i class="fa fa-edit  m-0"></i></span></a>&nbsp;&nbsp;';
+                                $button .= '<a href="javascript:destroy(\'' . route('laundry.destroy', $list->id) . '\')" class="button-icon button btn btn-sm rounded-small btn-danger"><span><i class="fa fa-trash m-0"></i></span></a>';
+                                return '<nobr>' . $button . '</nobr>';
+                            })
+                            ->rawColumns(['action'])
+                            ->make(true);
+
     }
 }

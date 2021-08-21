@@ -28,6 +28,7 @@ Route::group(['middleware' => ['auth']], function (){
 
 //Laundry Controller Routes
     Route::resource('/laundry',LaundryController::class)->name('*', 'laundry' );
+    Route::get('/laundry_list',[LaundryController::class,'laundry_list'])->name('laundry_list' );
 });
 
 //Landing page routes
