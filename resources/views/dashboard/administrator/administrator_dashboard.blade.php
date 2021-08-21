@@ -75,35 +75,6 @@
                         <div class="card-body res-block">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="d-flex align-items-center">
-                                    <div class="bg-primary-light icon iq-icon-box mr-2 rounded">
-                                        <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0)">
-                                                <path d="M27.25 10H0.75C0.335812 10 0 9.66419 0 9.25V7C0 5.34312 1.34312 4 3 4H6V0.75C6 0.335813 6.33581 0 6.75 0H9.25C9.66419 0 10 0.335813 10 0.75V4H18V0.75C18 0.335813 18.3358 0 18.75 0H21.25C21.6642 0 22 0.335813 22 0.75V4H25C26.6569 4 28 5.34312 28 7V9.25C28 9.66419 27.6642 10 27.25 10ZM0.75 12H27.25C27.6642 12 28 12.3358 28 12.75V29C28 30.6569 26.6569 32 25 32H3C1.34312 32 0 30.6569 0 29V12.75C0 12.3358 0.335812 12 0.75 12ZM21.581 17.9967L19.8204 16.2218C19.5287 15.9278 19.0539 15.9258 18.7598 16.2176L12.1325 22.7916L9.25875 19.8946C8.96706 19.6005 8.49212 19.5986 8.19806 19.8903L6.42325 21.6509C6.12919 21.9426 6.12725 22.4175 6.419 22.7116L11.5816 27.9159C11.8732 28.2099 12.3481 28.2119 12.6422 27.9201L21.5767 19.0573C21.8708 18.7656 21.8727 18.2907 21.581 17.9967Z" fill="#4788ff" />
-                                            </g>
-                                            <defs>
-                                                <clipPath id="clip0">
-                                                    <rect width="28" height="32" fill="white" />
-                                                </clipPath>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                    <div class="media-support-primary salon-2 ml-3">
-                                        <h5 class="text-primary">1000</h5>
-                                        <p class="mb-0">Event</p>
-                                    </div>
-                                </div>
-                                <div class="media-support-amount ml-3">
-                                    <div id="salon2-chart-02" class="chart-salon"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="card card-block card-stretch card-height">
-                        <div class="card-body res-block">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-flex align-items-center">
                                     <div class="bg-danger-light icon iq-icon-box mr-2 rounded">
                                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0)">
@@ -161,36 +132,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="card card-block card-stretch card-height">
-                        <div class="card-body res-block">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-info-light icon iq-icon-box mr-2 rounded">
-                                        <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4.8 11.2C6.565 11.2 8 9.76501 8 8.00001C8 6.23501 6.565 4.80001 4.8 4.80001C3.035 4.80001 1.6 6.23501 1.6 8.00001C1.6 9.76501 3.035 11.2 4.8 11.2ZM27.2 11.2C28.965 11.2 30.4 9.76501 30.4 8.00001C30.4 6.23501 28.965 4.80001 27.2 4.80001C25.435 4.80001 24 6.23501 24 8.00001C24 9.76501 25.435 11.2 27.2 11.2ZM28.8 12.8H25.6C24.72 12.8 23.925 13.155 23.345 13.73C25.36 14.835 26.79 16.83 27.1 19.2H30.4C31.285 19.2 32 18.485 32 17.6V16C32 14.235 30.565 12.8 28.8 12.8ZM16 12.8C19.095 12.8 21.6 10.295 21.6 7.20001C21.6 4.10501 19.095 1.60001 16 1.60001C12.905 1.60001 10.4 4.10501 10.4 7.20001C10.4 10.295 12.905 12.8 16 12.8ZM19.84 14.4H19.425C18.385 14.9 17.23 15.2 16 15.2C14.77 15.2 13.62 14.9 12.575 14.4H12.16C8.98 14.4 6.4 16.98 6.4 20.16V21.6C6.4 22.925 7.475 24 8.8 24H23.2C24.525 24 25.6 22.925 25.6 21.6V20.16C25.6 16.98 23.02 14.4 19.84 14.4ZM8.655 13.73C8.075 13.155 7.28 12.8 6.4 12.8H3.2C1.435 12.8 0 14.235 0 16V17.6C0 18.485 0.715 19.2 1.6 19.2H4.895C5.21 16.83 6.64 14.835 8.655 13.73Z" fill="#876cfe" />
-                                        </svg>
-                                    </div>
-                                    <div class="media-support-info salon-2 ml-3">
-                                        <h5 class="text-info">1000</h5>
-                                        <p class="mb-0">Visitor’s</p>
-                                    </div>
-                                </div>
-                                <div class="media-support-amount ml-3">
-                                    <div id="salon2-chart-04" class="chart-salon"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-
-
-                <div class="col-xl-9 col-lg-6 col-md-6">
+                <div class="col-xl-9 col-lg-12 col-md-12">
                     <div class="card card-block card-stretch card-height">
                         <div class="card-header d-flex justify-content-between">
                             <div class="header-title">
-                                <h4 class="card-title">Recent Customer</h4>
+                                <h4 class="card-title">Recent Laundry</h4>
                             </div>
                             <div class="card-header-toolbar d-flex align-items-center">
                                 <button class="btn btn-sm btn-success">View All</button>
@@ -198,172 +145,83 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table data-table mb-0 table-borderless">
+                                <table  class="table data-table table-striped table-bordered dataTable laundromat_table" role="grid" aria-describedby="datatable_info">
                                     <thead>
-                                    <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col">Gender</th>
-                                        <th scope="col">Service</th>
-                                        <th scope="col">Expert</th>
-                                        <th scope="col">Code</th>
-                                        <th scope="col">Number</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Status</th>
-                                    </tr>
+                                    <tr role="row">
+                                        <th>Client Name</th>
+                                        <th>Phone Number</th>
+                                        <th>Quantity</th>
+                                        <th>Total Cost</th>
+                                        <th>Registered On</th>
+                                        <th>Pickup Date</th>
+                                        <th></th>
                                     </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="media align-items-center">
-                                                <a href="javascript:void(0);"><img
-                                                        src="../assets/images/user/01.jpg"
-                                                        class="img-fluid avatar-40 rounded-normal" alt="image"></a>
-                                                <div class="media-body ml-3">
-                                                    <span>William Smith</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span>20/08/2020</span>
-                                        </td>
-                                        <td>
-                                            <span>Male</span>
-                                        </td>
-                                        <td>
-                                            <span>Washing Mashine</span>
-                                        </td>
-                                        <td>
-                                            <span>Smith Jackson</span>
-                                        </td>
-                                        <td>
-                                            <span>AB123</span>
-                                        </td>
-                                        <td>
-                                            <span>1234567890</span>
-                                        </td>
-                                        <td>
-                                            <span>25$</span>
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-danger">Confirmed</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="media align-items-center">
-                                                <a href="javascript:void(0);"><img
-                                                        src="../assets/images/user/02.jpg"
-                                                        class="img-fluid avatar-40 rounded-normal" alt="image"></a>
-                                                <div class="media-body ml-3">
-                                                    <span>Alena Mathew</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span>02/09/2020</span>
-                                        </td>
-                                        <td>
-                                            <span>Female</span>
-                                        </td>
-                                        <td>
-                                            <span>Dryer</span>
-                                        </td>
-                                        <td>
-                                            <span>Smith Jackson</span>
-                                        </td>
-                                        <td>
-                                            <span>AB124</span>
-                                        </td>
-                                        <td>
-                                            <span>1234567890</span>
-                                        </td>
-                                        <td>
-                                            <span>50$</span>
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-warning">Pending</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="media align-items-center">
-                                                <a href="javascript:void(0);"><img
-                                                        src="../assets/images/user/03.jpg"
-                                                        class="img-fluid avatar-40 rounded-normal" alt="image"></a>
-                                                <div class="media-body ml-3">
-                                                    <span>Barry Deo</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span>02/09/2020</span>
-                                        </td>
-                                        <td>
-                                            <span>Female</span>
-                                        </td>
-                                        <td>
-                                            <span>Appointment</span>
-                                        </td>
-                                        <td>
-                                            <span>Smith Jackson</span>
-                                        </td>
-                                        <td>
-                                            <span>AB124</span>
-                                        </td>
-                                        <td>
-                                            <span>1234567890</span>
-                                        </td>
-                                        <td>
-                                            <span>50$</span>
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-warning">Pending</span>
-                                        </td>
-                                    </tr>
-                                    </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="card card-block card-stretch card-height">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-4">
-                                <img src="{{asset('assets/images/user/12.jpg')}}" class="img-fluid avatar-90 rounded-normal"
-                                     alt="image">
-                                <div class="d-flex doc-social ml-4">
-                                    <a href="#"><i class="lab la-facebook-f text-primary font-size-20"></i></a>
-                                    <a href="#"><i class="lab la-twitter text-primary-dark font-size-20"></i></a>
-                                    <a href="#"><i class="lab la-instagram mr-2 text-danger font-size-20"></i></a>
-                                </div>
-                            </div>
-                            <h4 class="text-uppercase">{{Auth::user()->name}}</h4>
-                            <p class="font-size-16">Top Expert</p>
-                            <div class="d-flex align-items-center pt-3">
-                                    <span class="bg-warning-light rounded-small iq-card-icon-small mr-3">
-                                        <i class="las la-phone-volume"></i>
-                                    </span>
-                                <h5>+91 01234 56789</h5>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                    <span class="bg-success-light rounded-small iq-card-icon-small mr-3">
-                                        <i class="las la-envelope"></i>
-                                    </span>
-                                <h5>{{Auth::user()->email}}</h5>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                    <span class="bg-primary-light rounded-small iq-card-icon-small mr-3">
-                                        <i class="lab la-twitter"></i>
-                                    </span>
-                                <h5>social@laundromat.com</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="col-xl-3 col-lg-6 col-md-6">--}}
+{{--                    <div class="card card-block card-stretch card-height">--}}
+{{--                        <div class="card-body">--}}
+{{--                            <div class="d-flex align-items-center mb-4">--}}
+{{--                                <img src="{{asset('assets/images/user/12.jpg')}}" class="img-fluid avatar-90 rounded-normal"--}}
+{{--                                     alt="image">--}}
+{{--                                <div class="d-flex doc-social ml-4">--}}
+{{--                                    <a href="#"><i class="lab la-facebook-f text-primary font-size-20"></i></a>--}}
+{{--                                    <a href="#"><i class="lab la-twitter text-primary-dark font-size-20"></i></a>--}}
+{{--                                    <a href="#"><i class="lab la-instagram mr-2 text-danger font-size-20"></i></a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <h4 class="text-uppercase">{{Auth::user()->name}}</h4>--}}
+{{--                            <p class="font-size-16">Top Expert</p>--}}
+{{--                            <div class="d-flex align-items-center pt-3">--}}
+{{--                                    <span class="bg-warning-light rounded-small iq-card-icon-small mr-3">--}}
+{{--                                        <i class="las la-phone-volume"></i>--}}
+{{--                                    </span>--}}
+{{--                                <h5>+91 01234 56789</h5>--}}
+{{--                            </div>--}}
+{{--                            <div class="d-flex align-items-center pt-3">--}}
+{{--                                    <span class="bg-success-light rounded-small iq-card-icon-small mr-3">--}}
+{{--                                        <i class="las la-envelope"></i>--}}
+{{--                                    </span>--}}
+{{--                                <h5>{{Auth::user()->email}}</h5>--}}
+{{--                            </div>--}}
+{{--                            <div class="d-flex align-items-center pt-3">--}}
+{{--                                    <span class="bg-primary-light rounded-small iq-card-icon-small mr-3">--}}
+{{--                                        <i class="lab la-twitter"></i>--}}
+{{--                                    </span>--}}
+{{--                                <h5>social@laundromat.com</h5>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
     </div>
 </div>
+
+@endsection
+
+@section('scripts')
+    <script>
+        let main_datatable = $('.laundromat_table').DataTable({
+            processing: true,
+            serverSide: true,
+            lengthMenu: [[10,25,50],[10,25,50]],
+
+            ajax: '{{ route('laundry_list') }}',
+            columns: [
+                {data: 'full_name', name: 'full_name'},
+                {data: 'phone', name: 'phone'},
+                {data: 'quantity', name: 'quantity'},
+                {data: 'amount', name: 'amount'},
+                {data: 'created_at', name: 'created_at'},
+                {data: 'pickup_date', name: 'pickup_date'},
+                {data: 'action', name: 'action', orderable: false, searchable: false}
+            ],
+
+        });
+    </script>
+
 
 @endsection
