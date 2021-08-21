@@ -42,30 +42,33 @@ class LaundryController extends Controller
      */
     public function store(Request $request)
     {
-        DB::beginTransaction();
+
         try{
-            $routine_client = RoutineClient::create([
-               'full_name' => $request->full_name,
-               'phone' => $request->phone_number,
-            ]);
-            if($routine_client->id){
-                $laundry_details = LaundryDetail::create([
-                   'routine_client_id' => $routine_client->id,
-                   'quantity' => $request->laundry_quantity.' '.' Kgs',
-                   'pickup_date' => $request->pickup_date,
-                   'issued_by' => Auth::user()->id
-                ]);
-            }if ($laundry_details->id) {
-                    $laundry_machine_details = LaundryMachineDetail::create([
-                        'laundry_details_id' => $laundry_details->id,
-                        'washine_machine_id' => $request->washine_machine,
-                        'drying_machine_id' => $request->drying_machine
-                    ]);
-                if ($laundry_machine_details->id) {
-                    $laundry_costs = LaundryCost::create([
-                       'laundry_details_id' => $laundry_details->id,
-                       'amount' => $request->total_cost.' '.'/='
-                    ]);
+            DB::beginTransaction();
+            $routine_client = new RoutineClient();
+               $routine_client->full_name = $request->full_name;
+               $routine_client->phone = $request->phone_number;
+               $routine_client->save();
+
+            if(isset($routine_client->id)){
+                $laundry_details = new LaundryDetail();
+                   $laundry_details->routine_client_id = $routine_client->id;
+                   $laundry_details->quantity = $request->laundry_quantity.' '.' Kgs';
+                   $laundry_details->pickup_date = $request->pickup_date;
+                   $laundry_details->issued_by = Auth::user()->id;
+                   $laundry_details->save();
+
+            }if (isset($laundry_details->id)) {
+                    $laundry_machine_details = new LaundryMachineDetail();
+                    $laundry_machine_details->laundry_details_id = $laundry_details->id;
+                    $laundry_machine_details->washine_machine_id = $request->washine_machine;
+                    $laundry_machine_details->drying_machine_id = $request->drying_machine;
+                    $laundry_machine_details->save();
+                if (isset($laundry_machine_details->id)) {
+                    $laundry_costs = new LaundryCost();
+                    $laundry_costs->laundry_details_id = $laundry_details->id;
+                    $laundry_costs->amount = $request->total_cost.' '.'/=';
+                    $laundry_costs->save();
                 }
                 DB::commit();
                 if (isset($laundry_costs)) {
