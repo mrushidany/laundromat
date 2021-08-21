@@ -36,7 +36,6 @@
                                 <th>Total Cost</th>
                                 <th>Registered On</th>
                                 <th>Pickup Date</th>
-                                <th></th>
                             </thead>
                         </table>
                     </div>
@@ -60,7 +59,6 @@
                 {data: 'amount', name: 'amount'},
                 {data: 'created_at', name: 'created_at'},
                 {data: 'pickup_date', name: 'pickup_date'},
-                {data: 'action', name: 'action', orderable: false, searchable: false}
             ],
 
         });
