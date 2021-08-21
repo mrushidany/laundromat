@@ -140,6 +140,10 @@ class LaundryController extends Controller
 
 
                     return DataTables::of($laundry_list)
+                            ->addColumn('full_name', function ($list){
+                                return '<a href="">'. $list->full_name .'</a>';
+                            })
+                            ->rawColumns(['full_name'])
                             ->make(true);
 
     }
