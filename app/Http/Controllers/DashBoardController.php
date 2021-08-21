@@ -51,6 +51,7 @@ class DashBoardController extends Controller
             ];
             return view('dashboard.administrator.administrator_dashboard')->with($data);
         }
+        echo "Welcome to the Dashboard";
     }
      public function administrator_profile(){
        return view('dashboard.administrator.profile');

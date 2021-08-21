@@ -14,7 +14,6 @@ class AddWashingDryingMachineAndDropMachineIdColumnsInLaundryMachinesTable exten
     public function up()
     {
         Schema::table('laundry_machine_details', function (Blueprint $table) {
-            $table->dropColumn('machine_id');
             $table->integer('washine_machine_id')->after('laundry_details_id')->nullable();
             $table->integer('drying_machine_id')->after('washine_machine_id')->nullable();
         });
