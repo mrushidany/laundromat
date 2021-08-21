@@ -48,7 +48,7 @@ class LaundryController extends Controller
             DB::beginTransaction();
             $routine_client = new RoutineClient();
                $routine_client->full_name = $request->full_name;
-               $routine_client->phone = $request->phone_number;
+               $routine_client->phone = '+255'.$request->phone_number;
                $routine_client->save();
 
             if(isset($routine_client->id)){
