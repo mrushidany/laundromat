@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class RoutineClient extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'full_name',
+        'phone',
+        'routine_client_id'
+    ];
 }

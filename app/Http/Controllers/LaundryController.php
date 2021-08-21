@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LaundryCost;
 use App\Models\LaundryDetail;
 use App\Models\LaundryMachineDetail;
 use App\Models\RoutineClient;
@@ -9,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class LaundryController extends Controller
 {
@@ -53,18 +55,30 @@ class LaundryController extends Controller
                    'pickup_date' => $request->pickup_date,
                    'issued_by' => Auth::user()->id
                 ]);
-            } if ($laundry_details->id) {
-                if(!null($request->washine_machine) && !null($request->drying_machine)){
+            }if ($laundry_details->id) {
                     $laundry_machine_details = LaundryMachineDetail::create([
-
+                        'laundry_details_id' => $laundry_details->id,
+                        'washine_machine_id' => $request->washine_machine,
+                        'drying_machine_id' => $request->drying_machine
                     ]);
-
+                if ($laundry_machine_details->id) {
+                    $laundry_costs = LaundryCost::create([
+                       'laundry_details_id' => $laundry_details->id,
+                       'amount' => $request->total_cost.' '.'/='
+                    ]);
+                }
+                DB::commit();
+                if (isset($laundry_costs)) {
+                    $data = ['state' => 'Done', 'title' => 'Successful', 'msg' => 'Record created successful'];
+                    return \Request::ajax() ? response()->json($data) : redirect()->route('laundry.index')->with('data', $data);
                 }
             }
-
-
+            $data = ['state'=>'Fail', 'title'=>'Fail', 'msg'=>'Record could not be created'];
+            return \Request::ajax() ? response()->json($data) : redirect()->route('laundry.index')->withInput()->with('data', $data);
         }catch (QueryException $queryException){
-
+            DB::rollback();
+            $data = ['state'=>'Error', 'title'=>'Database error', 'msg'=>'Something went wrong!<br />' . $queryException->errorInfo[2]];
+            return \Request::ajax() ? response()->json($data) : redirect()->back()->with('data', $data);
         }
     }
 

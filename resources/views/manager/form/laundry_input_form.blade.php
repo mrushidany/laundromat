@@ -75,7 +75,7 @@
                             <div class="form-group col-md-4">
                                 <label for="pickup_date">PickUp Date</label>
                                 <input type="datetime-local" class="form-control" name="pickup_date" id="pickup_date" value="">
-                            </div><
+                            </div>
                             <div>
                         </div>
                     </div>
