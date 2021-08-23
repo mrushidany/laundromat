@@ -105,7 +105,12 @@ class LaundryController extends Controller
      */
     public function edit($id)
     {
-        //
+        dd($id);
+        $data = [
+            ''
+        ];
+
+        return view('manager.form.laundry_input_form');
     }
 
     /**
@@ -144,8 +149,8 @@ class LaundryController extends Controller
                 })
                 ->addColumn('action', function ($list){
                     $button  = '';
-                    $button .= '<a style="padding-right: 2px" href="" class="button-icon button btn btn-sm rounded-small btn-info"><span><i class="fa fa-edit  m-0"></i></span></a>&nbsp;&nbsp;';
-                    $button .= '<a href="" class="button-icon button btn btn-sm rounded-small btn-danger"><span><i class="fa fa-trash m-0"></i></span></a>';
+                    $button .= '<a style="padding-right: 2px" href="javascript:edit(\''. route('laundry.edit', $list->id) . '\')" class="button-icon button btn btn-sm rounded-small btn-info"><span><i class="fa fa-edit  m-0"></i></span></a>&nbsp;&nbsp;';
+                    $button .= '<a href="javascript:destroy(\''. route('laundry.destroy', $list->id) . '\')" class="button-icon button btn btn-sm rounded-small btn-danger"><span><i class="fa fa-trash m-0"></i></span></a>';
                     return '<nobr>' . $button . '</nobr>';
                 })
                 ->rawColumns(['full_name','action'])

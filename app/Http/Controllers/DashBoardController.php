@@ -45,7 +45,7 @@ class DashBoardController extends Controller
         elseif(Auth::user()->hasRole('owner')){
             $role = DB::table('roles')->where('name','=','owner')->first();
             $data = [
-                'company_name' => 'CompTech Company Limited',
+                'company_name' => 'Valar Technology Solutions',
                 'role' => $role->display_name,
                 'greeting' => $this->greeting()
             ];
