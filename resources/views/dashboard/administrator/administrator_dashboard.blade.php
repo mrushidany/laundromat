@@ -14,7 +14,7 @@
                                 </svg>
                             </div>
                             <div class="media-support-info ml-3">
-                                    <h5 class="text-warning">1334</h5>
+                                    <h5 class="text-warning"></h5>
                                     <p class="mb-0">Client’s</p>
                             </div>
                             <div class="media-support-amount ml-3">
@@ -26,7 +26,7 @@
                                         <span class="progress-bar border-warning" style="transform: rotate(150deg);"></span>
                                     </span>
                                     <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center text-center">
-                                        <div class="h4 mb-0">46</div>
+                                        <div class="h4 mb-0"></div>
                                     </div>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                                     </svg>
                                 </div>
                                 <div class="media-support-info ml-3">
-                                    <h5 class="text-info">200</h5>
+                                    <h5 class="text-info"></h5>
                                     <p class="mb-0">Total Staff</p>
                                 </div>
                                 <div class="media-support-amount ml-3">
@@ -88,7 +88,7 @@
                                         </svg>
                                     </div>
                                     <div class="media-support-danger salon-2 ml-3 flex-1">
-                                        <h5 class="text-danger">1000</h5>
+                                        <h5 class="text-danger"></h5>
                                         <p class="mb-0">Bookings</p>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                             </span>
                                     <div
                                             class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center text-center">
-                                            <div class="h4 mb-0">46</div>
+                                            <div class="h4 mb-0"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@
                                         </svg>
                                     </div>
                                     <div class="media-support-success salon-2 ml-3">
-                                        <h5 class="text-success">150</h5>
+                                        <h5 class="text-success"></h5>
                                         <p class="mb-0">Profit</p>
                                     </div>
                                 </div>
