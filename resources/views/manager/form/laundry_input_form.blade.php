@@ -22,12 +22,7 @@ if(isset($routine_client)){
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="input_type" class="control-label">Phone Number</label>
-                                <div class="input-group mb-4">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text text-blue" id="basic-addon1">+255</span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="xxxxxxxxx" name="phone_number" aria-describedby="basic-addon1" value="{{$phone ?? ''}}">
-                                </div>
+                                <input type="text" class="form-control" placeholder="xxxxxxxxx" name="phone_number" aria-describedby="basic-addon1" value="{{$phone ?? ''}}">
                             </div>
 
                             <div class="form-group col-md-6">
