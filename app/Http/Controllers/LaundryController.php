@@ -150,7 +150,7 @@ class LaundryController extends Controller
                 ->leftJoin('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
                 ->leftJoin('laundry_machine_details','laundry_machine_details.laundry_details_id','=','laundry_details.id')
                 ->leftJoin('laundry_costs','laundry_costs.laundry_details_id','=','laundry_details.id')
-                ->select('laundry_details.id','routine_clients.full_name as full_name','routine_clients.phone as phone','quantity','amount','pickup_date','laundry_details.created_at');
+                ->select('laundry_details.id','full_name','phone','quantity','amount','pickup_date','laundry_details.created_at');
             return DataTables::of($laundry_list)
                 ->addColumn('full_name', function ($list) {
                     return '<a href="">'. $list->full_name .'</a>';
