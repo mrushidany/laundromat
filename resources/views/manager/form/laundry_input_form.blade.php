@@ -78,8 +78,13 @@ if(isset($routine_client)){
                                 <input type="text" class="form-control" id="total_cost" name="total_cost"  value="">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="pickup_date">PickUp Date</label>
-                                <input type="datetime-local" class="form-control" name="pickup_date" id="pickup_date" value="">
+                                <label for="pickup_date">Payment Status</label>
+                                <select class="form-control mb-3 "  name="payment_details">
+                                    <option disabled selected>Select the Payment Status</option>
+                                    <option value="">Paid</option>
+                                    <option value="">Not Paid</option>
+                                    <option value="">Partial Payment</option>
+                                </select>
                             </div>
                             <div>
                         </div>
