@@ -1,5 +1,7 @@
 <?php
-
+if(isset($routine_client)){
+    $phone = ltrim($routine_client->phone, '+255');
+}
 ?>
         <div  class="card">
             <div class="card-body">
@@ -16,7 +18,7 @@
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="client_name" class="control-label">Client Full Name</label>
-                                <input name="full_name" type="text" class="form-control">
+                                <input name="full_name" type="text" class="form-control" value="{{$routine_client->full_name ?? ''}}">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="input_type" class="control-label">Phone Number</label>
@@ -24,7 +26,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text text-blue" id="basic-addon1">+255</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="xxxxxxxxx" name="phone_number" aria-describedby="basic-addon1">
+                                    <input type="text" class="form-control" placeholder="xxxxxxxxx" name="phone_number" aria-describedby="basic-addon1" value="{{$phone ?? ''}}">
                                 </div>
                             </div>
 

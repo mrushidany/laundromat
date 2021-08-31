@@ -40,8 +40,8 @@
                 <div class="col-lg-7 mt-5 mt-lg-0 pl-lg-5">
                     <h6 class="text-secondary text-uppercase font-weight-medium mb-3">Learn About Us</h6>
                     <h1 class="mb-4">We Are Quality Laundry Provider In Your City</h1>
-                    <h5 class="font-weight-medium font-italic mb-4">Clita sit et ipsum sed. Volup duo sea dolor rebum ea rebum kasd stet. Dolor at duo dolor sit stet.</h5>
-                    <p class="mb-2">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor</p>
+                    <h5 class="font-weight-medium font-italic mb-4">About Us</h5>
+                    <p class="mb-2">Laundry has never been Easier </p>
                     <div class="row">
                         <div class="col-sm-6 pt-3">
                             <div class="d-flex align-items-center">
