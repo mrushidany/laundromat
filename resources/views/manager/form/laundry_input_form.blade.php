@@ -22,7 +22,7 @@ if(isset($routine_client)){
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="input_type" class="control-label">Phone Number</label>
-                                <input type="text" class="form-control" placeholder="xxxxxxxxx" name="phone_number" aria-describedby="basic-addon1" value="{{$phone ?? ''}}">
+                                <input type="tel" id="exampleInputPhone" class="form-control" placeholder="xxxxxxxxx" name="phone_number" aria-describedby="basic-addon1" value="{{$phone ?? ''}}">
                             </div>
 
                             <div class="form-group col-md-6">
@@ -31,36 +31,24 @@ if(isset($routine_client)){
                                     <div class="form-check form-check-inline">
                                         <select class="form-control mb-3 select2search" name="washing_machine">
                                             <option disabled selected>Select the Washing Machine</option>
-                                            <option value="1" >Washing Machine 1</option>
-                                            <option value="1">Washing Machine 2</option>
-                                            <option value="1">Washing Machine 3</option>
-                                            <option value="1" >Washing Machine 4</option>
-                                            <option value="1">Washing Machine 5</option>
-                                            <option value="1">Washing Machine 6</option>
-                                            <option value="1" >Washing Machine 7</option>
-                                            <option value="1">Washing Machine 8</option>
-                                            <option value="1">Washing Machine 9</option>
-                                            <option value="1" >Washing Machine 10</option>
-                                            <option value="1">Washing Machine 11</option>
-                                            <option value="1">Washing Machine 12</option>
+                                            <option value="1" >Machine 1</option>
+                                            <option value="1">Machine 2</option>
+                                            <option value="1">Machine 3</option>
+                                            <option value="1" >Machine 4</option>
+                                            <option value="1">Machine 5</option>
+                                            <option value="1">Machine 6</option>
+                                            <option value="1" >Machine 7</option>
+                                            <option value="1">Machine 8</option>
+                                            <option value="1">Machine 9</option>
+                                            <option value="1" >Machine 10</option>
                                         </select>
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                        <select class="form-control mb-3 select2search" name="drying_machine">
-                                            <option disabled selected>Select the Drying Machine</option>
-                                            <option value="2" >Drying Machine 1</option>
-                                            <option value="2">Drying Machine 2</option>
-                                            <option value="2">Drying Machine 3</option>
-                                            <option value="2" >Drying Machine 4</option>
-                                            <option value="2">Drying Machine 5</option>
-                                            <option value="2">Drying Machine 6</option>
-                                            <option value="2" >Drying Machine 7</option>
-                                            <option value="2">Drying Machine 8</option>
-                                            <option value="2">Drying Machine 9</option>
-                                            <option value="2" >Drying Machine 10</option>
-                                            <option value="2">Drying Machine 11</option>
-                                            <option value="2">Drying Machine 12</option>
-                                        </select>
+                                    <div class="form-check form-check-inline was-validated">
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            <input type="checkbox" class="custom-control-input" id="customControlValidation1" required="">
+                                            <label class="custom-control-label" for="customControlValidation1">Drying Machine</label>
+                                            <div class="invalid-feedback">Drying Machine Not Selected</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
