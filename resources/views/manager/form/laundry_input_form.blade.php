@@ -69,6 +69,7 @@ if(isset($routine_client)){
                                     <option value="">Partial Payment</option>
                                 </select>
                             </div>
+
                             <div>
                         </div>
                     </div>

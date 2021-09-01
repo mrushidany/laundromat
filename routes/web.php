@@ -37,6 +37,9 @@ Route::get('/contact', function () {return view('home.contact');})->name('contac
 Route::get('/pricing', function () {return view('home.pricing');})->name('pricing');
 Route::get('/services', function () {return view('home.services');})->name('services');
 
+//Testing layouts routes
+Route::get('/test_layout', function (){return view('test_layouts.index');})->name('test');
+
 
 
 
