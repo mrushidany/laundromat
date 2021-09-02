@@ -29,7 +29,7 @@ if(isset($routine_client)){
                                 <label for="washing_machine" class="control-label">Select Machine</label>
                                 <div class="input-group mb-4 select_machine">
                                     <div class="form-check form-check-inline">
-                                        <select class="form-control mb-3 select2search" name="washing_machine">
+                                        <select class="s form-control mb-3" name="washing_machine">
                                             <option disabled selected>Select the Washing Machine</option>
                                             <option value="1" >Machine 1</option>
                                             <option value="1">Machine 2</option>
@@ -62,14 +62,13 @@ if(isset($routine_client)){
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="pickup_date">Payment Status</label>
-                                <select class="form-control mb-3 "  name="payment_details">
+                                <select id="multiple" class="form-control mb-3"  name="payment_details">
                                     <option disabled selected>Select the Payment Status</option>
                                     <option value="">Paid</option>
                                     <option value="">Not Paid</option>
                                     <option value="">Partial Payment</option>
                                 </select>
                             </div>
-
                             <div>
                         </div>
                     </div>
