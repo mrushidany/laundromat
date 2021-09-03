@@ -8,24 +8,24 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-6">
             <div class="form-group">
                 <label>Client Name</label>
                 <input type="text" class="form-control" name="full_name" placeholder="Optional">
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <div class="form-group">
                 <label>Phone Number</label>
                 <input type="text" class="form-control" name="phone" placeholder="xxxxxxxxx">
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="form-group">
                 <label for="washing_machine" >Select Machine</label>
                 <div class="input-group mb-4 select_machine">
                     <div class="form-check form-check-inline">
-                        <select id="multiple" class="js-states form-control" multiple style="width: 280px;">
+                        <select id="multiple" class="js-states form-control" multiple style="width: 800px;">
                             <option>Machine 1</option>
                             <option>Machine 2</option>
                             <option>Machine 3</option>

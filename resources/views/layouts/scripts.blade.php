@@ -239,5 +239,5 @@
         let btn = main_modal.find('button[type=submit]');
         btn.prop('disabled', true).text('Saving, Please wait...');
     }
-    $('.select2search').select2({'width': '100%'});
+    // $('.select2search').select2({'width': '100%'});
 </script>
