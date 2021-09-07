@@ -84,20 +84,6 @@
             <p><i class="fa fa-phone-alt mr-2"></i>+255 717 174734</p>
             <p><i class="fa fa-envelope mr-2"></i>info@easywash.co.tz</p>
         </div>
-        <div class="col-lg-4 col-md-6 mb-5">
-            <h4 class="text-white mb-4">Newsletter</h4>
-            <form action="">
-                <div class="form-group">
-                    <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
-                </div>
-                <div>
-                    <button class="btn btn-lg btn-secondary btn-block border-0" type="submit">Submit Now</button>
-                </div>
-            </form>
-        </div>
     </div>
 </div>
 <div class="container-fluid bg-dark text-white py-4 px-sm-3 px-md-5">
