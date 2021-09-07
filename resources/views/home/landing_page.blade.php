@@ -265,7 +265,7 @@
                     <div class="d-inline-flex flex-column align-items-center justify-content-center bg-easywash rounded-circle shadow mt-2 mb-4" style="width: 200px; height: 200px; border: 15px solid #ffffff;">
                         <h3 class="text-blue">Delivery</h3>
                         <h1 class="display-4 text-blue mb-0">
-                            <small class="align-top" style="font-size: 22px; line-height: 45px;">T<sub>shs</sub></small><small class="align-middle">4000</small><small class="align-bottom" style="font-size: 12px; line-height: 40px;">/ 8Kg</small>
+                            <small class="align-top" style="font-size: 22px; line-height: 45px;">T<sub>shs</sub></small><small class="align-middle">2000</small>
                         </h1>
                     </div>
                     <div class="d-flex flex-column align-items-center py-3">
