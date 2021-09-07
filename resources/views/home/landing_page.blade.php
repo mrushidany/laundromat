@@ -173,7 +173,18 @@
 
 
 <!-- Features Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 m-0 my-lg-5 pt-0 pt-lg-5 pr-lg-5">
+                <h6 class="text-secondary text-uppercase font-weight-medium mb-3">Our Features</h6>
+                <h1 class="mb-4">Why Choose Us</h1>
+                <p>At all times, we consider two things top of mind while handling your laundry: Sensitivity and Urgency. For that, we are equipped with enough wash and dry machines to guarantee you timely delivery along with a dedicated team of knowledgeable and friendly staff to offer you the best hands-on services at all times. </p>
+            </div>
 
+        </div>
+    </div>
+</div>
 <!-- Features -->
 
 
