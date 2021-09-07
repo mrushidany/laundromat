@@ -237,7 +237,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="d-flex flex-column align-items-center justify-content-center text-center mb-5">
                     <div class="d-inline-flex align-items-center justify-content-center bg-easywash border border-light shadow rounded-circle mb-4" style="width: 150px; height: 150px; border-width: 15px !important;">
-                        <h2 class="display-2 text-secondary m-0">4</h2>
+                        <h2 class="display-2 text-secondary m-0">3</h2>
                     </div>
                     <h3 class="font-weight-bold m-0 mt-2">Pick Up & Delivery</h3>
                 </div>
