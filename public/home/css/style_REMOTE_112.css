@@ -6136,6 +6136,9 @@ button.bg-info:focus {
 .bg-warning {
   background-color: #ffc107 !important;
 }
+.bg-easywash {
+    background-color: yellow;
+}
 
 a.bg-warning:hover, a.bg-warning:focus,
 button.bg-warning:hover,
@@ -6256,8 +6259,6 @@ button.bg-dark:focus {
 .border-white {
   border-color: #fff !important;
 }
-<<<<<<< HEAD
-=======
 .border-easywash {
     border-color: yellow;
 }
@@ -6265,7 +6266,6 @@ button.bg-dark:focus {
     width: 240px;
     height: 65px;
 }
->>>>>>> f942894... Inserted the logo onto the landing page
 
 .rounded-sm {
   border-radius: 0.2rem !important;
