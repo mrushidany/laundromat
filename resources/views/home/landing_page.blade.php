@@ -141,36 +141,28 @@
         <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Our Services</h6>
         <h1 class="display-4 text-center mb-5">What We Offer</h1>
         <div class="row">
-            <div class="col-lg-3 col-md-6 pb-1">
-                <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
-                        <i class="fa fa-3x fa-cloud-sun text-secondary"></i>
-                    </div>
-                    <h4 class="font-weight-bold m-0">Dry Cleaning</h4>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 pb-1">
+            <div class="col-lg-4 col-md-6 pb-1">
                 <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
                     <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
                         <i class="fas fa-3x fa-soap text-secondary"></i>
                     </div>
-                    <h4 class="font-weight-bold m-0">Wash & Laundry</h4>
+                    <h4 class="font-weight-bold m-0">Wash & Rinse</h4>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 pb-1">
+            <div class="col-lg-4 col-md-6 pb-1">
                 <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
                     <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
-                        <i class="fa fa-3x fa-burn text-secondary"></i>
+                        <i class="fa fa-3x fa-cloud-sun text-secondary"></i>
                     </div>
-                    <h4 class="font-weight-bold m-0">Curtain Laundry</h4>
+                    <h4 class="font-weight-bold m-0">Spin and Dry</h4>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 pb-1">
+            <div class="col-lg-4 col-md-6 pb-1">
                 <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
                     <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
                         <i class="fa fa-3x fa-tshirt text-secondary"></i>
                     </div>
-                    <h4 class="font-weight-bold m-0">Suits Cleaning</h4>
+                    <h4 class="font-weight-bold m-0">Fold</h4>
                 </div>
             </div>
         </div>
@@ -180,42 +172,42 @@
 
 
 <!-- Features Start -->
-<div class="container-fluid py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 m-0 my-lg-5 pt-0 pt-lg-5 pr-lg-5">
-                <h6 class="text-secondary text-uppercase font-weight-medium mb-3">Our Features</h6>
-                <h1 class="mb-4">Why Choose Us</h1>
-                <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor</p>
-                <div class="row">
-                    <div class="col-sm-6 mb-4">
-                        <h1 class="text-secondary" data-toggle="counter-up">10</h1>
-                        <h5 class="font-weight-bold">Years Expereince</h5>
-                    </div>
-                    <div class="col-sm-6 mb-4">
-                        <h1 class="text-secondary" data-toggle="counter-up">250</h1>
-                        <h5 class="font-weight-bold">Expert Worker</h5>
-                    </div>
-                    <div class="col-sm-6 mb-4">
-                        <h1 class="text-secondary" data-toggle="counter-up">1250</h1>
-                        <h5 class="font-weight-bold">Happy Clients</h5>
-                    </div>
-                    <div class="col-sm-6 mb-4">
-                        <h1 class="text-secondary" data-toggle="counter-up">9550</h1>
-                        <h5 class="font-weight-bold">Dry Cleaning</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <div class="d-flex flex-column align-items-center justify-content-center bg-secondary h-100 py-5 px-3">
-                    <i class="fa fa-5x fa-certificate text-white mb-5"></i>
-                    <h1 class="display-1 text-white mb-3">10+</h1>
-                    <h1 class="text-white m-0">Years Experience</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{{--<div class="container-fluid py-5">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-7 m-0 my-lg-5 pt-0 pt-lg-5 pr-lg-5">--}}
+{{--                <h6 class="text-secondary text-uppercase font-weight-medium mb-3">Our Features</h6>--}}
+{{--                <h1 class="mb-4">Why Choose Us</h1>--}}
+{{--                <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor</p>--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-sm-6 mb-4">--}}
+{{--                        <h1 class="text-secondary" data-toggle="counter-up">10</h1>--}}
+{{--                        <h5 class="font-weight-bold">Years Expereince</h5>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-sm-6 mb-4">--}}
+{{--                        <h1 class="text-secondary" data-toggle="counter-up">250</h1>--}}
+{{--                        <h5 class="font-weight-bold">Expert Worker</h5>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-sm-6 mb-4">--}}
+{{--                        <h1 class="text-secondary" data-toggle="counter-up">1250</h1>--}}
+{{--                        <h5 class="font-weight-bold">Happy Clients</h5>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-sm-6 mb-4">--}}
+{{--                        <h1 class="text-secondary" data-toggle="counter-up">9550</h1>--}}
+{{--                        <h5 class="font-weight-bold">Dry Cleaning</h5>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-5">--}}
+{{--                <div class="d-flex flex-column align-items-center justify-content-center bg-secondary h-100 py-5 px-3">--}}
+{{--                    <i class="fa fa-5x fa-certificate text-white mb-5"></i>--}}
+{{--                    <h1 class="display-1 text-white mb-3">10+</h1>--}}
+{{--                    <h1 class="text-white m-0">Years Experience</h1>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 <!-- Features End -->
 
 
@@ -225,36 +217,28 @@
         <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Working Process</h6>
         <h1 class="display-4 text-center mb-5">How We Work</h1>
         <div class="row">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="d-flex flex-column align-items-center justify-content-center text-center mb-5">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4" style="width: 150px; height: 150px; border-width: 15px !important;">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-easywash border border-light shadow rounded-circle mb-4" style="width: 150px; height: 150px; border-width: 15px !important;">
                         <h2 class="display-2 text-secondary m-0">1</h2>
                     </div>
-                    <h3 class="font-weight-bold m-0 mt-2">Order Place</h3>
+                    <h3 class="font-weight-bold m-0 mt-2">Self Service</h3>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="d-flex flex-column align-items-center justify-content-center text-center mb-5">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4" style="width: 150px; height: 150px; border-width: 15px !important;">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-easywash border  border-light shadow rounded-circle mb-4" style="width: 150px; height: 150px; border-width: 15px !important;">
                         <h2 class="display-2 text-secondary m-0">2</h2>
                     </div>
-                    <h3 class="font-weight-bold m-0 mt-2">Free Pick Up</h3>
+                    <h3 class="font-weight-bold m-0 mt-2">Drop Off and Pick Up</h3>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="d-flex flex-column align-items-center justify-content-center text-center mb-5">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4" style="width: 150px; height: 150px; border-width: 15px !important;">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-easywash border border-light shadow rounded-circle mb-4" style="width: 150px; height: 150px; border-width: 15px !important;">
                         <h2 class="display-2 text-secondary m-0">3</h2>
                     </div>
-                    <h3 class="font-weight-bold m-0 mt-2">Dry Cleaning</h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="d-flex flex-column align-items-center justify-content-center text-center mb-5">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4" style="width: 150px; height: 150px; border-width: 15px !important;">
-                        <h2 class="display-2 text-secondary m-0">4</h2>
-                    </div>
-                    <h3 class="font-weight-bold m-0 mt-2">Free Delivery</h3>
+                    <h3 class="font-weight-bold m-0 mt-2">Pick Up and Delivery</h3>
                 </div>
             </div>
         </div>
@@ -272,9 +256,9 @@
             <div class="col-lg-4 mb-4">
                 <div class="bg-light text-center mb-2 pt-4">
                     <div class="d-inline-flex flex-column align-items-center justify-content-center bg-secondary rounded-circle shadow mt-2 mb-4" style="width: 200px; height: 200px; border: 15px solid #ffffff;">
-                        <h3 class="text-white">Basic</h3>
+                        <h4 class="text-white">Washing</h4>
                         <h1 class="display-4 text-white mb-0">
-                            <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>49<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
+                            <small class="align-top" style="font-size: 10px; line-height: 35px;">/=</small>4000<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ 8Kg</small>
                         </h1>
                     </div>
                     <div class="d-flex flex-column align-items-center py-3">

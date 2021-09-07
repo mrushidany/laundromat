@@ -6136,6 +6136,9 @@ button.bg-info:focus {
 .bg-warning {
   background-color: #ffc107 !important;
 }
+.bg-easywash {
+    background-color: yellow;
+}
 
 a.bg-warning:hover, a.bg-warning:focus,
 button.bg-warning:hover,
@@ -6255,6 +6258,9 @@ button.bg-dark:focus {
 
 .border-white {
   border-color: #fff !important;
+}
+.border-easywash {
+    border-color: yellow;
 }
 
 .rounded-sm {

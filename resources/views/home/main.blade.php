@@ -35,13 +35,13 @@
             </div>
             <div class="col-md-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-white px-3" href="">
+                    <a class="text-white px-3" href="https://www.facebook.com/easywashtz-106653400830167/">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                     <a class="text-white px-3" href="">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a class="text-white px-3" href="">
+                    <a class="text-white px-3" href="https://instagram.com/easywashtz?utm_medium=copy_link">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
