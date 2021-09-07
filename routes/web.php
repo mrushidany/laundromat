@@ -13,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Default page location
-Route::get('/', function () {return view('home.landing_page');})->name('home');
+use App\Http\Controllers\LandingPageController;
+Route::get('/', [LandingPageController::class, 'index'])->name('home');
+
+//Landing page routes
+Route::get('/about', [LandingPageController::class, 'about'])->name('about');
+Route::get('/contact', [LandingPageController::class, 'contact'])->name('contact');
+Route::get('/pricing', [LandingPageController::class, 'pricing'])->name('pricing');
+Route::get('/services', [LandingPageController::class, 'services'])->name('services');
 
 //Login authentication routes
 Route::get('/login', function () {return view('auth.login');})->name('login');
@@ -31,16 +38,7 @@ Route::group(['middleware' => ['auth']], function (){
     Route::get('/laundry_list',[LaundryController::class,'laundry_list'])->name('laundry_list' );
 });
 
-//Landing page routes
-Route::get('/about', function () {return view('home.about');})->name('about');
-Route::get('/contact', function () {return view('home.contact');})->name('contact');
-Route::get('/pricing', function () {return view('home.pricing');})->name('pricing');
-Route::get('/services', function () {return view('home.services');})->name('services');
-
 //Testing layouts routes
 Route::get('/test_layout', function (){return view('test_layouts.index');})->name('test');
-
-
-
 
 require __DIR__.'/auth.php';
