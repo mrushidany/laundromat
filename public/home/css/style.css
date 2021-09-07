@@ -6256,16 +6256,6 @@ button.bg-dark:focus {
 .border-white {
   border-color: #fff !important;
 }
-<<<<<<< HEAD
-=======
-.border-easywash {
-    border-color: yellow;
-}
-.web-logo {
-    width: 240px;
-    height: 65px;
-}
->>>>>>> f942894... Inserted the logo onto the landing page
 
 .rounded-sm {
   border-radius: 0.2rem !important;

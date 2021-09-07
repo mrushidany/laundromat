@@ -35,17 +35,10 @@
             </div>
             <div class="col-md-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-white px-3" href="">
+                    <a class="text-white px-3" href="https://www.facebook.com/easywashtz-106653400830167/">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-<<<<<<< HEAD
-                    <a class="text-white px-3" href="">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="text-white px-3" href="">
-=======
                     <a class="text-white px-3" href="https://instagram.com/easywashtz?utm_medium=copy_link">
->>>>>>> f942894... Inserted the logo onto the landing page
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
@@ -61,7 +54,7 @@
     <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 pl-3 pl-lg-5">
             <a href="" class="navbar-brand">
-                <img  src="{{asset('assets/images/easywash_web_logo.jpeg')}}" />
+                <h1 class="m-0 text-secondary"><span class="text-primary">Easy</span>Wash</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
