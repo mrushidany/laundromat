@@ -21,4 +21,26 @@ class LandingPageController extends Controller
          ];
           return view('home.about')->with($data);
      }
+
+    public function contact(){
+        $data = [
+            'facebook_url' => 'https://www.facebook.com/easywashtz-106653400830167/',
+            'instagram_url' => 'https://instagram.com/easywashtz?utm_medium=copy_link'
+        ];
+        return view('home.contact')->with($data);
+    }
+    public function pricing(){
+        $data = [
+            'facebook_url' => 'https://www.facebook.com/easywashtz-106653400830167/',
+            'instagram_url' => 'https://instagram.com/easywashtz?utm_medium=copy_link'
+        ];
+        return view('home.pricing')->with($data);
+    }
+    public function services(){
+        $data = [
+            'facebook_url' => 'https://www.facebook.com/easywashtz-106653400830167/',
+            'instagram_url' => 'https://instagram.com/easywashtz?utm_medium=copy_link'
+        ];
+        return view('home.services')->with($data);
+    }
 }

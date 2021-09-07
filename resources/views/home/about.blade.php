@@ -1,6 +1,5 @@
 @extends('home.main')
 
-
 @section('navbar')
     <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
         <div class="navbar-nav ml-auto py-0">
