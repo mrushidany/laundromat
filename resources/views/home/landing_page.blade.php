@@ -242,7 +242,7 @@
 
 
                     </div>
-                    <a href="{{route('contact','book_washing')}}" class="btn btn-secondary py-2 px-4">Book Now</a>
+                    <a href="{{route('contact','easywash')}}" class="btn btn-secondary py-2 px-4">Book Now</a>
                 </div>
             </div>
             <div class="col-lg-4 mb-4">
@@ -257,7 +257,7 @@
 
 
                     </div>
-                    <a href="{{route('contact','book_drying')}}" class="btn btn-primary py-2 px-4">Book Now</a>
+                    <a href="{{route('contact','easywash')}}" class="btn btn-primary py-2 px-4">Book Now</a>
                 </div>
             </div>
             <div class="col-lg-4 mb-4">
@@ -272,7 +272,7 @@
 
 
                     </div>
-                    <a href="{{route('contact','book_delivery')}}" class="btn btn-secondary py-2 px-4">Book Now</a>
+                    <a href="{{route('contact','easywash')}}" class="btn btn-secondary py-2 px-4">Book Now</a>
                 </div>
             </div>
         </div>
