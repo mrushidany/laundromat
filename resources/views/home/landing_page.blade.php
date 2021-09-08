@@ -7,7 +7,7 @@
             <a href="{{route('about')}}" class="nav-item nav-link">About</a>
             <a href="{{route('services')}}" class="nav-item nav-link">Services</a>
             <a href="{{route('pricing')}}" class="nav-item nav-link">Pricing</a>
-            <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
+            <a href="{{route('contact','easywash')}}" class="nav-item nav-link">Contact</a>
         </div>
     </div>
 @endsection
@@ -242,7 +242,7 @@
 
 
                     </div>
-                    <a href="" class="btn btn-secondary py-2 px-4">Book Now</a>
+                    <a href="{{route('contact','book_washing')}}" class="btn btn-secondary py-2 px-4">Book Now</a>
                 </div>
             </div>
             <div class="col-lg-4 mb-4">
@@ -257,7 +257,7 @@
 
 
                     </div>
-                    <a href="" class="btn btn-primary py-2 px-4">Book Now</a>
+                    <a href="{{route('contact','book_drying')}}" class="btn btn-primary py-2 px-4">Book Now</a>
                 </div>
             </div>
             <div class="col-lg-4 mb-4">
@@ -272,7 +272,7 @@
 
 
                     </div>
-                    <a href="" class="btn btn-secondary py-2 px-4">Book Now</a>
+                    <a href="{{route('contact','book_delivery')}}" class="btn btn-secondary py-2 px-4">Book Now</a>
                 </div>
             </div>
         </div>

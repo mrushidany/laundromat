@@ -7,7 +7,7 @@
             <a href="{{route('about')}}" class="nav-item nav-link">About</a>
             <a href="{{route('services')}}" class="nav-item nav-link">Services</a>
             <a href="{{route('pricing')}}" class="nav-item nav-link">Pricing</a>
-            <a href="{{route('contact')}}" class="nav-item nav-link active">Contact</a>
+            <a href="" class="nav-item nav-link active">Contact</a>
         </div>
     </div>
 @endsection
@@ -68,7 +68,8 @@
                 <div class="col-12">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <form name="sent_message" id="contact_form" method="POST" novalidate="novalidate">
+                            @method('POST')
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="control-group">
@@ -78,7 +79,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="control-group">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                        <input type="text" class="form-control" id="phone" placeholder="Your Phone" required="required" data-validation-required-message="Please enter your phone" />
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
@@ -92,7 +93,7 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Send Message</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="send_message_button">Send Message</button>
                             </div>
                         </form>
                     </div>
@@ -101,5 +102,78 @@
         </div>
     </div>
     <!-- Contact End -->
+@endsection
 
+@section('scripts')
+    <script type="application/javascript">
+        $(function () {
+
+            $("#contact_form input, #contact_form textarea").jqBootstrapValidation({
+                preventSubmit: true,
+                submitError: function ($form, event, errors) {
+                },
+                submitSuccess: function ($form, event) {
+                    event.preventDefault();
+                    var name = $("input#name").val();
+                    var phone = $("input#phone").val();
+                    var subject = $("input#subject").val();
+                    var message = $("textarea#message").val();
+
+                    $this = $("#send_message_button");
+                    $this.prop("disabled", true);
+
+                    $.ajax({
+                        url: '{{route("save_contact")}}',
+                        type: 'POST',
+                        data: {
+                            name: name,
+                            phone: phone,
+                            subject: subject,
+                            message: message,
+                        },
+                        headers: {
+                            'X-CSRF-Token': '{{ csrf_token() }}',
+                        },
+                        cache: false,
+                        success: function () {
+                            $('#success').html("<div class='alert alert-success'>");
+                            $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                                .append("</button>");
+                            $('#success > .alert-success')
+                                .append("<strong>Your message has been sent. </strong>");
+                            $('#success > .alert-success')
+                                .append('</div>');
+                            $('#contact_form').trigger("reset");
+                        },
+                        error: function () {
+                            $('#success').html("<div class='alert alert-danger'>");
+                            $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                                .append("</button>");
+                            $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that our mail server is not responding. Please try again later!"));
+                            $('#success > .alert-danger').append('</div>');
+                            $('#contact_form').trigger("reset");
+                        },
+                        complete: function () {
+                            setTimeout(function () {
+                                $this.prop("disabled", false);
+                            }, 1000);
+                        }
+                    });
+                },
+                filter: function () {
+                    return $(this).is(":visible");
+                },
+            });
+
+            $("a[data-toggle=\"tab\"]").click(function (e) {
+                e.preventDefault();
+                $(this).tab("show");
+            });
+        });
+
+        $('#name').focus(function () {
+            $('#success').html('');
+        });
+
+    </script>
 @endsection

@@ -18,9 +18,10 @@ Route::get('/', [LandingPageController::class, 'index'])->name('home');
 
 //Landing page routes
 Route::get('/about', [LandingPageController::class, 'about'])->name('about');
-Route::get('/contact', [LandingPageController::class, 'contact'])->name('contact');
+Route::get('/contact/{request}', [LandingPageController::class, 'contact'])->name('contact');
 Route::get('/pricing', [LandingPageController::class, 'pricing'])->name('pricing');
 Route::get('/services', [LandingPageController::class, 'services'])->name('services');
+Route::post('/save_contact', [LandingPageController::class, 'save_contact'])->name('save_contact');
 
 //Login authentication routes
 Route::get('/login', function () {return view('auth.login');})->name('login');

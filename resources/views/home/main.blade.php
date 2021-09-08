@@ -112,6 +112,8 @@
 
 <!-- Template Javascript -->
 <script src="{{asset('home/js/main.js')}}"></script>
+
+@yield('scripts')
 </body>
 
 </html>
