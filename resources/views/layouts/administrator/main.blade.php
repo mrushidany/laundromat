@@ -2,7 +2,7 @@
 <html>
 @include('layouts.stylesheet_link')
 
-<body class="salon-2-saidbar-main  ">
+<body class="dobule-navbar ">
 <div id="main_modal" role="dialog" class="modal fade" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content"></div>
@@ -15,13 +15,10 @@
 </div>
 <!-- loader END -->
 <!-- Wrapper Start -->
-<div class="wrapper l-horizontal">
+<div class="wrapper">
     @include('layouts.administrator.header')
-    <div class="content-page salon2-content">
-        @include('layouts.administrator.horizontal_navigation')
-        <div class="tab-content" id="myTabContent-2">
-            @yield('content')
-        </div>
+    <div class="content-page">
+        @yield('content')
     </div>
 </div>
 <!-- Wrapper End-->
