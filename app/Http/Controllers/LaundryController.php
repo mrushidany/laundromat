@@ -22,6 +22,9 @@ class LaundryController extends Controller
      */
     public function index()
     {
+        if(Auth::user()->hasRole('owner')){
+            return view('owner.laundry');
+        }
         return view('manager.laundry');
     }
 

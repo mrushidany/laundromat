@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="col-sm-6 col-md-6 col-lg-6">
                 <div class="card card-block card-stretch card-height bg-primary-light">
                     <div class="card-body">
                         <div class="media align-items-center">
@@ -11,21 +11,21 @@
                                 <i class="fas fa-laptop-house"></i>
                             </div>
                             <div class="media-body ml-3">
-                                <h3 class="mb-0 text-primary">130</h3>
-                                <h5>Property</h5>
+                                <h3 class="mb-0 text-primary">20</h3>
+                                <h5>Machines</h5>
                             </div>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mt-5 position-relative">
                             <div class="iq-progress-bar bg-white mt-2">
-                            <span class="bg-primary iq-progress progress-1" data-percent="55">
-                            <span class="progress-text-one bg-primary">55%</span>
+                            <span class="bg-primary iq-progress progress-1" data-percent="100">
+                            <span class="progress-text-one bg-primary">100%</span>
                             </span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="col-sm-6 col-md-6 col-lg-6">
                 <div class="card card-block card-stretch card-height bg-primary-light">
                     <div class="card-body">
                         <div class="media align-items-center">
@@ -33,58 +33,14 @@
                                 <i class="fas fa-hand-holding-usd"></i>
                             </div>
                             <div class="media-body ml-3">
-                                <h3 class="mb-0 text-primary">130</h3>
-                                <h5>Profit</h5>
+                                <h3 class="mb-0 text-primary"></h3>
+                                <h5>Sales</h5>
                             </div>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mt-5 position-relative">
                             <div class="iq-progress-bar bg-white mt-2">
-                            <span class="bg-primary iq-progress progress-1" data-percent="40">
-                            <span class="progress-text-one bg-primary">40%</span>
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card card-block card-stretch card-height bg-primary-light">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="icon iq-icon-box bg-primary rounded">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                            </div>
-                            <div class="media-body ml-3">
-                                <h3 class="mb-0 text-primary">150</h3>
-                                <h5>Seller</h5>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-5 position-relative">
-                            <div class="iq-progress-bar bg-white mt-2">
-                            <span class="bg-primary iq-progress progress-1" data-percent="85">
-                            <span class="progress-text-one bg-primary">85%</span>
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card card-block card-stretch card-height bg-primary-light">
-                    <div class="card-body">
-                        <div class="media align-items-center">
-                            <div class="icon iq-icon-box bg-primary rounded">
-                                <i class="far fa-credit-card"></i>
-                            </div>
-                            <div class="media-body ml-3">
-                                <h3 class="mb-0 text-primary">600</h3>
-                                <h5>Buyer's</h5>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-5 position-relative">
-                            <div class="iq-progress-bar bg-white mt-2">
-                            <span class="bg-primary iq-progress progress-1" data-percent="65">
-                            <span class="progress-text-one bg-primary">65%</span>
+                            <span class="bg-primary iq-progress progress-1" data-percent="0">
+                            <span class="progress-text-one bg-primary">0%</span>
                             </span>
                             </div>
                         </div>

@@ -43,7 +43,7 @@
                                                         </form>
                                                     </div>
                                                     <div class="profile-details my-4">
-                                                        <a href="{{route('administrator_profile')}}"
+                                                        <a href="{{route('dashboard')}}"
                                                            class="iq-sub-card bg-primary-light rounded-small p-2">
                                                             <div class="media align-items-center">
                                                                 <div class="rounded iq-card-icon-small">
@@ -90,7 +90,7 @@
                                 </li>
 
                                 <li class=" ">
-                                    <a href="" class="">
+                                    <a href="{{route('laundry.index')}}" class="">
                                         <i class="dripicons dripicons-basket"></i><span>Laundry</span>
                                     </a>
                                 </li>

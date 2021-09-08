@@ -2,7 +2,7 @@
     <div class="iq-navbar-custom d-flex align-items-center justify-content-between">
         <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
             <i class="ri-menu-line wrapper-menu"></i>
-            <a href="index.html" class="header-logo">
+            <a href="" class="header-logo">
                 <img src="{{asset('assets/images/easywash_logo.jpeg')}}" class="img-fluid rounded-normal" alt="logo">
             </a>
         </div>
@@ -72,7 +72,7 @@
                                                 </form>
                                             </div>
                                             <div class="profile-details my-4">
-                                                <a href="../app/user-account-setting.html"
+                                                <a href=""
                                                    class="iq-sub-card bg-success-light rounded-small p-2">
                                                     <div class="media align-items-center">
                                                         <div class="rounded iq-card-icon-small">

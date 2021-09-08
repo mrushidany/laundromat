@@ -14,7 +14,7 @@
                     <img src="{{asset('/assets/images/user/user-1.jpg')}}" class="img-fluid d-inline-block avatar-110 rounded" alt="logo">
                 </div>
                 <h4>{{Auth::user()->name}}</h4>
-                <p>{{Auth::user()->email}}</p>
+                <p></p>
             </div>
         </div>
         <div class="double-icon-height">
