@@ -108,7 +108,6 @@
 
 <!-- Contact Javascript File -->
 <script src="{{asset('home/mail/jqBootstrapValidation.min.js')}}"></script>
-<script src="{{asset('home/mail/contact.js')}}"></script>
 
 <!-- Template Javascript -->
 <script src="{{asset('home/js/main.js')}}"></script>
