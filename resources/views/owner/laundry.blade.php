@@ -16,9 +16,6 @@
                             <a  class="button btn btn-primary btn-sm  mr-2" href="{{route('laundry.create')}}"><i class="ri-add-line m-0"></i> Add New Laundry</a>
                         </div>
                     </div>
-                    <div class="card-footer d-flex justify-content-between">
-
-                    </div>
                 </div>
             </div>
         </div>
