@@ -35,6 +35,9 @@ class LaundryController extends Controller
      */
     public function create()
     {
+        if(Auth::user()->hasRole('owner')){
+            return view('owner.form.create');
+        }
         return view('manager.form.create');
     }
 
