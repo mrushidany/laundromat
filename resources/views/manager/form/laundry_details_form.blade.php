@@ -51,13 +51,13 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="laundry_quantity">Laundry Quantity in Kg</label>
-                <input type="text" name="laundry_quantity" class="form-control" id="laundry_quantity" value="">
+                <input type="text" name="laundry_quantity" class="form-control text-blue font-size-20" id="laundry_quantity" value="">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="total_cost">Total Cost</label>
-                <input type="text" class="form-control" id="total_cost" name="total_cost"  value="">
+                <input type="text" class="form-control text-blue font-size-20" id="total_cost" name="total_cost"  value="">
             </div>
         </div>
     </div>
@@ -70,22 +70,21 @@
             number_of_machines = $(this).val().length;
             laundry_quantity = 8 * number_of_machines;
             total_cost = number_of_machines * 4000;
-            $('#laundry_quantity').val(laundry_quantity + ' Kgs').trigger('change');
-            $('#total_cost').val(total_cost + ' /=').trigger('change');
+            $('input[name="laundry_quantity"]').val(laundry_quantity + ' Kgs').trigger('change');
+            $('input[name="total_cost"]').val(total_cost + ' /=').trigger('change');
             return laundry_quantity, total_cost;
         })
         $('input[name="drying_machine"]').change(function (){
             if($(this).is(':checked')){
               var total_quantity = laundry_quantity * 2;
               var cost = total_cost * 2;
-              $('#laundry_quantity').val(total_quantity + ' Kgs').trigger('change');
-              $('#total_cost').val(cost + ' /=').trigger('change');
+              $('input[name="laundry_quantity"]').val(total_quantity + ' Kgs').trigger('change');
+              $('input[name="total_cost"]').val(cost + ' /=').trigger('change');
             }else if (!$(this).is(':checked')){
                 total_quantity = laundry_quantity;
                 cost = total_cost;
-                $('#laundry_quantity').val(total_quantity + ' Kgs').trigger('change');
-                $('#total_cost').val(cost + ' /=').trigger('change');
-                console.log(total_quantity)
+                $('input[name="laundry_quantity"]').val(total_quantity + ' Kgs').trigger('change');
+                $('input[name="total_cost"]').val(cost + ' /=').trigger('change');
             }
         })
     })
