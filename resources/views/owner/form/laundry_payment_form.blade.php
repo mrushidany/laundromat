@@ -22,11 +22,42 @@
     </div>
 </div>
 
+<div class="modal fade" id="payment_status_modal" tabindex="-1" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title offset-5">Partial Payment Status Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="total_cost" class="control-label">Total Cost</label>
+                        <input type="text" name="total_cost" class="form-control text-blue font-size-20" value="">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="initial_payment" class="control-label">Initial Payment</label>
+                        <input  type="text" name="initial_payment" class="form-control text-blue font-size-20" value="">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Verify Partial Payment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="application/javascript">
     $('.payment_status').on('change',function (){
-        var status = $(this).val();
-        if(status == 'Partial Payment'){
-            alert(status)
+        $modal = $('#payment_status_modal')
+        if($(this).val() === 'Partial Payment'){
+            $modal.modal('show')
         }
     })
 </script>
