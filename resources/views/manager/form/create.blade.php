@@ -44,9 +44,9 @@
                                     @include('manager.form.laundry_details_form')
                                     <button type="button" name="next" class="btn btn-primary next action-button float-right" value="Next">Next</button>
                                 </fieldset>
-                                <fieldset>
+                                <fieldset id="LaundryPaymentFormFieldSet">
                                    @include('manager.form.laundry_payment_form')
-                                    <button type="button" name="next" class="btn btn-primary next action-button float-right" value="Next">Next</button>
+                                    <button type="button" name="next" class="btn btn-primary next next_laundry_and_payment_summary action-button float-right" value="Next">Next</button>
                                     <button type="button" name="previous" class="btn btn-dark previous action-button-previous float-right mr-3" value="Previous">Previous</button>
                                 </fieldset>
                                 <fieldset>
@@ -79,9 +79,17 @@
 @section('scripts')
     <script type="application/javascript">
         $(document).ready(function () {
+            $('.next_laundry_and_payment_summary').on('click',function (){
+                $('#LaundryPaymentFormFieldSet').each(function (key,value){
+                    console.log($(this).val())
+                })
+            })
             $('.previous_payment_status').on('click', function () {
                 $(this).closest('li').find('#payment').trigger('change','class');
             })
+
+
+
         })
     </script>
 @endsection

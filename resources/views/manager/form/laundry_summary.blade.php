@@ -9,7 +9,7 @@
             </div>
             <hr>
             <div class="row mt-4">
-                <div class="col-lg-6">
+                <div class="col-lg-6 laundry_and_payment_status_summary">
                     <ul class="list-unstyled mb-0">
                         <li class="row mb-2">
                             <span class="col-md-5"><b>Client Name:</b></span>
@@ -45,3 +45,4 @@
         </div>
     </div>
 </div>
+
