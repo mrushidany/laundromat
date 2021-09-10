@@ -40,7 +40,7 @@
                                     </li>
                                 </ul>
                                 <!-- fieldsets -->
-                                <fieldset>
+                                <fieldset id="LaundryDetailFormFieldSet">
                                     @include('manager.form.laundry_details_form')
                                     <button type="button" name="next" class="btn btn-primary next action-button float-right" value="Next">Next</button>
                                 </fieldset>
@@ -79,9 +79,43 @@
 @section('scripts')
     <script type="application/javascript">
         $(document).ready(function () {
+
             $('.next_laundry_and_payment_summary').on('click',function (){
-                $('#LaundryPaymentFormFieldSet').each(function (key,value){
-                    console.log($(this).val())
+                var $laundry_detail_form = $('#LaundryDetailFormFieldSet :input')
+                var $laundry_payment_form = $('#LaundryPaymentFormFieldSet :input')
+                var values = {};
+
+                $laundry_detail_form.each(function (){
+                    values[this.name] = $(this).val()
+                    console.log(values)
+                    return values
+
+                })
+
+                $laundry_payment_form.each(function (){
+                    values[this.name] = $(this).val()
+                    return values
+
+                })
+
+                $('.laundry_and_payment_status_summary').each(function (){
+                    $(this).find('.client_name').append(values.full_name).trigger('change')
+                    $(this).find('.machines_selected').append(values.machine_selected).trigger('change')
+                    $(this).find('.total_cost').append(values.total_cost).trigger('change')
+                })
+
+                $('.laundry_and_payment_status_summary_2').each(function (){
+                    $(this).find('.phone_number').append(values.phone).trigger('change')
+                    $(this).find('.laundry_quantity').append(values.laundry_quantity).trigger('change')
+                    switch (values.payment_status){
+                        case 'Paid': $(this).find('.payment_status').append(values.payment_status).trigger('change')
+                        break;
+                        case 'Not Paid': $(this).find('.payment_status').append(values.payment_status).trigger('change')
+                        break;
+                        case 'Partial Payment': $(this).find('.payment_status').append(values.payment_status + ' ( ' + values.initial_payment + ' /= )').trigger('change')
+                        break;
+                    }
+
                 })
             })
             $('.previous_payment_status').on('click', function () {
