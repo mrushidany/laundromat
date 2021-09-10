@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="payment_status_modal" tabindex="-1" aria-hidden="true" style="display: none;">
+<div class="modal fade modal-md" id="payment_status_modal" tabindex="-1" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -38,7 +38,7 @@
                         <input type="text" name="total_cost" class="form-control text-blue font-size-20" value="">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="initial_payment" class="control-label">Initial Payment</label>
+                        <label for="initial_payment" class="control-label">Partial Payment</label>
                         <input  type="text" name="initial_payment" class="form-control text-blue font-size-20" value="">
                     </div>
 
@@ -46,8 +46,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Verify Partial Payment</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Verify Partial Payment</button>
             </div>
         </div>
     </div>

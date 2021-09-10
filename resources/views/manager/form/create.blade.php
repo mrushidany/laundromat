@@ -33,9 +33,9 @@
                                             <i class="ri-exchange-dollar-line"></i><span>Payment Details</span>
                                         </a>
                                     </li>
-                                    <li id="confirm">
+                                    <li id="payment">
                                         <a href="javascript:void();">
-                                            <i class="ri-check-fill"></i><span>Finish</span>
+                                            <i class="ri-check-fill"></i><span>Summary</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -53,25 +53,19 @@
                                     <div class="form-card">
                                         <div class="row">
                                             <div class="col-7">
-                                                <h3 class="mb-4 text-left">Finish:</h3>
+                                                <h3 class="mb-4 text-left">Summary:</h3>
                                             </div>
                                             <div class="col-5">
                                                 <h2 class="steps">Step 3 - 3</h2>
                                             </div>
                                         </div>
                                         <br><br>
-                                        <h2 class="text-success text-center"><strong>SUCCESS !</strong></h2>
-                                        <br>
-                                        <div class="row justify-content-center">
-                                            <div class="col-3"> <img src="{{asset('assets/images/page-img/img-success.png')}}" class="fit-image" alt="fit-image"> </div>
-                                        </div>
-                                        <br><br>
-                                        <div class="row justify-content-center">
-                                            <div class="col-7 text-center">
-                                                <h5 class="purple-text text-center">You Have Successfully Signed Up</h5>
-                                            </div>
+                                        <div class="row">
+                                            @include('manager.form.laundry_summary')
                                         </div>
                                     </div>
+                                        <button type="button" name="save" class="btn btn-primary next action-button float-right" value="Save">Save</button>
+                                        <button type="button" name="previous" class="btn btn-dark previous_payment_status previous action-button-previous float-right mr-3" value="Previous">Previous</button>                                    </div>
                                 </fieldset>
                             </form>
                         </div>
@@ -80,4 +74,14 @@
             </div>
     </div>
 
+@endsection
+
+@section('scripts')
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $('.previous_payment_status').on('click', function () {
+                $(this).closest('li').find('#payment').trigger('change','class');
+            })
+        })
+    </script>
 @endsection

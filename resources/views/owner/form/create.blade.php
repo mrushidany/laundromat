@@ -37,7 +37,7 @@
                                         </li>
                                         <li id="confirm">
                                             <a href="javascript:void();">
-                                                <i class="ri-check-fill"></i><span>Finish</span>
+                                                <i class="ri-check-fill"></i><span>Summary</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -55,24 +55,14 @@
                                         <div class="form-card">
                                             <div class="row">
                                                 <div class="col-7">
-                                                    <h3 class="mb-4 text-left">Finish:</h3>
+                                                    <h3 class="mb-4 text-left">Summary:</h3>
                                                 </div>
                                                 <div class="col-5">
                                                     <h2 class="steps">Step 3 - 3</h2>
                                                 </div>
                                             </div>
                                             <br><br>
-                                            <h2 class="text-success text-center"><strong>SUCCESS !</strong></h2>
-                                            <br>
-                                            <div class="row justify-content-center">
-                                                <div class="col-3"> <img src="{{asset('assets/images/page-img/img-success.png')}}" class="fit-image" alt="fit-image"> </div>
-                                            </div>
-                                            <br><br>
-                                            <div class="row justify-content-center">
-                                                <div class="col-7 text-center">
-                                                    <h5 class="purple-text text-center">You Have Successfully Signed Up</h5>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </fieldset>
                                 </form>
