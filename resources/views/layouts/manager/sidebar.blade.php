@@ -44,9 +44,6 @@
         </div>
         <div class="sidebar-bottom-menu">
             <nav class="iq-sidebar-menu">
-                <ul class="iq-menu-bottom list-inline">
-                    <li><a href="#"><i class="las la-envelope-open iq-arrow-left"></i><span>Messages </span><span class="float-right badge badge-warning rounded-circle menu-icon-right">18</span></a></li>
-                </ul>
                 <div class="text-center mt-3">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
