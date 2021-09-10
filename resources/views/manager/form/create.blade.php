@@ -100,7 +100,7 @@
 
                 $('.laundry_and_payment_status_summary').each(function (){
                     $(this).find('.client_name').empty().append(values.full_name)
-                    $(this).find('.machines_selected').empty().append(values.machine_selected)
+                    $(this).find('.machines_selected').empty().append(values.machine_selected.join(", "))
                     $(this).find('.total_cost').empty().append(values.total_cost)
                 })
 
