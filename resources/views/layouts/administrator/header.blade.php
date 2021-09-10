@@ -4,7 +4,7 @@
             <div class="iq-navbar-custom d-flex align-items-center justify-content-between">
                 <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
                     <i class="ri-menu-line wrapper-menu"></i>
-                    <a href="index.html" class="header-logo">
+                    <a href="{{route('dashboard')}}" class="header-logo">
                         <img src="{{asset('assets/images/easywash_logo.jpeg')}}" class="img-fluid rounded-normal" alt="logo">
                     </a>
                 </div>
@@ -75,7 +75,7 @@
                     <div class="iq-menu-horizontal">
                         <nav class="iq-sidebar-menu">
                             <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-                                <a href="index.html" class="header-logo">
+                                <a href="{{route('dashboard')}}" class="header-logo">
                                     <img src="{{asset('assets/images/easywash_logo.jpeg')}}" class="img-fluid rounded-normal" alt="logo">
                                 </a>
                                 <div class="iq-menu-bt-sidebar">
@@ -84,7 +84,7 @@
                             </div>
                             <ul id="iq-sidebar-toggle" class="iq-menu d-flex mn-center">
                                 <li class=" ">
-                                    <a href="" class="">
+                                    <a href="{{route('dashboard')}}" class="">
                                         <i class="las la-home iq-arrow-left"></i><span>Dashboard</span>
                                     </a>
                                 </li>

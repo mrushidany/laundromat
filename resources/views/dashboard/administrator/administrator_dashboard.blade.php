@@ -84,20 +84,20 @@
 @section('scripts')
     <script>
         let main_datatable = $('.laundromat_table').DataTable({
-            processing: true,
-            serverSide: true,
-            lengthMenu: [[10,25,50],[10,25,50]],
+            // processing: true,
+            // serverSide: true,
+            {{--lengthMenu: [[10,25,50],[10,25,50]],--}}
 
-            ajax: '{{ route('laundry_list') }}',
-            columns: [
-                {data: 'full_name', name: 'full_name'},
-                {data: 'phone', name: 'phone'},
-                {data: 'quantity', name: 'quantity'},
-                {data: 'amount', name: 'amount'},
-                {data: 'created_at', name: 'created_at'},
-                {data: 'pickup_date', name: 'pickup_date'},
-                {data: 'action', name: 'action', orderable: false, searchable: false}
-            ],
+            {{--ajax: '{{ route('laundry_list') }}',--}}
+            {{--columns: [--}}
+            {{--    {data: 'full_name', name: 'full_name'},--}}
+            {{--    {data: 'phone', name: 'phone'},--}}
+            {{--    {data: 'quantity', name: 'quantity'},--}}
+            {{--    {data: 'amount', name: 'amount'},--}}
+            {{--    {data: 'created_at', name: 'created_at'},--}}
+            {{--    {data: 'pickup_date', name: 'pickup_date'},--}}
+            {{--    {data: 'action', name: 'action', orderable: false, searchable: false}--}}
+            {{--],--}}
 
         });
     </script>
