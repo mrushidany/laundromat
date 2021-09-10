@@ -99,20 +99,20 @@
                 })
 
                 $('.laundry_and_payment_status_summary').each(function (){
-                    $(this).find('.client_name').append(values.full_name).trigger('change')
-                    $(this).find('.machines_selected').append(values.machine_selected).trigger('change')
-                    $(this).find('.total_cost').append(values.total_cost).trigger('change')
+                    $(this).find('.client_name').empty().append(values.full_name)
+                    $(this).find('.machines_selected').empty().append(values.machine_selected)
+                    $(this).find('.total_cost').empty().append(values.total_cost)
                 })
 
                 $('.laundry_and_payment_status_summary_2').each(function (){
-                    $(this).find('.phone_number').append(values.phone).trigger('change')
-                    $(this).find('.laundry_quantity').append(values.laundry_quantity).trigger('change')
+                    $(this).find('.phone_number').empty().append(values.phone)
+                    $(this).find('.laundry_quantity').empty().append(values.laundry_quantity)
                     switch (values.payment_status){
-                        case 'Paid': $(this).find('.payment_status').append(values.payment_status).trigger('change')
+                        case 'Paid': $(this).find('.payment_status').empty().append(values.payment_status)
                             break;
-                        case 'Not Paid': $(this).find('.payment_status').append(values.payment_status).trigger('change')
+                        case 'Not Paid': $(this).find('.payment_status').empty().append(values.payment_status)
                             break;
-                        case 'Partial Payment': $(this).find('.payment_status').append(values.payment_status + ' ( ' + values.initial_payment + ' /= )').trigger('change')
+                        case 'Partial Payment': $(this).find('.payment_status').empty().append(values.payment_status + ' ( ' + values.initial_payment + ' /= )')
                             break;
                     }
 
