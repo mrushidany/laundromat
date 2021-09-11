@@ -11,13 +11,13 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label>Client Name</label>
-                <input type="text" class="form-control" name="full_name" placeholder="Optional">
+                <input type="text" class="form-control text-blue font-size-14" name="full_name" placeholder="Optional">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label>Phone Number</label>
-                <input type="text" class="form-control" name="phone" placeholder="xxxxxxxxx">
+                <input type="text" class="form-control text-blue font-size-14" name="phone" placeholder="xxxxxxxxx">
             </div>
         </div>
         <div class="col-md-12">
@@ -51,13 +51,13 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="laundry_quantity">Laundry Quantity in Kg</label>
-                <input type="text" name="laundry_quantity" class="form-control text-blue font-size-20" id="laundry_quantity" value="">
+                <input type="text" name="laundry_quantity" class="form-control text-blue font-size-14" id="laundry_quantity" value="">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="total_cost">Total Cost</label>
-                <input type="text" class="form-control text-blue font-size-20" id="total_cost" name="total_cost"  value="">
+                <input type="text" class="form-control text-blue font-size-14" id="total_cost" name="total_cost"  value="">
             </div>
         </div>
     </div>

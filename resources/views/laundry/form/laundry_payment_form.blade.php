@@ -35,11 +35,11 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="total_cost" class="control-label">Total Cost</label>
-                        <input type="text" name="total_cost" class="form-control text-blue font-size-20" value="">
+                        <input type="text" name="total_cost" class="form-control text-blue font-size-14" readonly value="">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="initial_payment" class="control-label">Partial Payment</label>
-                        <input  type="text" name="initial_payment" class="form-control text-blue font-size-20" value="">
+                        <input  type="text" name="initial_payment" class="form-control text-blue font-size-14" value="">
                     </div>
 
                 </div>
