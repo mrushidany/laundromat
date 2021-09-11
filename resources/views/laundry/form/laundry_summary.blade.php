@@ -19,6 +19,10 @@
                             <span class="col-md-5 font-size-14"><b>Machines Selected:</b></span>
                             <span class="col-md-7 font-size-12 machines_selected text-cyan"></span>
                         </li>
+                        <li class=" row mb-2">
+                            <span class="col-md-5 font-size-14"><b>Drying Machine Selection:</b></span>
+                            <span class="col-md-7 font-size-12 drying_machine_selected text-cyan"></span>
+                        </li>
                         <li class="row mb-2">
                             <span class="col-md-5 font-size-14"><b>Total cost to Paid:</b></span>
                             <span class="col-md-7 font-size-12 total_cost text-cyan"></span>

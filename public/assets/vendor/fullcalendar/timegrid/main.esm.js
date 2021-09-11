@@ -950,7 +950,7 @@ var TIMEGRID_ALL_DAY_EVENT_LIMIT = 5;
 var WEEK_HEADER_FORMAT = createFormatter({ week: 'short' });
 /* An abstract class for all timegrid-related views. Displays one more columns with time slots running vertically.
 ----------------------------------------------------------------------------------------------------------------------*/
-// Is a manager for the TimeGrid subcomponent and possibly the DayGrid subcomponent (if allDaySlot is on).
+// Is a easywash for the TimeGrid subcomponent and possibly the DayGrid subcomponent (if allDaySlot is on).
 // Responsible for managing width/height.
 var TimeGridView = /** @class */ (function (_super) {
     __extends(TimeGridView, _super);

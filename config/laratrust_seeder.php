@@ -17,7 +17,7 @@ return [
             'payments' => 'c,r,u,d',
             'profile' => 'r,u'
         ],
-        'manager' => [
+        'easywash' => [
             'users' => 'c,r,u,d',
             'profile' => 'r,u'
         ],

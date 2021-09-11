@@ -1,4 +1,4 @@
-@extends('layouts.manager.main')
+@extends('layouts.easywash.main')
 
 @section('content')
     <div class="container-fluid">
@@ -41,11 +41,11 @@
                                 </ul>
                                 <!-- fieldsets -->
                                 <fieldset id="LaundryDetailFormFieldSet">
-                                    @include('manager.form.laundry_details_form')
+                                    @include('laundry.form.laundry_details_form')
                                     <button type="button" name="next" class="btn btn-primary next action-button float-right" value="Next">Next</button>
                                 </fieldset>
                                 <fieldset id="LaundryPaymentFormFieldSet">
-                                   @include('manager.form.laundry_payment_form')
+                                   @include('laundry.form.laundry_payment_form')
                                     <button type="button" name="next" class="btn btn-primary next next_laundry_and_payment_summary action-button float-right" value="Next">Next</button>
                                     <button type="button" name="previous" class="btn btn-dark previous action-button-previous float-right mr-3" value="Previous">Previous</button>
                                 </fieldset>
@@ -61,7 +61,7 @@
                                         </div>
                                         <br><br>
                                         <div class="row">
-                                            @include('manager.form.laundry_summary')
+                                            @include('laundry.form.laundry_summary')
                                         </div>
                                     </div>
                                         <button type="button" name="save" class="btn btn-primary next action-button float-right" value="Save">Save</button>
@@ -101,6 +101,13 @@
                 $('.laundry_and_payment_status_summary').each(function (){
                     $(this).find('.client_name').empty().append(values.full_name)
                     $(this).find('.machines_selected').empty().append(values.machine_selected.join(", "))
+                    switch (values.drying_machine){
+                        case 'checked' : $(this).find('.drying_machine_selected').empty().append('Selected');
+                        break;
+                        case 'unchecked' : $(this).find('.drying_machine_selected').empty().append('Not Selected');
+                        break;
+
+                    }
                     $(this).find('.total_cost').empty().append(values.total_cost)
                 })
 

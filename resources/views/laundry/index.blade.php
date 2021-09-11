@@ -1,4 +1,4 @@
-@extends('layouts.manager.main')
+@extends('layouts.easywash.main')
 
 @section('content')
     <div class="container-fluid">

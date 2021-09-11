@@ -22,10 +22,7 @@ class LaundryController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->hasRole('owner')){
-            return view('owner.laundry');
-        }
-        return view('manager.laundry');
+        return view('laundry.index');
     }
 
     /**
@@ -35,10 +32,7 @@ class LaundryController extends Controller
      */
     public function create()
     {
-        if(Auth::user()->hasRole('owner')){
-            return view('owner.form.create');
-        }
-        return view('manager.form.create');
+        return view('laundry.form.create');
     }
 
     /**
@@ -112,12 +106,6 @@ class LaundryController extends Controller
     public function edit($id)
     {
 
-        $data = [
-            'routine_client' => RoutineClient::find($id),
-            'laundry_details' => LaundryDetail::where('routine_client_id', $id)->first()
-        ];
-
-        return view('manager.form.laundry_input_form')->with($data);
     }
 
     /**

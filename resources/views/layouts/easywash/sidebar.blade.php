@@ -27,10 +27,10 @@
                                 <a href="{{route('laundry.index')}}" class="collapsed active"  aria-expanded="true"><i class="dripicons dripicons-basket"></i><span>Laundry</span></a>
                             </div>
                         </li>
-                        @if (Auth::user()->hasRole('manager'))
+                        @if (Auth::user()->hasRole('owner'))
                         <li>
                             <div class="d-flex align-items-center">
-                                <a href="#" class="collapsed" data-toggle="collapse" aria-expanded="false"><i class="las la-file-invoice-dollar"></i><span>Payment</span></a>
+                                <a href="#" class="collapsed" data-toggle="collapse" aria-expanded="false"><i class="las la-file-invoice-dollar"></i><span>Sales</span></a>
 
                             </div>
                         </li>
