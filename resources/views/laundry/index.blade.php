@@ -38,6 +38,12 @@
                                 <th>Registered On</th>
                                 <th>Payment Status</th>
                             </thead>
+                            <tfoot>
+                            <tr role="row">
+                                <th colspan="4" class="text-center">Total</th>
+                                <th id="laundry_table_total_cost"></th>
+                            </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
@@ -53,7 +59,6 @@
             processing: true,
             serverSide: true,
             lengthMenu: [[10,25,50],[10,25,50]],
-
             ajax: '{{ route('laundry_list') }}',
             columns: [
                 {data: 'full_name', name: 'full_name'},
@@ -64,7 +69,6 @@
                 {data: 'created_at', name: 'created_at'},
                 {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
             ],
-
         });
     </script>
 
