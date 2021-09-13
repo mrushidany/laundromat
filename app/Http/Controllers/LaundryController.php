@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InitialPayment;
 use App\Models\LaundryCost;
 use App\Models\LaundryDetail;
 use App\Models\LaundryMachineDetail;
@@ -12,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
+use function PHPUnit\Framework\isNull;
 
 class LaundryController extends Controller
 {
@@ -49,7 +51,6 @@ class LaundryController extends Controller
                $routine_client->full_name = $request->full_name;
                $routine_client->phone = $request->phone;
                $routine_client->save();
-
             if(isset($routine_client->id)){
                 $laundry_details = new LaundryDetail();
                    $laundry_details->routine_client_id = $routine_client->id;
@@ -58,23 +59,27 @@ class LaundryController extends Controller
                    $laundry_details->issued_by = Auth::user()->id;
                    $laundry_details->save();
             }
-                if (isset($laundry_details->id)) {
+            if (isset($laundry_details->id)) {
+
                     $laundry_costs = new LaundryCost();
                     $laundry_costs->laundry_details_id = $laundry_details->id;
                     $laundry_costs->amount = $request->total_cost;
                     $laundry_costs->payment_status = $request->payment_status;
                     $laundry_costs->save();
-
+                switch ($request->payment_status){
+                    case 'Partial Payment':
+                        $initial_payment = new InitialPayment();
+                        $initial_payment->laundry_cost_id = $laundry_costs->id;
+                        $initial_payment->initial_payment = $request->initial_payment.' /=';
+                        $initial_payment->save();
+                        break;
                 }
-                if(isset($laundry_costs->payment_status) == 'Partial Payment'){
-
-            }
-                DB::commit();
-                if (isset($laundry_costs)) {
+                }
+            DB::commit();
+            if (isset($laundry_costs)) {
                     $data = ['state' => 'Done', 'title' => 'Successful', 'msg' => 'Record created successful'];
                     return \Request::ajax() ? response()->json($data) : redirect()->route('laundry.index')->with('data', $data);
                 }
-            }
             $data = ['state'=>'Fail', 'title'=>'Fail', 'msg'=>'Record could not be created'];
             return \Request::ajax() ? response()->json($data) : redirect()->route('laundry.index')->withInput()->with('data', $data);
         }catch (QueryException $queryException){
