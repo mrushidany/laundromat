@@ -21,7 +21,9 @@
                 <div class="col-sm-12 col-lg-12">
                     <div class="iq-card">
                         <div class="iq-card-body">
-                            <form id="form-wizard1" class="text-center mt-4">
+                            <form id="form-wizard1" method='post' action="{{route('laundry.store')}}" class="text-center mt-4">
+                               {{method_field('POST')}}
+                                {{csrf_field()}}
                                 <ul id="top-tab-list" class="p-0">
                                     <li class="active" id="account">
                                         <a href="javascript:void();">
@@ -64,7 +66,8 @@
                                             @include('laundry.form.laundry_summary')
                                         </div>
                                     </div>
-                                        <button type="button" name="save" class="btn btn-primary next action-button float-right" value="Save">Save</button>
+                                        <input type="hidden" name="all_machines_selected">
+                                        <button type="submit" name="save" class="btn btn-primary next action-button float-right" value="Save">Save</button>
                                         <button type="button" name="previous" class="btn btn-dark previous_payment_status previous action-button-previous float-right mr-3" value="Previous">Previous</button>                                    </div>
                                 </fieldset>
                             </form>
@@ -97,8 +100,10 @@
                     $(this).find('.machines_selected').empty().append(values.machine_selected.join(", "))
                     if($('input[name="drying_machine"]').is(':checked')){
                         $(this).find('.drying_machine_selected').empty().append('Selected');
+                        $('input[name="all_machines_selected"]').val(values.machine_selected.join(", ") + ', Drying Machine').trigger('change')
                     }else{
                         $(this).find('.drying_machine_selected').empty().append('Not Selected');
+                        $('input[name="all_machines_selected"]').val(values.machine_selected.join(", ")).trigger('change');
                     }
                     $(this).find('.total_cost').empty().append(values.total_cost)
                 })

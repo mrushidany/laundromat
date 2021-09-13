@@ -43,19 +43,17 @@ class LaundryController extends Controller
      */
     public function store(Request $request)
     {
-
         try{
             DB::beginTransaction();
             $routine_client = new RoutineClient();
                $routine_client->full_name = $request->full_name;
-               $routine_client->phone = '+255'.$request->phone_number;
+               $routine_client->phone = $request->phone;
                $routine_client->save();
 
             if(isset($routine_client->id)){
                 $laundry_details = new LaundryDetail();
                    $laundry_details->routine_client_id = $routine_client->id;
-                   $laundry_details->quantity = $request->laundry_quantity.' '.' Kgs';
-                   $laundry_details->pickup_date = $request->pickup_date;
+                   $laundry_details->quantity = $request->laundry_quantity;
                    $laundry_details->issued_by = Auth::user()->id;
                    $laundry_details->save();
 
@@ -117,7 +115,7 @@ class LaundryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
