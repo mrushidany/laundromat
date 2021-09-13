@@ -54,16 +54,11 @@ class LaundryController extends Controller
                 $laundry_details = new LaundryDetail();
                    $laundry_details->routine_client_id = $routine_client->id;
                    $laundry_details->quantity = $request->laundry_quantity;
+                   $laundry_details->selected_machines = $request->all_machines_selected;
                    $laundry_details->issued_by = Auth::user()->id;
                    $laundry_details->save();
-
-            }if (isset($laundry_details->id)) {
-                    $laundry_machine_details = new LaundryMachineDetail();
-                    $laundry_machine_details->laundry_details_id = $laundry_details->id;
-                    $laundry_machine_details->washine_machine_id = $request->washine_machine;
-                    $laundry_machine_details->drying_machine_id = $request->drying_machine;
-                    $laundry_machine_details->save();
-                if (isset($laundry_machine_details->id)) {
+            }
+                if (isset($laundry_details->id)) {
                     $laundry_costs = new LaundryCost();
                     $laundry_costs->laundry_details_id = $laundry_details->id;
                     $laundry_costs->amount = $request->total_cost.' '.'/=';
