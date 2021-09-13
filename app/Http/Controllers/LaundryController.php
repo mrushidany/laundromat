@@ -62,8 +62,13 @@ class LaundryController extends Controller
                     $laundry_costs = new LaundryCost();
                     $laundry_costs->laundry_details_id = $laundry_details->id;
                     $laundry_costs->amount = $request->total_cost;
+                    $laundry_costs->payment_status = $request->payment_status;
                     $laundry_costs->save();
+
                 }
+                if(isset($laundry_costs->payment_status) == 'Partial Payment'){
+
+            }
                 DB::commit();
                 if (isset($laundry_costs)) {
                     $data = ['state' => 'Done', 'title' => 'Successful', 'msg' => 'Record created successful'];
