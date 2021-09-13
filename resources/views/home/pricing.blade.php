@@ -1,6 +1,5 @@
 @extends('home.main')
 
-
 @section('navbar')
     <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
         <div class="navbar-nav ml-auto py-0">
@@ -32,7 +31,6 @@
         </div>
     </div>
     <!-- Page Header Start -->
-
 
     <!-- Pricing Plan Start -->
     <div class="container-fluid pt-5 pb-3">
@@ -89,5 +87,4 @@
         </div>
     </div>
     <!-- Pricing Plan End -->
-
-    @endsection
+@endsection

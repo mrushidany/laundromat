@@ -79,38 +79,29 @@
 @section('scripts')
     <script type="application/javascript">
         $(document).ready(function () {
-
             $('.next_laundry_and_payment_summary').on('click',function (){
                 var $laundry_detail_form = $('#LaundryDetailFormFieldSet :input')
                 var $laundry_payment_form = $('#LaundryPaymentFormFieldSet :input')
                 var values = {};
-
                 $laundry_detail_form.each(function (){
                     values[this.name] = $(this).val()
-                    console.log(values)
+                    console.log(values.drying_machine)
                     return values
-
                 })
-
                 $laundry_payment_form.each(function (){
                     values[this.name] = $(this).val()
                     return values
-
                 })
-
                 $('.laundry_and_payment_status_summary').each(function (){
                     $(this).find('.client_name').empty().append(values.full_name)
                     $(this).find('.machines_selected').empty().append(values.machine_selected.join(", "))
-                    switch (values.drying_machine){
-                        case 'checked' : $(this).find('.drying_machine_selected').empty().append('Selected');
-                        break;
-                        case 'unchecked' : $(this).find('.drying_machine_selected').empty().append('Not Selected');
-                        break;
-
+                    if($('input[name="drying_machine"]').is(':checked')){
+                        $(this).find('.drying_machine_selected').empty().append('Selected');
+                    }else{
+                        $(this).find('.drying_machine_selected').empty().append('Not Selected');
                     }
                     $(this).find('.total_cost').empty().append(values.total_cost)
                 })
-
                 $('.laundry_and_payment_status_summary_2').each(function (){
                     $(this).find('.phone_number').empty().append(values.phone)
                     $(this).find('.laundry_quantity').empty().append(values.laundry_quantity)
@@ -122,7 +113,6 @@
                         case 'Partial Payment': $(this).find('.payment_status').empty().append(values.payment_status + ' ( ' + values.initial_payment + ' /= )')
                         break;
                     }
-
                 })
             })
             $('.previous_payment_status').on('click', function () {

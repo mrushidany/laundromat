@@ -1,6 +1,5 @@
 @extends('home.main')
 
-
 @section('navbar')
     <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
         <div class="navbar-nav ml-auto py-0">
@@ -30,6 +29,7 @@
             </div>
         </div>
     </div>
+
     <div class="container-fluid pt-5 pb-3">
         <div class="container">
             <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Our Services</h6>
