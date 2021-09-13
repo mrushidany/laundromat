@@ -146,24 +146,32 @@ class LaundryController extends Controller
             ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']); ;
 
 
-        return DataTables::of($laundry_list)->make(true);
-//            $laundry_list = DB::table('laundry_details')
-//                ->leftJoin('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
-//                ->leftJoin('laundry_machine_details','laundry_machine_details.laundry_details_id','=','laundry_details.id')
-//                ->leftJoin('laundry_costs','laundry_costs.laundry_details_id','=','laundry_details.id')
-//                ->select('laundry_details.id','full_name','phone','quantity','amount','pickup_date','laundry_details.created_at');
-//            return DataTables::of($laundry_list)
-//                ->addColumn('full_name', function ($list) {
-//                    return '<a href="">'. $list->full_name .'</a>';
-//                })
+        return DataTables::of($laundry_list)
+                ->addColumn('full_name', function ($list) {
+                    return '<a href="">'. $list->full_name .'</a>';
+                })
+                ->addColumn('payment_status', function ($list){
+                   switch ($list->payment_status){
+                       case 'Paid' : return '<span class="mt-2 badge badge-success">Paid</span>';
+                       break;
+                       case 'Not Paid' : return '<span class="mt-2 badge badge-pill badge-danger">Not Paid</span>';
+                       break;
+                       case 'Partial Payment' : return '<span class="mt-2 badge badge-pill badge-warning">Partial Payment</span>';
+                       break;
+                   }
+                })
+            ->addColumn('created_at',function ($list){
+                return $list->created_at->format('d/m/Y H:i:s');
+            })
+                ->rawColumns(['full_name','payment_status','created_at'])
+                ->make(true);
 //                ->addColumn('action', function ($list){
 //                    $button  = '';
 //                    $button .= '<a style="padding-right: 2px" href="javascript:edit(\''. route('laundry.edit', $list->id) . '\')" class="button-icon button btn btn-sm rounded-small btn-info"><span><i class="fa fa-edit  m-0"></i></span></a>&nbsp;&nbsp;';
 //                    $button .= '<a href="javascript:destroy(\''. route('laundry.destroy', $list->id) . '\')" class="button-icon button btn btn-sm rounded-small btn-danger"><span><i class="fa fa-trash m-0"></i></span></a>';
 //                    return '<nobr>' . $button . '</nobr>';
 //                })
-//                ->rawColumns(['full_name','action'])
-//                ->make(true);
+
         }
 
 }

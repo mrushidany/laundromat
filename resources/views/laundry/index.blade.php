@@ -62,7 +62,7 @@
                 {data: 'quantity', name: 'quantity'},
                 {data: 'amount', name: 'amount'},
                 {data: 'created_at', name: 'created_at'},
-                {data: 'payment_status', name: 'payment_status'},
+                {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
             ],
 
         });
