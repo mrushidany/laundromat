@@ -61,7 +61,7 @@ class LaundryController extends Controller
                 if (isset($laundry_details->id)) {
                     $laundry_costs = new LaundryCost();
                     $laundry_costs->laundry_details_id = $laundry_details->id;
-                    $laundry_costs->amount = $request->total_cost.' '.'/=';
+                    $laundry_costs->amount = $request->total_cost;
                     $laundry_costs->save();
                 }
                 DB::commit();
