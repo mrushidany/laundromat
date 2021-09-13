@@ -88,7 +88,6 @@
                 var values = {};
                 $laundry_detail_form.each(function (){
                     values[this.name] = $(this).val()
-                    console.log(values.drying_machine)
                     return values
                 })
                 $laundry_payment_form.each(function (){
@@ -123,8 +122,6 @@
             $('.previous_payment_status').on('click', function () {
                 $(this).closest('li').find('#payment').trigger('change','class');
             })
-
-
 
         })
     </script>

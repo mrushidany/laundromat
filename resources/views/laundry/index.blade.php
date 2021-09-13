@@ -32,10 +32,11 @@
                             <tr role="row">
                                 <th>Client Name</th>
                                 <th>Phone Number</th>
+                                <th>Machine Selected</th>
                                 <th>Quantity</th>
-                                <th>Total Cost</th>
+                                <th>Cost to be Paid</th>
                                 <th>Registered On</th>
-                                <th>Pickup Date</th>
+                                <th>Payment Status</th>
                             </thead>
                         </table>
                     </div>
@@ -49,19 +50,20 @@
 @section('scripts')
     <script>
         let main_datatable = $('.laundromat_table').DataTable({
-            {{--processing: false,--}}
-            {{--serverSide: false,--}}
-            {{--lengthMenu: [[10,25,50],[10,25,50]],--}}
+            processing: true,
+            serverSide: true,
+            lengthMenu: [[10,25,50],[10,25,50]],
 
-            {{--ajax: '{{ route('laundry_list') }}',--}}
-            {{--columns: [--}}
-            {{--    {data: 'full_name', name: 'full_name'},--}}
-            {{--    {data: 'phone', name: 'phone'},--}}
-            {{--    {data: 'quantity', name: 'quantity'},--}}
-            {{--    {data: 'amount', name: 'amount'},--}}
-            {{--    {data: 'created_at', name: 'created_at'},--}}
-            {{--    {data: 'pickup_date', name: 'pickup_date'},--}}
-            {{--],--}}
+            ajax: '{{ route('laundry_list') }}',
+            columns: [
+                {data: 'full_name', name: 'full_name'},
+                {data: 'phone', name: 'phone'},
+                {data: 'selected_machines', name: 'selected_machines'},
+                {data: 'quantity', name: 'quantity'},
+                {data: 'amount', name: 'amount'},
+                {data: 'created_at', name: 'created_at'},
+                {data: 'payment_status', name: 'payment_status'},
+            ],
 
         });
     </script>
