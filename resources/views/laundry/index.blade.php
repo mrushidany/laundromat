@@ -41,7 +41,7 @@
                             <tfoot>
                             <tr role="row">
                                 <th colspan="4" class="text-center">Total</th>
-                                <th id="laundry_table_total_cost"></th>
+                                <th class="bg-blue font-size-14" id="laundry_table_total_cost"></th>
                             </tr>
                             </tfoot>
                         </table>
@@ -70,6 +70,36 @@
                 {data: 'created_at', name: 'created_at'},
                 {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
             ],
+            "footerCallback" : function (row, data, start, end, display) {
+                var api = this.api(), data;
+
+                //Removing the formating to get the interger data
+                var intVal = function (i) {
+                    return typeof i === 'string' ? i.replace(' /=', '')*1 :
+                        typeof i == "number" ?
+                            i : 0;
+                }
+                // Total over all pages
+                total = api
+                    .column( 4 )
+                    .data()
+                    .reduce( function (a, b) {
+                        return intVal(a) + intVal(b);
+                    }, 0 );
+
+                // Total over this page
+                pageTotal = api
+                    .column( 4, { page: 'current'} )
+                    .data()
+                    .reduce( function (a, b) {
+                        return intVal(a) + intVal(b);
+                    }, 0 );
+
+                // Update footer
+                $( api.column( 4 ).footer() ).html(
+                    'Tshs '+pageTotal.toLocaleString() +' ( Tshs '+ total.toLocaleString() +' total)'
+                );
+            }
 
 
         });
