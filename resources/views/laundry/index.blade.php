@@ -58,17 +58,20 @@
         let main_datatable = $('.laundromat_table').DataTable({
             processing: true,
             serverSide: true,
+            order: [5, 'desc'],
             lengthMenu: [[10,25,50],[10,25,50]],
             ajax: '{{ route('laundry_list') }}',
             columns: [
-                {data: 'full_name', name: 'full_name'},
-                {data: 'phone', name: 'phone'},
-                {data: 'selected_machines', name: 'selected_machines'},
-                {data: 'quantity', name: 'quantity'},
-                {data: 'amount', name: 'amount'},
+                {data: 'full_name', name: 'full_name', orderable: false},
+                {data: 'phone', name: 'phone', orderable: false},
+                {data: 'selected_machines', name: 'selected_machines', orderable: false},
+                {data: 'quantity', name: 'quantity', orderable: false},
+                {data: 'amount', name: 'amount', orderable: false},
                 {data: 'created_at', name: 'created_at'},
                 {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
             ],
+
+
         });
     </script>
 
