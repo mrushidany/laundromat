@@ -51,6 +51,11 @@
                                         <input type="date" class="form-control" id="exampleInputdate" aria-label="Default" aria-describedby="inputGroup-sizing-small"  value="2019-12-18">
                                     </div>
                                 </div>
+                                <div class="col">
+                                    <div class="input-group input-group-sm mb-4">
+                                        <button type="button" class="btn btn-success btn-sm mt-2" style="line-height: 12px;"><i class="ri-settings-4-fill pr-0"></i>Filter</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div><hr>
