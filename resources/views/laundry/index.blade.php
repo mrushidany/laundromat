@@ -80,27 +80,23 @@
                             i : 0;
                 }
                 // Total over all pages
-                total = api
-                    .column( 4 )
-                    .data()
-                    .reduce( function (a, b) {
-                        return intVal(a) + intVal(b);
-                    }, 0 );
+                data = api.column( 4 ).data();
+                total = data.length ? data.reduce( function (a, b) {
+                    return intVal(a) + intVal(b); } ) : 0;
 
                 // Total over this page
-                pageTotal = api
-                    .column( 4, { page: 'current'} )
-                    .data()
-                    .reduce( function (a, b) {
-                        return intVal(a) + intVal(b);
-                    }, 0 );
+                data = api.column( 4, { page: 'current'} ).data();
+                pageTotal = data.length ? data.reduce( function (a, b) {
+                    return intVal(a) + intVal(b); } ) : 0;
+                console.log(total + pageTotal)
 
                 // Update footer
                 $( api.column( 4 ).footer() ).html(
-                    'Tshs '+pageTotal.toLocaleString() +' ( Tshs '+ total.toLocaleString() +' total)'
-                );
-            }
+                    'Tshs '+pageTotal.toLocaleString() +' ( Tshs '+ (total).toLocaleString() +' total)'
 
+                );
+
+            }
 
         });
     </script>

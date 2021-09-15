@@ -42,18 +42,7 @@
                 </ul>
             </nav>
         </div>
-        <div class="sidebar-bottom-menu">
-            <nav class="iq-sidebar-menu">
-                <div class="text-center mt-3">
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <x-responsive-nav-link :href="route('logout')" class="btn btn-primary" onclick="event.preventDefault(); this.closest('form').submit();">
-                            <i class="las la-sign-out-alt"></i>{{ __('Logout') }}
-                        </x-responsive-nav-link>
-                    </form>
-                </div>
-            </nav>
-        </div>
+
     </div>
 </div>
 
