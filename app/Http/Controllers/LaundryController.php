@@ -96,7 +96,7 @@ class LaundryController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -155,7 +155,7 @@ class LaundryController extends Controller
 
         return DataTables::of($laundry_list)
                 ->addColumn('full_name', function ($list) {
-                    return '<a href="">'. $list->full_name .'</a>';
+                    return '<a href="'.route('laundry.show',$list->id).'">'. $list->full_name .'</a>';
                 })
                 ->addColumn('payment_status', function ($list){
                    switch ($list->payment_status){

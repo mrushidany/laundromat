@@ -72,12 +72,18 @@
                                         <tr role="row">
                                             <th>Client Name</th>
                                             <th>Phone Number</th>
+                                            <th>Machine Selected</th>
                                             <th>Quantity</th>
-                                            <th>Total Cost</th>
+                                            <th>Cost to be Paid</th>
                                             <th>Registered On</th>
-                                            <th>Pickup Date</th>
-                                            <th></th>
+                                            <th>Payment Status</th>
                                         </thead>
+                                        <tfoot>
+                                        <tr role="row">
+                                            <th colspan="4" class="text-center">Total</th>
+                                            <th class="bg-blue font-size-14"></th>
+                                        </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
                             </div>
@@ -97,20 +103,47 @@
 @section('scripts')
     <script>
         let main_datatable = $('.laundromat_table').DataTable({
-            // processing: true,
-            // serverSide: true,
-            {{--lengthMenu: [[10,25,50],[10,25,50]],--}}
-            {{--ajax: '{{ route('laundry_list') }}',--}}
-            {{--columns: [--}}
-            {{--    {data: 'full_name', name: 'full_name'},--}}
-            {{--    {data: 'phone', name: 'phone'},--}}
-            {{--    {data: 'quantity', name: 'quantity'},--}}
-            {{--    {data: 'amount', name: 'amount'},--}}
-            {{--    {data: 'created_at', name: 'created_at'},--}}
-            {{--    {data: 'pickup_date', name: 'pickup_date'},--}}
-            {{--    {data: 'action', name: 'action', orderable: false, searchable: false}--}}
-            {{--],--}}
+            processing: true,
+            serverSide: true,
+            order: [5, 'desc'],
+            lengthMenu: [[10,25,50],[10,25,50]],
+            ajax: '{{ route('laundry_list') }}',
+            columns: [
+                {data: 'full_name', name: 'full_name', orderable: false},
+                {data: 'phone', name: 'phone', orderable: false},
+                {data: 'selected_machines', name: 'selected_machines', orderable: false},
+                {data: 'quantity', name: 'quantity', orderable: false},
+                {data: 'amount', name: 'amount', orderable: false},
+                {data: 'created_at', name: 'created_at'},
+                {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
+            ],
+            "footerCallback" : function (row, data, start, end, display) {
+                var api = this.api(), data;
+
+                //Removing the formating to get the interger data
+                var intVal = function (i) {
+                    return typeof i === 'string' ? i.replace(' /=', '')*1 :
+                        typeof i == "number" ?
+                            i : 0;
+                }
+                // Total over all pages
+                data = api.column( 4 ).data();
+                total = data.length ? data.reduce( function (a, b) {
+                    return intVal(a) + intVal(b); } ) : 0;
+
+                // Total over this page
+                data = api.column( 4, { page: 'current'} ).data();
+                pageTotal = data.length ? data.reduce( function (a, b) {
+                    return intVal(a) + intVal(b); } ) : 0;
+                console.log(total + pageTotal)
+
+                // Update footer
+                $( api.column( 4 ).footer() ).html(
+                    'Tshs '+pageTotal.toLocaleString() +' ( Tshs '+ (total).toLocaleString() +' total)'
+                );
+            }
         });
     </script>
+
 @endsection
 

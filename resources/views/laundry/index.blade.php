@@ -16,9 +16,6 @@
                             <a  class="button btn btn-primary btn-sm  mr-2" href="{{route('laundry.create')}}"><i class="ri-add-line m-0"></i> Add New Laundry</a>
                         </div>
                     </div>
-                    <div class="card-footer d-flex justify-content-between">
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -26,6 +23,37 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="form-group col-md-9">
+                                <select class="form-control ">
+                                    <option disabled selected>Recent Laundry</option>
+                                    <option>Today</option>
+                                    <option>Yesterday</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-6">
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="input-group input-group-sm mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-default">From</span>
+                                        </div>
+                                        <input type="date" class="form-control" id="exampleInputdate" aria-label="Default" aria-describedby="inputGroup-sizing-small"  value="2019-12-18">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group input-group-sm mb-4 ">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-default">To</span>
+                                        </div>
+                                        <input type="date" class="form-control" id="exampleInputdate" aria-label="Default" aria-describedby="inputGroup-sizing-small"  value="2019-12-18">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><hr>
                     <div class="table-responsive">
                         <table  class="table data-table table-striped table-bordered dataTable laundromat_table" role="grid" aria-describedby="datatable_info">
                             <thead>
