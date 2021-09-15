@@ -141,10 +141,17 @@ class LaundryController extends Controller
     }
 
     public function laundry_list(){
-        $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
-            ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
-            ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
-
+        $laundry_list = [];
+        if(Auth::user()->hasRole('owner')){
+            $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+                ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
+                ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+        } else {
+            $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+                ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
+                ->where('laundry_details.issued_by', '=', Auth::user()->id)
+                ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+        }
 
         return DataTables::of($laundry_list)
                 ->addColumn('full_name', function ($list) {

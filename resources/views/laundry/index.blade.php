@@ -93,11 +93,8 @@
                 // Update footer
                 $( api.column( 4 ).footer() ).html(
                     'Tshs '+pageTotal.toLocaleString() +' ( Tshs '+ (total).toLocaleString() +' total)'
-
                 );
-
             }
-
         });
     </script>
 
