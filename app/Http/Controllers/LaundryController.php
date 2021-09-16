@@ -196,31 +196,52 @@ class LaundryController extends Controller
               $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
                   ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
                   ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+              return DataTables::of($laundry_list)
+                  ->addColumn('full_name', function ($list) {
+                      return '<a href="'.route('laundry.show',$list->id).'">'. $list->full_name .'</a>';
+                  })
+                  ->addColumn('payment_status', function ($list){
+                      switch ($list->payment_status){
+                          case 'Paid' : return '<span class="mt-2 badge badge-success">Paid</span>';
+                              break;
+                          case 'Not Paid' : return '<span class="mt-2 badge badge-pill badge-danger">Not Paid</span>';
+                              break;
+                          case 'Partial Payment' : return '<span class="mt-2 badge badge-pill badge-warning">Partial Payment</span>';
+                              break;
+                      }
+                  })
+                  ->addColumn('created_at',function ($list){
+                      return $list->created_at->format('d/m/Y H:i:s');
+                  })
+                  ->addColumn('action', function () {
+                  })
+                  ->rawColumns(['full_name','payment_status','created_at','action'])
+                  ->make(true);
           } else {
               $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
                   ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
                   ->where('laundry_details.issued_by', '=', Auth::user()->id)
                   ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+              return DataTables::of($laundry_list)
+                  ->addColumn('full_name', function ($list) {
+                      return '<a href="'.route('laundry.show',$list->id).'">'. $list->full_name .'</a>';
+                  })
+                  ->addColumn('payment_status', function ($list){
+                      switch ($list->payment_status){
+                          case 'Paid' : return '<span class="mt-2 badge badge-success">Paid</span>';
+                              break;
+                          case 'Not Paid' : return '<span class="mt-2 badge badge-pill badge-danger">Not Paid</span>';
+                              break;
+                          case 'Partial Payment' : return '<span class="mt-2 badge badge-pill badge-warning">Partial Payment</span>';
+                              break;
+                      }
+                  })
+                  ->addColumn('created_at',function ($list){
+                      return $list->created_at->format('d/m/Y H:i:s');
+                  })
+                  ->rawColumns(['full_name','payment_status','created_at'])
+                  ->make(true);
           }
-          return DataTables::of($laundry_list)
-              ->addColumn('full_name', function ($list) {
-                  return '<a href="'.route('laundry.show',$list->id).'">'. $list->full_name .'</a>';
-              })
-              ->addColumn('payment_status', function ($list){
-                  switch ($list->payment_status){
-                      case 'Paid' : return '<span class="mt-2 badge badge-success">Paid</span>';
-                          break;
-                      case 'Not Paid' : return '<span class="mt-2 badge badge-pill badge-danger">Not Paid</span>';
-                          break;
-                      case 'Partial Payment' : return '<span class="mt-2 badge badge-pill badge-warning">Partial Payment</span>';
-                          break;
-                  }
-              })
-              ->addColumn('created_at',function ($list){
-                  return $list->created_at->format('d/m/Y H:i:s');
-              })
-              ->rawColumns(['full_name','payment_status','created_at'])
-              ->make(true);
 
         }
 

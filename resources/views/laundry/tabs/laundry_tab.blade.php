@@ -48,13 +48,25 @@
                     <table  class="table data-table table-striped table-bordered dataTable laundromat_table" role="grid" aria-describedby="datatable_info">
                         <thead>
                         <tr role="row">
-                            <th>Client Name</th>
-                            <th>Phone Number</th>
-                            <th>Machine Selected</th>
-                            <th>Quantity</th>
-                            <th>Cost to be Paid</th>
-                            <th>Registered On</th>
-                            <th>Payment Status</th>
+                            @if (Auth::user()->hasRole('owner'))
+                                <th>Client Name</th>
+                                <th>Phone Number</th>
+                                <th>Machine Selected</th>
+                                <th>Quantity</th>
+                                <th>Cost to be Paid</th>
+                                <th>Registered On</th>
+                                <th>Payment Status</th>
+                                <th>Action</th>
+                             @else
+                                <th>Client Name</th>
+                                <th>Phone Number</th>
+                                <th>Machine Selected</th>
+                                <th>Quantity</th>
+                                <th>Cost to be Paid</th>
+                                <th>Registered On</th>
+                                <th>Payment Status</th>
+                            @endif
+
                         </thead>
                         <tfoot>
                         <tr role="row">
