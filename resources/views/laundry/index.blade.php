@@ -65,9 +65,7 @@
                     {data: 'amount', name: 'amount', orderable: false},
                     {data: 'created_at', name: 'created_at', searchable: true},
                     {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
-                    @if (Auth::user()->hasRole('owner'))
                     {data: 'action', name: 'action', searchable: false, orderable: false},
-                    @endif
                 ],
 
                 "footerCallback" : function (row, data, start, end, display) {
