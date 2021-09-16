@@ -21,14 +21,14 @@
                                 <a class="nav-link active" id="home-tab-three" data-toggle="tab" href="#laundry_tab" role="tab" aria-controls="home" aria-selected="true">Laundry</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab-three" data-toggle="tab" href="#profile-three" role="tab" aria-controls="profile" aria-selected="false">Payments & Receipts</a>
+                                <a class="nav-link" id="profile-tab-three" data-toggle="tab" href="#payments_and_receipts_tab" role="tab" aria-controls="profile" aria-selected="false">Payments & Receipts</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent-4">
                             <div class="tab-pane fade show active" id="laundry_tab" role="tabpanel" aria-labelledby="home-tab-three">
                                 @include('laundry.tabs.laundry_tab')
                             </div>
-                            <div class="tab-pane fade" id="profile-three" role="tabpanel" aria-labelledby="profile-tab-three">
+                            <div class="tab-pane fade" id="payments_and_receipts_tab" role="tabpanel" aria-labelledby="profile-tab-three">
                                 @include('laundry.tabs.payment_and_receipt_tab')
                             </div>
 
