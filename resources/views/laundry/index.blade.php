@@ -5,85 +5,39 @@
         <div class="row">
             <div class="col-sm-12 col-lg-12">
                 <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="ri-home-4-line mr-1 float-left"></i>Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Laundry</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
                     <div class="card-body">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="ri-home-4-line mr-1 float-left"></i>Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Laundry</li>
-                            </ol>
-                        </nav>
-                        <div class="btn-group btn-group-toggle offset-md-10">
-                            <a  class="button btn btn-primary btn-sm  mr-2" href="{{route('laundry.create')}}"><i class="ri-add-line m-0"></i> Add New Laundry</a>
+                        <ul class="nav nav-tabs" id="myTab-three" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab-three" data-toggle="tab" href="#laundry_tab" role="tab" aria-controls="home" aria-selected="true">Laundry</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab-three" data-toggle="tab" href="#profile-three" role="tab" aria-controls="profile" aria-selected="false">Payments & Receipts</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent-4">
+                            <div class="tab-pane fade show active" id="laundry_tab" role="tabpanel" aria-labelledby="home-tab-three">
+                                @include('laundry.tabs.laundry_tab')
+                            </div>
+                            <div class="tab-pane fade" id="profile-three" role="tabpanel" aria-labelledby="profile-tab-three">
+                                @include('laundry.tabs.payment_and_receipt_tab')
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-         <div class="row col-md-12">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="form-group col-md-9">
-                                <select class="form-control" name="recent_laundry">
-                                    <option disabled selected value="recent_laundry">Recent Laundry</option>
-                                    <option value="{{\Illuminate\Support\Carbon::now()->format('Y-m-d')}}">Today</option>
-                                    <option value="{{\Illuminate\Support\Carbon::yesterday()->format('Y-m-d')}}">Yesterday</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-6">
-                            <div class="form-row">
-                                <div class="col">
-                                    <div class="input-group input-group-sm mb-4">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroup-sizing-default">From</span>
-                                        </div>
-                                        <input type="date" name="from_specific_date" class="form-control"  aria-label="Default" aria-describedby="inputGroup-sizing-small"  value="">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="input-group input-group-sm mb-4 ">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroup-sizing-default">To</span>
-                                        </div>
-                                        <input type="date" name="to_desired_date" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-small"  value="">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="input-group input-group-sm mb-4">
-                                        <button type="button" class="btn btn-success btn-sm mt-2 date_laundry_details_filter" style="line-height: 12px;"><i class="ri-settings-4-fill pr-0"></i>Filter</button>&nbsp;&nbsp;
-                                        <button type="button" class="btn btn-primary btn-sm mt-2 date_laundry_details_refresh" style="line-height: 12px;"><i class="ri-loader-4-fill pr-0"></i>Refresh</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><hr>
-                    <div class="table-responsive">
-                        <table  class="table data-table table-striped table-bordered dataTable laundromat_table" role="grid" aria-describedby="datatable_info">
-                            <thead>
-                            <tr role="row">
-                                <th>Client Name</th>
-                                <th>Phone Number</th>
-                                <th>Machine Selected</th>
-                                <th>Quantity</th>
-                                <th>Cost to be Paid</th>
-                                <th>Registered On</th>
-                                <th>Payment Status</th>
-                            </thead>
-                            <tfoot>
-                            <tr role="row">
-                                <th colspan="4" class="text-center">Total</th>
-                                <th class="bg-blue font-size-14" id="laundry_table_total_cost"></th>
-                            </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     </div>
 
 @endsection
@@ -138,7 +92,6 @@
                     );
                 }
             });
-
            $('.date_laundry_details_filter').on('click', function (e){
                var from_specific_date = $('input[name="from_specific_date"]').val();
                var to_desired_date = $('input[name="to_desired_date"]').val();
