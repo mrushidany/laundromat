@@ -3,11 +3,6 @@
         <a  class="button btn btn-primary btn-sm  mr-2" href="{{route('laundry.create')}}"><i class="ri-add-line m-0"></i> Add New Laundry</a>
     </div>
 </div><br><br>
-<div class="row">
-    <div class="col-sm-12 col-lg-12">
-
-    </div>
-</div>
 <div class="row col-md-12">
     <div class="col-sm-12">
         <div class="card">

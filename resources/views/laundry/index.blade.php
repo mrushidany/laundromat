@@ -43,8 +43,8 @@
 @endsection
 @section('scripts')
     <script type="application/javascript">
-        let main_datatable = '';
-            main_datatable = $('.laundromat_table').DataTable({
+
+          let main_datatable = $('.laundromat_table').DataTable({
                 processing: true,
                 serverSide: true,
                 order: [5, 'desc'],
@@ -97,9 +97,9 @@
                var to_desired_date = $('input[name="to_desired_date"]').val();
 
                if(from_specific_date != '' && to_desired_date != ''){
-                   main_datatable.destroy();
-                   load_datatable('',from_specific_date,to_desired_date)
-                   main_datatable.draw();
+                  // main_datatable.destroy();
+                   //load_datatable('',from_specific_date,to_desired_date)
+                   //main_datatable.draw();
                }else{
                    alert('Both Dates are required!')
                }
@@ -109,14 +109,14 @@
                $('input[name="to_desired_date"]').val('');
                $('select[name="recent_laundry"]').val('recent_laundry');
 
-              main_datatable.destroy();
-               main_datatable.draw();
+               //main_datatable.destroy();
+              // main_datatable.draw();
            })
            $('select[name="recent_laundry"]').on('change', function (e){
               var recent_laundry = $(this).val();
               if(recent_laundry != ''){
-                  main_datatable.destroy();
-                  load_datatable(recent_laundry,'','')
+                //  main_datatable.destroy();
+                 // load_datatable(recent_laundry,'','')
               }else{
                   alert('Nothing is selected')
               }
