@@ -27,9 +27,9 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="form-group col-md-9">
                                 <select class="form-control" name="recent_laundry">
-                                    <option disabled selected>Recent Laundry</option>
-                                    <option value="{{\Illuminate\Support\Carbon::now()->format('d/m/Y')}}">Today</option>
-                                    <option value="{{\Illuminate\Support\Carbon::yesterday()->format('d/m/Y')}}">Yesterday</option>
+                                    <option disabled selected value="recent_laundry">Recent Laundry</option>
+                                    <option value="{{\Illuminate\Support\Carbon::now()->format('Y-m-d')}}">Today</option>
+                                    <option value="{{\Illuminate\Support\Carbon::yesterday()->format('Y-m-d')}}">Yesterday</option>
                                 </select>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                 <div class="col">
                                     <div class="input-group input-group-sm mb-4">
                                         <button type="button" class="btn btn-success btn-sm mt-2 date_laundry_details_filter" style="line-height: 12px;"><i class="ri-settings-4-fill pr-0"></i>Filter</button>&nbsp;&nbsp;
-                                        <button type="button" class="btn btn-primary btn-sm mt-2 date_laundry_details_filter" style="line-height: 12px;"><i class="ri-settings-4-fill pr-0"></i>Refresh</button>
+                                        <button type="button" class="btn btn-primary btn-sm mt-2 date_laundry_details_refresh" style="line-height: 12px;"><i class="ri-loader-4-fill pr-0"></i>Refresh</button>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +89,8 @@
 @endsection
 @section('scripts')
     <script type="application/javascript">
-           let main_datatable = $('.laundromat_table').DataTable({
+        let main_datatable = '';
+            main_datatable = $('.laundromat_table').DataTable({
                 processing: true,
                 serverSide: true,
                 order: [5, 'desc'],
@@ -145,20 +146,31 @@
                if(from_specific_date != '' && to_desired_date != ''){
                    main_datatable.destroy();
                    load_datatable('',from_specific_date,to_desired_date)
+                   main_datatable.draw();
                }else{
                    alert('Both Dates are required!')
                }
+           })
+           $('.date_laundry_details_refresh').on('click', function (e){
+               $('input[name="from_specific_date"]').val('');
+               $('input[name="to_desired_date"]').val('');
+               $('select[name="recent_laundry"]').val('recent_laundry');
 
-
+              main_datatable.destroy();
+               main_datatable.draw();
            })
            $('select[name="recent_laundry"]').on('change', function (e){
-               alert($(this).val())
-               main_datatable.draw();
-               e.preventDefault();
+              var recent_laundry = $(this).val();
+              if(recent_laundry != ''){
+                  main_datatable.destroy();
+                  load_datatable(recent_laundry,'','')
+              }else{
+                  alert('Nothing is selected')
+              }
            })
 
            function load_datatable(recent_laundry = '', from_specific_date = '', to_desired_date = ''){
-               main_datatable = $('.laundromat_table').DataTable({
+              main_datatable = $('.laundromat_table').DataTable({
                    processing: true,
                    serverSide: true,
                    order: [5, 'desc'],

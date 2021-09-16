@@ -142,48 +142,85 @@ class LaundryController extends Controller
     }
 
     public function laundry_list(Request $request){
+      $laundry_list = [];
+//      if($request->ajax()){
+//          if(!empty($request->from_specific_date)){
+//              if(Auth::user()->hasRole('owner')){
+//                  $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+//                      ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
+//                      ->whereBetween('laundry_details.created_at', [$request->from_specific_date,$request->to_desired_date])
+//                      ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+//              } else {
+//                  $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+//                      ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
+//                      ->whereBetween('laundry_details.created_at', [$request->from_specific_date,$request->to_desired_date])
+//                      ->where('laundry_details.issued_by', '=', Auth::user()->id)
+//                      ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+//              }
+//          } if(!empty($request->recent_laundry)){
+//              if(Auth::user()->hasRole('owner')){
+//                  $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+//                      ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
+//                      ->where('laundry_details.created_at', '=', $request->recent_laundry)
+//                      ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+//              } else {
+//                  $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+//                      ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
+//                      ->where('laundry_details.created_at', '=', $request->recent_laundry)
+//                      ->where('laundry_details.issued_by', '=', Auth::user()->id)
+//                      ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+//              }
+//          }
+//          return DataTables::of($laundry_list)
+//              ->addColumn('full_name', function ($list) {
+//                  return '<a href="'.route('laundry.show',$list->id).'">'. $list->full_name .'</a>';
+//              })
+//              ->addColumn('payment_status', function ($list){
+//                  switch ($list->payment_status){
+//                      case 'Paid' : return '<span class="mt-2 badge badge-success">Paid</span>';
+//                          break;
+//                      case 'Not Paid' : return '<span class="mt-2 badge badge-pill badge-danger">Not Paid</span>';
+//                          break;
+//                      case 'Partial Payment' : return '<span class="mt-2 badge badge-pill badge-warning">Partial Payment</span>';
+//                          break;
+//                  }
+//              })
+//              ->addColumn('created_at',function ($list){
+//                  return $list->created_at->format('d/m/Y H:i:s');
+//              })
+//              ->rawColumns(['full_name','payment_status','created_at'])
+//              ->make(true);
+//      }
 
-        if(Auth::user()->hasRole('owner')){
-            $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
-                ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
-                ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
-        } else {
-            $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
-                ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
-                ->where('laundry_details.issued_by', '=', Auth::user()->id)
-                ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
-        }
-
-        return DataTables::of($laundry_list)
-//                ->filter(function ($instance) use ($request) {
-//                    if($request->has('recent_laundry')){
-//                        $instance->where('created_at',$request->get('recent_laundry'));
-//                    }
-//                })
-                ->addColumn('full_name', function ($list) {
-                    return '<a href="'.route('laundry.show',$list->id).'">'. $list->full_name .'</a>';
-                })
-                ->addColumn('payment_status', function ($list){
-                   switch ($list->payment_status){
-                       case 'Paid' : return '<span class="mt-2 badge badge-success">Paid</span>';
-                       break;
-                       case 'Not Paid' : return '<span class="mt-2 badge badge-pill badge-danger">Not Paid</span>';
-                       break;
-                       case 'Partial Payment' : return '<span class="mt-2 badge badge-pill badge-warning">Partial Payment</span>';
-                       break;
-                   }
-                })
-            ->addColumn('created_at',function ($list){
-                return $list->created_at->format('d/m/Y H:i:s');
-            })
-                ->rawColumns(['full_name','payment_status','created_at'])
-                ->make(true);
-//                ->addColumn('action', function ($list){
-//                    $button  = '';
-//                    $button .= '<a style="padding-right: 2px" href="javascript:edit(\''. route('laundry.edit', $list->id) . '\')" class="button-icon button btn btn-sm rounded-small btn-info"><span><i class="fa fa-edit  m-0"></i></span></a>&nbsp;&nbsp;';
-//                    $button .= '<a href="javascript:destroy(\''. route('laundry.destroy', $list->id) . '\')" class="button-icon button btn btn-sm rounded-small btn-danger"><span><i class="fa fa-trash m-0"></i></span></a>';
-//                    return '<nobr>' . $button . '</nobr>';
-//                })
+          if(Auth::user()->hasRole('owner')){
+              $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+                  ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
+                  ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+          } else {
+              $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+                  ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
+                  ->where('laundry_details.issued_by', '=', Auth::user()->id)
+                  ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+          }
+          return DataTables::of($laundry_list)
+              ->addColumn('full_name', function ($list) {
+                  return '<a href="'.route('laundry.show',$list->id).'">'. $list->full_name .'</a>';
+              })
+              ->addColumn('payment_status', function ($list){
+                  switch ($list->payment_status){
+                      case 'Paid' : return '<span class="mt-2 badge badge-success">Paid</span>';
+                          break;
+                      case 'Not Paid' : return '<span class="mt-2 badge badge-pill badge-danger">Not Paid</span>';
+                          break;
+                      case 'Partial Payment' : return '<span class="mt-2 badge badge-pill badge-warning">Partial Payment</span>';
+                          break;
+                  }
+              })
+              ->addColumn('created_at',function ($list){
+                  return $list->created_at->format('d/m/Y H:i:s');
+              })
+              ->rawColumns(['full_name','payment_status','created_at'])
+              ->make(true);
 
         }
 
