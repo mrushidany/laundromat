@@ -12,6 +12,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 use function PHPUnit\Framework\isNull;
 
@@ -140,8 +141,8 @@ class LaundryController extends Controller
         }
     }
 
-    public function laundry_list(){
-        $laundry_list = [];
+    public function laundry_list(Request $request){
+
         if(Auth::user()->hasRole('owner')){
             $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
                 ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
@@ -154,6 +155,11 @@ class LaundryController extends Controller
         }
 
         return DataTables::of($laundry_list)
+//                ->filter(function ($instance) use ($request) {
+//                    if($request->has('recent_laundry')){
+//                        $instance->where('created_at',$request->get('recent_laundry'));
+//                    }
+//                })
                 ->addColumn('full_name', function ($list) {
                     return '<a href="'.route('laundry.show',$list->id).'">'. $list->full_name .'</a>';
                 })
