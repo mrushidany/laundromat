@@ -220,6 +220,17 @@ class LaundryController extends Controller
                   return $list->created_at->format('d/m/Y H:i:s');
               })
               ->addColumn('action', function () {
+                  $div = '<div class="flex align-items-center list-user-action">';
+                  if (Auth::user()->hasRole('owner')) {
+                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Print" data-original-title="Print" href="#"><i class="ri-printer-line"></i></a>&nbsp;&nbsp;';
+                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>&nbsp;&nbsp;';
+                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Delete" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a></div>';
+                  }else {
+                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Print" data-original-title="Print" href="#"><i class="ri-printer-line"></i></a>&nbsp;&nbsp;';
+                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a></div>';
+                  }
+                  return '<nobr>' . $div . '</nobr>';
+
               })
               ->rawColumns(['full_name','payment_status','created_at','action'])
               ->make(true);
