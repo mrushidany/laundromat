@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 use function PHPUnit\Framework\isNull;
+use charlieuki\ReceiptPrinter\ReceiptPrinter;
 
 class LaundryController extends Controller
 {
@@ -219,10 +220,10 @@ class LaundryController extends Controller
               ->addColumn('created_at',function ($list){
                   return $list->created_at->format('d/m/Y H:i:s');
               })
-              ->addColumn('action', function () {
+              ->addColumn('action', function ($list) {
                   $div = '<div class="flex align-items-center list-user-action">';
                   if (Auth::user()->hasRole('owner')) {
-                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Print" data-original-title="Print" href="#"><i class="ri-printer-line"></i></a>&nbsp;&nbsp;';
+                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Print" data-original-title="Print" href="'.route('laundry_print_receipt', $list->id).' "><i class="ri-printer-line"></i></a>&nbsp;&nbsp;';
                       $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>&nbsp;&nbsp;';
                       $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Delete" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a></div>';
                   }else {
@@ -235,5 +236,73 @@ class LaundryController extends Controller
               ->rawColumns(['full_name','payment_status','created_at','action'])
               ->make(true);
         }
+
+    public function print_receipt($id){
+        // Setting parameters
+        $mid = $id;
+        $store_name = config('app.name');
+        $store_address = 'Sinza, Mori Street. Dar es Salaam Tanzania';
+        $store_phone = '0717174734';
+        $store_email = 'info@easywash.co.tz';
+        $store_website = 'easywash.co.tz';
+        $tax_percentage = 18;
+        $transaction_id = 'TX123ABC456';
+        $currency = 'Tshs';
+
+        //Setting the items
+        $laundry_details = LaundryDetail::find($id);
+        $laundry_costs = LaundryCost::where('laundry_details_id',$id)->first();
+        $client = RoutineClient::where('id',$laundry_details->routine_client_id)->first();
+
+        $items = [
+                'name' => $client->full_name,
+                'phone' => $client->phone,
+                'qty' => 20,
+                'price' => 4000,
+                'machines' => $laundry_details->selected_machines,
+                'issued_by' => Auth::user()->name
+        ];
+
+        //Initiate printer
+        $printer = new ReceiptPrinter;
+        $printer->init(
+            config('receiptprinter.connector_type'),
+            config('receiptprinter.connector_descriptor'),
+            config('receiptprinter.connector_port')
+        );
+
+        //Set store information
+        $printer->setStore($mid, $store_name, $store_address, $store_phone, $store_email, $store_website, );
+        //Setting currency
+        $printer->setCurrency($currency);
+        //Adding the items
+        $printer->addItem(
+            $items['name'],
+            $items['phone'],
+            $items['qty'],
+            $items['price'],
+            $items['machines'],
+            $items['issued_by']
+            );
+
+        //Set tax
+        $printer->setTax($tax_percentage);
+        //Calculate Total
+        $printer->calculateSubtotal();
+        $printer->calculateGrandTotal();
+        //Set Transaction Id
+        $printer->setTransactionID($transaction_id);
+        //Set Qr Code
+        $printer->setQRcode(['tid'=> $transaction_id]);
+        //Set Logo
+       // $printer->setLogo(asset('assets/images/easywash_logo.jpeg'));
+
+        //Print Receipt
+        $printer->printReceipt();
+
+        return redirect()->back();
+
+        echo "We are here we want to print receipt ". $id;
+    }
 
 }
