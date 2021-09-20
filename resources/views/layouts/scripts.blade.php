@@ -240,4 +240,8 @@
         btn.prop('disabled', true).text('Saving, Please wait...');
     }
     $('.select2search').select2({'width': '100%'});
+
+    function printReceipt(el){
+        var data = '<input type="button" id="printPage">'
+    }
 </script>
