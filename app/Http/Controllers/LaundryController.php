@@ -8,6 +8,7 @@ use App\Models\LaundryDetail;
 use App\Models\LaundryMachineDetail;
 use App\Models\RoutineClient;
 use Carbon\Carbon;
+use charlieuki\ReceiptPrinter\ReceiptPrinter;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 use function PHPUnit\Framework\isNull;
-use charlieuki\ReceiptPrinter\Facades\ReceiptPrinter;
+
 
 class LaundryController extends Controller
 {
@@ -264,7 +265,7 @@ class LaundryController extends Controller
         ];
 
         //Initiate printer
-        $printer = new ReceiptPrinter;
+        $printer = new ReceiptPrinter();
         $printer->init(
             config('receiptprinter.connector_type'),
             config('receiptprinter.connector_descriptor'),
