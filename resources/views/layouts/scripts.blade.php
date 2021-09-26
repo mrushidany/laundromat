@@ -224,7 +224,7 @@
     {{--// ===== CRUD Operations functions -  end  ==========--}}
 
     function startSpinner() {
-        // $.showLoading({name: 'square-flip'});
+         $.showLoading({name: 'square-flip'});
     }
     function stopSpinner() {
         // $.hideLoading();
@@ -243,5 +243,9 @@
 
     function printReceipt(el){
         var data = '<input type="button" id="printPage">'
+    }
+
+    function updateLaundryPayment(url){
+        startSpinner();
     }
 </script>

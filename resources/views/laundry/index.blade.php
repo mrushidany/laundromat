@@ -31,6 +31,7 @@
                             <div class="tab-pane fade" id="payments_and_receipts_tab" role="tabpanel" aria-labelledby="profile-tab-three">
                                 @include('laundry.tabs.payment_and_receipt_tab')
                             </div>
+                            <div class="iq-loader"></div>
 
                         </div>
                     </div>
@@ -122,7 +123,6 @@
                   alert('Nothing is selected')
               }
            })
-
            function load_datatable(recent_laundry = '', from_specific_date = '', to_desired_date = ''){
               main_datatable = $('.laundromat_table').DataTable({
                    processing: true,

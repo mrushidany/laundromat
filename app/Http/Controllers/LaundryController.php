@@ -211,7 +211,7 @@ class LaundryController extends Controller
                   switch ($list->payment_status){
                       case 'Paid' : return '<span class="mt-2 badge badge-success">Paid</span>';
                           break;
-                      case 'Not Paid' : return '<span class="mt-2 badge badge-pill badge-danger">Not Paid</span>';
+                      case 'Not Paid' : return '<a href="javascript:updateLaundryPayment(\'' . route('laundry.update', $list->id) . '\')"><span class="mt-2 badge badge-pill badge-danger">Not Paid</span></a>';
                           break;
                       case 'Partial Payment' : return '<span class="mt-2 badge badge-pill badge-warning">Partial Payment</span>';
                           break;
@@ -300,7 +300,7 @@ class LaundryController extends Controller
         //Print Receipt
         $printer->printReceipt();
 
-        return redirect()->back();
+        return redirect()->back()->with(['success'=> 'success']);
 
         echo "We are here we want to print receipt ". $id;
     }
