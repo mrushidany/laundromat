@@ -8,6 +8,7 @@
             <a href="{{route('services')}}" class="nav-item nav-link">Services</a>
             <a href="{{route('pricing')}}" class="nav-item nav-link">Pricing</a>
             <a href="" class="nav-item nav-link active">Contact</a>
+            <a href="{{route('login')}}" class="nav-item nav-link">Login</a>
         </div>
     </div>
 @endsection
