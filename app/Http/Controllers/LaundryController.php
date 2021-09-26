@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 use function PHPUnit\Framework\isNull;
-use charlieuki\ReceiptPrinter\ReceiptPrinter as ReceiptPrinter;
+use charlieuki\ReceiptPrinter\Facades\ReceiptPrinter;
 
 class LaundryController extends Controller
 {
