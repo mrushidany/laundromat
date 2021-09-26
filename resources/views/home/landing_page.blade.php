@@ -31,7 +31,7 @@
                 <img class="w-100" src="{{asset('home/img/carousel-2.jpg')}}" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase mb-md-3">Laundry & Dry Cleaning</h4>
+                        <h4 class="text-white text-uppercase mb-md-3"></h4>
                         <h1 class="display-3 text-white mb-md-4">Highly Professional Staff</h1>
                         <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Learn More</a>
                     </div>
