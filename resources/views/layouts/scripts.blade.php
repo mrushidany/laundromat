@@ -33,6 +33,9 @@
         $.ajax({
             url: url,
             type: method,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             beforeSend: function() {
                 startSpinner();
             },
@@ -224,7 +227,7 @@
     {{--// ===== CRUD Operations functions -  end  ==========--}}
 
     function startSpinner() {
-         $.showLoading({name: 'square-flip'});
+        // $.showLoading({name: 'square-flip'});
     }
     function stopSpinner() {
         // $.hideLoading();
@@ -241,11 +244,4 @@
     }
     $('.select2search').select2({'width': '100%'});
 
-    function printReceipt(el){
-        var data = '<input type="button" id="printPage">'
-    }
-
-    function updateLaundryPayment(url){
-        startSpinner();
-    }
 </script>

@@ -133,12 +133,22 @@ class LaundryController extends Controller
     {
         try {
             DB::beginTransaction();
-//            $ = RoutineClient::find($id);
-//            $routine_client->delete();
+            LaundryCost::where('laundry_details_id',$id)->delete();
+            $routine_client = LaundryDetail::where('id',$id)->first();
+            LaundryDetail::find($id)->delete();
+            RoutineClient::find($routine_client->routine_client_id)->delete();
+
+            DB::commit();
+            $data = ['state' => 'Done', 'title' => 'Success', 'msg' => " Record Deleted"];
+            return $request->ajax() ? response()->json($data) : redirect()->back()->with($data);
 
         }catch(QueryException $queryException){
-
+            DB::rollBack();
+            $data =['state' => 'Fail', 'title' => 'Fail', 'msg' => 'Record could not be Deleted'];
+            return $request->ajax() ? response()->json($data) : redirect()->back()->with($data);
         }
+        $data =['state' => 'Fail', 'title' => 'Fail', 'msg' => 'Record could not be Deleted'];
+        return $request->ajax() ? response()->json($data) : redirect()->back()->with($data);
     }
 
     public function laundry_list(Request $request){
@@ -215,12 +225,8 @@ class LaundryController extends Controller
               ->addColumn('action', function ($list) {
                   $div = '<div class="flex align-items-center list-user-action">';
                   if (Auth::user()->hasRole('owner')) {
-                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Print" data-original-title="Print" href="'.route('laundry_print_receipt', $list->id).' "><i class="ri-printer-line"></i></a>&nbsp;&nbsp;';
-                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>&nbsp;&nbsp;';
-                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Delete" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a></div>';
-                  }else {
-                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Print" data-original-title="Print" href="'.route('laundry_print_receipt', $list->id).'"><i class="ri-printer-line"></i></a>&nbsp;&nbsp;';
-                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a></div>';
+                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-original-title="Edit" href="javascript:edit(\''. route('laundry.update', $list->id). '\')"><i class="ri-pencil-line"></i></a>&nbsp;&nbsp;';
+                      $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Delete" data-original-title="Delete" href="javascript:destroy(\''. route('laundry.destroy', $list->id).'\')"><i class="ri-delete-bin-line"></i></a></div>';
                   }
                   return '<nobr>' . $div . '</nobr>';
 
