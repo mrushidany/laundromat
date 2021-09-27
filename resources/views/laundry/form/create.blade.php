@@ -67,7 +67,7 @@
                                         </div>
                                     </div>
                                         <input type="hidden" name="all_machines_selected">
-                                        <button type="submit" name="save" class="btn btn-primary next action-button float-right" value="Save">Save</button>
+                                        <button type="submit" name="save" class="btn btn-primary save_laundry next action-button float-right" value="Save">Save</button>
                                         <button type="button" name="previous" class="btn btn-dark previous_payment_status previous action-button-previous float-right mr-3" value="Previous">Previous</button>                                    </div>
                                 </fieldset>
                             </form>
@@ -118,10 +118,19 @@
                         break;
                     }
                 })
+                $('.save_laundry').on('click', function (){
+                    switch (values.payment_status){
+                        case 'Paid': alert('Printing is Required')
+                         break;
+                    }
+                })
             })
             $('.previous_payment_status').on('click', function () {
                 $(this).closest('li').find('#payment').trigger('change','class');
             })
+
+
+
 
         })
     </script>
