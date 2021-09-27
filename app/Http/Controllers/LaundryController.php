@@ -7,8 +7,6 @@ use App\Models\LaundryCost;
 use App\Models\LaundryDetail;
 use App\Models\LaundryMachineDetail;
 use App\Models\RoutineClient;
-use Carbon\Carbon;
-use charlieuki\ReceiptPrinter\ReceiptPrinter;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -193,17 +191,10 @@ class LaundryController extends Controller
 //              ->rawColumns(['full_name','payment_status','created_at'])
 //              ->make(true);
 //      }
+              $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+                  ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
+                  ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
 
-          if(Auth::user()->hasRole('owner')){
-              $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
-                  ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
-                  ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
-          } else {
-              $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
-                  ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
-                  ->where('laundry_details.issued_by', '=', Auth::user()->id)
-                  ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
-          }
           return DataTables::of($laundry_list)
               ->addColumn('full_name', function ($list) {
                   return '<a href="'.route('laundry.show',$list->id).'">'. $list->full_name .'</a>';
@@ -238,72 +229,5 @@ class LaundryController extends Controller
               ->make(true);
         }
 
-    public function print_receipt($id){
-        // Setting parameters
-        $mid = $id;
-        $store_name = config('app.name');
-        $store_address = 'Sinza, Mori Street. Dar es Salaam Tanzania';
-        $store_phone = '0717174734';
-        $store_email = 'info@easywash.co.tz';
-        $store_website = 'easywash.co.tz';
-        $tax_percentage = 18;
-        $transaction_id = 'TX123ABC456';
-        $currency = 'Tshs';
-
-        //Setting the items
-        $laundry_details = LaundryDetail::find($id);
-        $laundry_costs = LaundryCost::where('laundry_details_id',$id)->first();
-        $client = RoutineClient::where('id',$laundry_details->routine_client_id)->first();
-
-        $items = [
-                'name' => $client->full_name,
-                'phone' => $client->phone,
-                'qty' => 20,
-                'price' => 4000,
-                'machines' => $laundry_details->selected_machines,
-                'issued_by' => Auth::user()->name
-        ];
-
-        //Initiate printer
-        $printer = new ReceiptPrinter();
-        $printer->init(
-            config('receiptprinter.connector_type'),
-            config('receiptprinter.connector_descriptor'),
-            config('receiptprinter.connector_port')
-        );
-
-        //Set store information
-        $printer->setStore($mid, $store_name, $store_address, $store_phone, $store_email, $store_website, );
-        //Setting currency
-        $printer->setCurrency($currency);
-        //Adding the items
-        $printer->addItem(
-            $items['name'],
-            $items['phone'],
-            $items['qty'],
-            $items['price'],
-            $items['machines'],
-            $items['issued_by']
-            );
-
-        //Set tax
-        $printer->setTax($tax_percentage);
-        //Calculate Total
-        $printer->calculateSubtotal();
-        $printer->calculateGrandTotal();
-        //Set Transaction Id
-        $printer->setTransactionID($transaction_id);
-        //Set Qr Code
-        $printer->setQRcode(['tid'=> $transaction_id]);
-        //Set Logo
-       // $printer->setLogo(asset('assets/images/easywash_logo.jpeg'));
-
-        //Print Receipt
-        $printer->printReceipt();
-
-        return redirect()->back()->with(['success'=> 'success']);
-
-        echo "We are here we want to print receipt ". $id;
-    }
 
 }
