@@ -58,16 +58,29 @@
                         d.recent_laundry = $('input[name="recent_laundry"]').val();
                     }
                 },
-                columns: [
-                    {data: 'full_name', name: 'full_name', orderable: false},
-                    {data: 'phone', name: 'phone', orderable: false},
-                    {data: 'selected_machines', name: 'selected_machines', orderable: false},
-                    {data: 'quantity', name: 'quantity', orderable: false},
-                    {data: 'amount', name: 'amount', orderable: false},
-                    {data: 'created_at', name: 'created_at', searchable: true},
-                    {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
-                    {data: 'action', name: 'action', searchable: false, orderable: false},
-                ],
+              @if (Auth::user()->hasRole('owner'))
+              columns: [
+                  {data: 'full_name', name: 'full_name', orderable: false},
+                  {data: 'phone', name: 'phone', orderable: false},
+                  {data: 'selected_machines', name: 'selected_machines', orderable: false},
+                  {data: 'quantity', name: 'quantity', orderable: false},
+                  {data: 'amount', name: 'amount', orderable: false},
+                  {data: 'created_at', name: 'created_at', searchable: true},
+                  {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
+                  {data: 'action', name: 'action', searchable: false, orderable: false},
+              ],
+              @else
+              columns: [
+                  {data: 'full_name', name: 'full_name', orderable: false},
+                  {data: 'phone', name: 'phone', orderable: false},
+                  {data: 'selected_machines', name: 'selected_machines', orderable: false},
+                  {data: 'quantity', name: 'quantity', orderable: false},
+                  {data: 'amount', name: 'amount', orderable: false},
+                  {data: 'created_at', name: 'created_at', searchable: true},
+                  {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
+              ],
+              @endif
+
 
                 "footerCallback" : function (row, data, start, end, display) {
                     var api = this.api(), data;
