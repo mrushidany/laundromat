@@ -216,9 +216,6 @@
     }
     function onModalShown() {
         $('.select2s').select2({'width':'100%'});
-        // $('input, textarea').focusin(function() {
-        //     return $(this).select();
-        // });
 
         if ( typeof modalScripts === 'function' ) {
             modalScripts();
@@ -243,5 +240,11 @@
         btn.prop('disabled', true).text('Saving, Please wait...');
     }
     $('.select2search').select2({'width': '100%'});
+
+    function updateLaundryPayment(id){
+        if(id != null){
+            main_modal.modal('show')
+        }
+    }
 
 </script>

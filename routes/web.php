@@ -43,4 +43,8 @@ Route::group(['middleware' => ['auth']], function (){
 //Testing layouts routes
 Route::get('/test_layout', function (){return view('test_layouts.index');})->name('test');
 
+//Printing Receipt Routes
+use App\Http\Controllers\PrintingReceiptController;
+Route::get('/printing_receipt', [PrintingReceiptController::class,'print_receipt'])->name('print_receipt');
+
 require __DIR__.'/auth.php';

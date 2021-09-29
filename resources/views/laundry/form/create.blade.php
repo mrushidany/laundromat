@@ -119,18 +119,23 @@
                     }
                 })
                 $('.save_laundry').on('click', function (){
-                    switch (values.payment_status){
-                        case 'Paid': alert('Printing is Required')
-                         break;
-                    }
+                   if(values.payment_status === 'Paid'){
+                       $.ajax(
+                           {
+                           url : '{{route('print_receipt')}}',
+                           type: 'GET',
+                           success: function (){
+                           alert('Receipt Printed')
+                       }
+
+                       }
+                       )
+                   }
                 })
             })
             $('.previous_payment_status').on('click', function () {
                 $(this).closest('li').find('#payment').trigger('change','class');
             })
-
-
-
 
         })
     </script>
