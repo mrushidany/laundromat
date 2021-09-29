@@ -45,8 +45,9 @@
 @section('scripts')
     <script type="application/javascript">
 
-          let main_datatable = $('.laundromat_table').DataTable({
+        var table = $('.laundromat_table').DataTable({
                 processing: true,
+                //serverSide: true,
                 order: [5, 'desc'],
                 lengthMenu: [[10,25,50],[10,25,50]],
                 ajax: {
@@ -54,7 +55,7 @@
                     data: function (d){
                         d.from_specific_date = $('input[name="from_specific_date"]').val();
                         d.to_desired_date = $('input[name="to_desired_date"]').val();
-                        d.recent_laundry = $('input[name="recent_laundry"]').val();
+                        d.recent_laundry = $('select[name="recent_laundry"]').val();
                     }
                 },
               @if (Auth::user()->hasRole('owner'))
@@ -79,8 +80,6 @@
                   {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
               ],
               @endif
-
-
                 "footerCallback" : function (row, data, start, end, display) {
                     var api = this.api(), data;
 
@@ -107,84 +106,17 @@
                 }
             });
            $('.date_laundry_details_filter').on('click', function (e){
-               var from_specific_date = $('input[name="from_specific_date"]').val();
-               var to_desired_date = $('input[name="to_desired_date"]').val();
-
-               if(from_specific_date != '' && to_desired_date != ''){
-                  // main_datatable.destroy();
-                   //load_datatable('',from_specific_date,to_desired_date)
-                   //main_datatable.draw();
-               }else{
-                   alert('Both Dates are required!')
-               }
+               main_datatable.draw(true)
            })
            $('.date_laundry_details_refresh').on('click', function (e){
                $('input[name="from_specific_date"]').val('');
                $('input[name="to_desired_date"]').val('');
                $('select[name="recent_laundry"]').val('recent_laundry');
 
-               //main_datatable.destroy();
-              // main_datatable.draw();
            })
            $('select[name="recent_laundry"]').on('change', function (e){
-              var recent_laundry = $(this).val();
-              if(recent_laundry != ''){
-                //  main_datatable.destroy();
-                 // load_datatable(recent_laundry,'','')
-              }else{
-                  alert('Nothing is selected')
-              }
+              table.column($(this).data('column')).search($(this).val()).draw()
            })
-           function load_datatable(recent_laundry = '', from_specific_date = '', to_desired_date = ''){
-              main_datatable = $('.laundromat_table').DataTable({
-                   processing: true,
-                   serverSide: true,
-                   order: [5, 'desc'],
-                   lengthMenu: [[10,25,50],[10,25,50]],
-                   ajax: {
-                       url : '{{ route('laundry_list') }}',
-                       data: {
-                           from_specific_date: from_specific_date,
-                           to_desired_date: to_desired_date,
-                           recent_laundry: recent_laundry
-                       },
-                   },
-                   columns: [
-                       {data: 'full_name', name: 'full_name', orderable: false},
-                       {data: 'phone', name: 'phone', orderable: false},
-                       {data: 'selected_machines', name: 'selected_machines', orderable: false},
-                       {data: 'quantity', name: 'quantity', orderable: false},
-                       {data: 'amount', name: 'amount', orderable: false},
-                       {data: 'created_at', name: 'created_at', searchable: true},
-                       {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
-                   ],
-
-                   "footerCallback" : function (row, data, start, end, display) {
-                       var api = this.api(), data;
-
-                       //Removing the formating to get the interger data
-                       var intVal = function (i) {
-                           return typeof i === 'string' ? i.replace(' /=', '')*1 :
-                               typeof i == "number" ?
-                                   i : 0;
-                       }
-                       // Total over all pages
-                       data = api.column( 4 ).data();
-                       total = data.length ? data.reduce( function (a, b) {
-                           return intVal(a) + intVal(b); } ) : 0;
-
-                       // Total over this page
-                       data = api.column( 4, { page: 'current'} ).data();
-                       pageTotal = data.length ? data.reduce( function (a, b) {
-                           return intVal(a) + intVal(b); } ) : 0;
-
-                       // Update footer
-                       $( api.column( 4 ).footer() ).html(
-                           'Tshs '+pageTotal.toLocaleString() +' ( Tshs '+ (total).toLocaleString() +' total)'
-                       );
-                   }
-               });
-           }
     </script>
 
 @endsection

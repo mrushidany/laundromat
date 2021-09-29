@@ -10,10 +10,10 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="form-group col-md-9">
-                            <select class="form-control" name="recent_laundry">
+                            <select class="form-control" name="recent_laundry" data-column="5">
                                 <option disabled selected value="recent_laundry">Recent Laundry</option>
-                                <option value="{{\Illuminate\Support\Carbon::now()->format('Y-m-d')}}">Today</option>
-                                <option value="{{\Illuminate\Support\Carbon::yesterday()->format('Y-m-d')}}">Yesterday</option>
+                                <option value="{{\Illuminate\Support\Carbon::now()->format('d/m/Y')}}">Today</option>
+                                <option value="{{\Illuminate\Support\Carbon::yesterday()->format('d/m/Y')}}">Yesterday</option>
                             </select>
                         </div>
                     </div>
