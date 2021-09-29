@@ -47,7 +47,6 @@
 
           let main_datatable = $('.laundromat_table').DataTable({
                 processing: true,
-                serverSide: true,
                 order: [5, 'desc'],
                 lengthMenu: [[10,25,50],[10,25,50]],
                 ajax: {
