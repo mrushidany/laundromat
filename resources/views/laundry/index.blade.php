@@ -45,7 +45,7 @@
 @section('scripts')
     <script type="application/javascript">
 
-        var table = $('.laundromat_table').DataTable({
+        const table = $('.laundromat_table').DataTable({
                 processing: true,
                 //serverSide: true,
                 order: [5, 'desc'],
@@ -105,8 +105,16 @@
                     );
                 }
             });
+        table.on('preXhr.dt', function (e, settings, data){
+            data.from_specific_date = $('input[name="from_specific_date"]')
+            data.to_desired_date = $('input[name="to_desired_date"]')
+        })
+        $('select[name="recent_laundry"]').on('change', function (e){
+            table.column($(this).data('column')).search($(this).val()).draw()
+        })
            $('.date_laundry_details_filter').on('click', function (e){
-               main_datatable.draw(true)
+               table.ajax.reload();
+               return false;
            })
            $('.date_laundry_details_refresh').on('click', function (e){
                $('input[name="from_specific_date"]').val('');
@@ -114,9 +122,7 @@
                $('select[name="recent_laundry"]').val('recent_laundry');
 
            })
-           $('select[name="recent_laundry"]').on('change', function (e){
-              table.column($(this).data('column')).search($(this).val()).draw()
-           })
+
     </script>
 
 @endsection

@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth']], function (){
     Route::resource('/laundry',LaundryController::class)->name('*', 'laundry' );
     Route::get('/laundry_list',[LaundryController::class,'laundry_list'])->name('laundry_list' );
     Route::get('laundry_print_receipt/{id}',[LaundryController::class,'print_receipt'])->name('laundry_print_receipt');
+    Route::get('/filter_laundry',[LaundryController::class,'filter_laundry'])->name('filter_laundry');
 });
 
 //Testing layouts routes

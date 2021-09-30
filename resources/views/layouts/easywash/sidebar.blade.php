@@ -10,9 +10,16 @@
     <div id="sidebar-scrollbar" class="data-scrollbar" data-scroll="1">
         <div class="d-block user-info mb-3">
             <div class="text-center mb-4">
-                <div class="d-inline-block doc-img user-image mb-3 rounded position-relative">
-                    <img src="{{asset('/assets/images/user/user-1.jpg')}}" class="img-fluid d-inline-block avatar-110 rounded" alt="logo">
-                </div>
+                @if (Auth::user()->hasRole('wash_man'))
+                    <div class="d-inline-block doc-img user-image mb-3 rounded position-relative">
+                        <img src="{{asset('/assets/images/user/user-6.jpg')}}" class="img-fluid d-inline-block avatar-110 rounded" alt="logo">
+                    </div>
+                @else
+                    <div class="d-inline-block doc-img user-image mb-3 rounded position-relative">
+                        <img src="{{asset('/assets/images/user/user-1.jpg')}}" class="img-fluid d-inline-block avatar-110 rounded" alt="logo">
+                    </div>
+                @endif
+
                 <h4>{{Auth::user()->name}}</h4>
                 <p></p>
             </div>
@@ -35,10 +42,6 @@
                             </div>
                         </li>
                         @endif
-
-
-
-
                 </ul>
             </nav>
         </div>
