@@ -156,6 +156,7 @@ class LaundryController extends Controller
                 $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
                     ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
                     ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+                $paid_laundry_cost = LaundryCost::where('payment_status','Paid')->sum('amount');
 
             return DataTables::of($laundry_list)
                 ->addColumn('full_name', function ($list) {
@@ -183,6 +184,7 @@ class LaundryController extends Controller
                     return '<nobr>' . $div . '</nobr>';
                 })
                 ->rawColumns(['full_name','payment_status','created_at','action'])
+                ->with('total_amount', number_format($paid_laundry_cost))
                 ->make(true);
 
 

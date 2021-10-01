@@ -47,11 +47,15 @@
 
         const table = $('.laundromat_table').DataTable({
                 processing: true,
-                //serverSide: true,
+                serverSide: true,
                 order: [5, 'desc'],
                 lengthMenu: [[10,25,50],[10,25,50]],
                 ajax: {
                     url : '{{ route('laundry_list') }}',
+                    dataSrc : function (data){
+                        total_amount  = data.total_amount;
+                        return data.data;
+                    },
                     data: function (d){
                         d.from_specific_date = $('input[name="from_specific_date"]').val();
                         d.to_desired_date = $('input[name="to_desired_date"]').val();
@@ -80,47 +84,47 @@
                   {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
               ],
               @endif
-                "footerCallback" : function (row, data, start, end, display) {
-                    var api = this.api(), data;
 
-                    //Removing the formating to get the interger data
-                    var intVal = function (i) {
-                        return typeof i === 'string' ? i.replace(' /=', '')*1 :
-                            typeof i == "number" ?
-                                i : 0;
-                    }
-                    // Total over all pages
-                    data = api.column( 4 ).data();
-                    total = data.length ? data.reduce( function (a, b) {
-                        return intVal(a) + intVal(b); } ) : 0;
-
-                    // Total over this page
-                    data = api.column( 4, { page: 'current'} ).data();
-                    pageTotal = data.length ? data.reduce( function (a, b) {
-                        return intVal(a) + intVal(b); } ) : 0;
-
-                    // Update footer
-                    $( api.column( 4 ).footer() ).html(
-                        'Tshs '+pageTotal.toLocaleString() +' ( Tshs '+ (total).toLocaleString() +' total)'
-                    );
-                }
+            drawCallback: function (settings){
+                var api = this.api();
+                $(api.column(4).footer()).html('Tshs : ' + total_amount + ' Paid')
+              }
+                // "footerCallback" : function (row, data, start, end, display) {
+                //     var api = this.api(), data;
+                //
+                //     //Removing the formating to get the interger data
+                //     var intVal = function (i) {
+                //         return typeof i === 'string' ? i.replace(' /=', '')*1 :
+                //             typeof i == "number" ?
+                //                 i : 0;
+                //     }
+                //     // Total over all pages
+                //     data = api.column( 6 ).data();
+                //
+                //     console.log(data)
+                //     total = data.length ? data.reduce( function (a, b) {
+                //         return intVal(a) + intVal(b); } ) : 0;
+                //
+                //     // Total over this page
+                //     data = api.column( 4, { page: 'current'} ).data();
+                //     pageTotal = data.length ? data.reduce( function (a, b) {
+                //         return intVal(a) + intVal(b); } ) : 0;
+                //
+                //     // Update footer
+                //     $( api.column( 4 ).footer() ).html(
+                //         'Tshs '+pageTotal.toLocaleString() +' ( Tshs '+ (total).toLocaleString() +' total)'
+                //     );
+                // }
             });
-        table.on('preXhr.dt', function (e, settings, data){
-            data.from_specific_date = $('input[name="from_specific_date"]')
-            data.to_desired_date = $('input[name="to_desired_date"]')
-        })
         $('select[name="recent_laundry"]').on('change', function (e){
             table.column($(this).data('column')).search($(this).val()).draw()
         })
            $('.date_laundry_details_filter').on('click', function (e){
-               table.ajax.reload();
-               return false;
            })
            $('.date_laundry_details_refresh').on('click', function (e){
                $('input[name="from_specific_date"]').val('');
                $('input[name="to_desired_date"]').val('');
                $('select[name="recent_laundry"]').val('recent_laundry');
-
            })
 
     </script>
