@@ -56,21 +56,6 @@
     }
 
     function destroy(url) {
-        // swal({
-        //         title: "Are you sure?",
-        //         text: "You won't be able to revert this!",
-        //         type: "warning",
-        //         showCancelButton: true,
-        //         cancelButtonText: 'No, cancel!',
-        //         confirmButtonText: "Yes, delete it!",
-        //         confirmButtonColor: "#d33",
-        //         closeOnConfirm: true,
-        //         allowOutsideClick: true
-        //     },
-        //     function () {
-        //         mainAjax(url, 'DELETE');
-        //     });
-
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -84,6 +69,7 @@
                 if (willDelete.value) {
                     // Swal.fire("Deleted ");
                     mainAjax(url, 'DELETE');
+                    main_datatable.draw()
                 } else {
                     // Swal.fire("Fail to delete");
                 }

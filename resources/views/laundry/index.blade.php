@@ -45,7 +45,7 @@
 @section('scripts')
     <script type="application/javascript">
 
-        const table = $('.laundromat_table').DataTable({
+        let main_datatable = $('.laundromat_table').DataTable({
                 processing: true,
                 serverSide: true,
                 order: [5, 'desc'],
@@ -55,11 +55,6 @@
                     dataSrc : function (data){
                         total_amount  = data.total_amount;
                         return data.data;
-                    },
-                    data: function (d){
-                        d.from_specific_date = $('input[name="from_specific_date"]').val();
-                        d.to_desired_date = $('input[name="to_desired_date"]').val();
-                        d.recent_laundry = $('select[name="recent_laundry"]').val();
                     }
                 },
               @if (Auth::user()->hasRole('owner'))
@@ -84,40 +79,13 @@
                   {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
               ],
               @endif
-
             drawCallback: function (settings){
                 var api = this.api();
                 $(api.column(4).footer()).html('Tshs : ' + total_amount + ' Paid')
               }
-                // "footerCallback" : function (row, data, start, end, display) {
-                //     var api = this.api(), data;
-                //
-                //     //Removing the formating to get the interger data
-                //     var intVal = function (i) {
-                //         return typeof i === 'string' ? i.replace(' /=', '')*1 :
-                //             typeof i == "number" ?
-                //                 i : 0;
-                //     }
-                //     // Total over all pages
-                //     data = api.column( 6 ).data();
-                //
-                //     console.log(data)
-                //     total = data.length ? data.reduce( function (a, b) {
-                //         return intVal(a) + intVal(b); } ) : 0;
-                //
-                //     // Total over this page
-                //     data = api.column( 4, { page: 'current'} ).data();
-                //     pageTotal = data.length ? data.reduce( function (a, b) {
-                //         return intVal(a) + intVal(b); } ) : 0;
-                //
-                //     // Update footer
-                //     $( api.column( 4 ).footer() ).html(
-                //         'Tshs '+pageTotal.toLocaleString() +' ( Tshs '+ (total).toLocaleString() +' total)'
-                //     );
-                // }
             });
         $('select[name="recent_laundry"]').on('change', function (e){
-            table.column($(this).data('column')).search($(this).val()).draw()
+            main_datatable.column($(this).data('column')).search($(this).val()).draw()
         })
            $('.date_laundry_details_filter').on('click', function (e){
            })
