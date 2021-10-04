@@ -128,6 +128,11 @@
                        icon : 'error'
                    })
                }
+               if($('input[name="from_specific_date"]').val() && $('input[name="to_desired_date"]').val()){
+                   $('.laundromat_table').DataTable().destroy();
+                   default_datatable(recent_laundry = '', from_specific_date = $('input[name="from_specific_date"]').val(), to_desired_date = $('input[name="to_desired_date"]').val() )
+               }
+
 
            })
            $('.date_laundry_details_refresh').on('click', function (e){
