@@ -44,48 +44,75 @@
 @endsection
 @section('scripts')
     <script type="application/javascript">
+        let main_datatable = '';
+        default_datatable();
 
-        let main_datatable = $('.laundromat_table').DataTable({
+        function default_datatable(recent_laundry = '', from_specific_date = '', to_desired_date = '' ){
+            main_datatable += $('.laundromat_table').DataTable({
                 processing: true,
                 serverSide: true,
                 order: [5, 'desc'],
                 lengthMenu: [[10,25,50],[10,25,50]],
                 ajax: {
                     url : '{{ route('laundry_list') }}',
+                    data : {
+                        recent_laundry : recent_laundry,
+                        from_specific_date : from_specific_date,
+                        to_desired_date : to_desired_date
+                    },
                     dataSrc : function (data){
                         total_amount  = data.total_amount;
                         return data.data;
-                    }
+                    },
                 },
-              @if (Auth::user()->hasRole('owner'))
-              columns: [
-                  {data: 'full_name', name: 'full_name', orderable: false},
-                  {data: 'phone', name: 'phone', orderable: false},
-                  {data: 'selected_machines', name: 'selected_machines', orderable: false},
-                  {data: 'quantity', name: 'quantity', orderable: false},
-                  {data: 'amount', name: 'amount', orderable: false},
-                  {data: 'created_at', name: 'created_at', searchable: true},
-                  {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
-                  {data: 'action', name: 'action', searchable: false, orderable: false},
-              ],
-              @else
-              columns: [
-                  {data: 'full_name', name: 'full_name', orderable: false},
-                  {data: 'phone', name: 'phone', orderable: false},
-                  {data: 'selected_machines', name: 'selected_machines', orderable: false},
-                  {data: 'quantity', name: 'quantity', orderable: false},
-                  {data: 'amount', name: 'amount', orderable: false},
-                  {data: 'created_at', name: 'created_at', searchable: true},
-                  {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
-              ],
-              @endif
-            drawCallback: function (settings){
-                var api = this.api();
-                $(api.column(4).footer()).html('Tshs : ' + total_amount + ' Paid')
-              }
+                @if (Auth::user()->hasRole('owner'))
+                columns: [
+                    {data: 'full_name', name: 'full_name', orderable: false},
+                    {data: 'phone', name: 'phone', orderable: false},
+                    {data: 'selected_machines', name: 'selected_machines', orderable: false},
+                    {data: 'quantity', name: 'quantity', orderable: false},
+                    {data: 'amount', name: 'amount', orderable: false},
+                    {data: 'created_at', name: 'created_at', searchable: true},
+                    {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
+                    {data: 'action', name: 'action', searchable: false, orderable: false},
+                ],
+                @else
+                columns: [
+                    {data: 'full_name', name: 'full_name', orderable: false},
+                    {data: 'phone', name: 'phone', orderable: false},
+                    {data: 'selected_machines', name: 'selected_machines', orderable: false},
+                    {data: 'quantity', name: 'quantity', orderable: false},
+                    {data: 'amount', name: 'amount', orderable: false},
+                    {data: 'created_at', name: 'created_at', searchable: true},
+                    {data: 'payment_status', name: 'payment_status', searchable: false, orderable: false},
+                ],
+                @endif
+                drawCallback: function (settings){
+                    var api = this.api();
+                    $(api.column(4).footer()).html('Tshs : ' + total_amount + ' Paid')
+                }
             });
+        }
+
+        function yesterday(){
+            var yesterday = new Date();
+            var dd = String(yesterday.getDate()-1).padStart(2, '0');
+            var mm = String(yesterday.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = yesterday.getFullYear();
+
+            yesterday = dd + '/' + mm + '/' + yyyy;
+            return yesterday;
+        }
         $('select[name="recent_laundry"]').on('change', function (e){
-            main_datatable.column($(this).data('column')).search($(this).val()).draw()
+            if($(this).val() == yesterday()){
+                var recent_laundry = $(this).val()
+                $('.laundromat_table').DataTable().destroy()
+                default_datatable(recent_laundry)
+            }else{
+                $('.laundromat_table').DataTable().destroy()
+                default_datatable()
+            }
+
         })
            $('.date_laundry_details_filter').on('click', function (e){
            })

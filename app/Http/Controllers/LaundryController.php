@@ -153,13 +153,31 @@ class LaundryController extends Controller
     }
 
     public function laundry_list(Request $request){
+
+        if($request->ajax()){
+            if(!empty($request->recent_laundry)){
+                if($request->recent_laundry == Carbon::yesterday()->format('d/m/Y')){
+                    $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+                        ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
+                        ->whereDate('laundry_details.created_at', Carbon::yesterday()->format('Y-m-d') )
+                        ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+                    $paid_laundry_cost = LaundryCost::where('payment_status','Paid')->whereDate('created_at', Carbon::yesterday()->format('Y-m-d') )->sum('amount');
+                } else if($request->recent_laundry == Carbon::today()->format('d/m/Y')){
+                    $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+                        ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
+                        ->whereDate('laundry_details.created_at', Carbon::today()->format('Y-m-d') )
+                        ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+                    $paid_laundry_cost = LaundryCost::where('payment_status','Paid')->whereDate('created_at', Carbon::today()->format('Y-m-d') )->sum('amount');
+                }
+            }else{
                 $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
                     ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
                     ->whereDate('laundry_details.created_at', Carbon::today()->format('Y-m-d') )
                     ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
+                $paid_laundry_cost = LaundryCost::where('payment_status','Paid')->whereDate('created_at', Carbon::today()->format('Y-m-d') )->sum('amount');
+            }
 
-                $paid_laundry_cost = LaundryCost::where('payment_status','Paid')->sum('amount');
-
+        }
             return DataTables::of($laundry_list)
                 ->addColumn('full_name', function ($list) {
                     return '<a href="'.route('laundry.show',$list->id).'">'. $list->full_name .'</a>';
