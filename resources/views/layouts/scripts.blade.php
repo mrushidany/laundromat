@@ -227,10 +227,5 @@
     }
     $('.select2search').select2({'width': '100%'});
 
-    function updateLaundryPayment(id){
-        if(id != null){
-
-        }
-    }
 
 </script>
