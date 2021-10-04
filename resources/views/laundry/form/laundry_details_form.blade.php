@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-check form-check-inline was-validated">
                         <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" name="drying_machine" class="custom-control-input" id="customControlValidation1" required="">
+                            <input type="checkbox" name="drying_machine" class="custom-control-input" id="customControlValidation1" novalidate>
                             <label class="custom-control-label" for="customControlValidation1">Drying Machine</label>
                             <div class="invalid-feedback">Drying Machine Not Selected</div>
                         </div>
