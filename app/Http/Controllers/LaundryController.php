@@ -198,9 +198,9 @@ class LaundryController extends Controller
                     switch ($list->payment_status){
                         case 'Paid' : return '<span class="mt-2 badge badge-success">Paid</span>';
                             break;
-                        case 'Not Paid' : return '<a href="javascript:updateLaundryPayment(\'' . $list->id . '\')"><span class="mt-2 badge badge-pill badge-danger">Not Paid</span></a>';
+                        case 'Not Paid' : return '<a href="" onclick="event.preventDefault();updateNotPaidPaymentStatus(\''. $list->id . '\')"><span class="mt-2 badge badge-pill badge-danger">Not Paid</span></a >';
                             break;
-                        case 'Partial Payment' : return '<a href="javascript:updateLaundryPayment(\'' . $list->id . '\')"><span class="mt-2 badge badge-pill badge-warning">Partial Payment</span></a>';
+                        case 'Partial Payment' : return '<a href="" onclick="event.preventDefault();updateNotPaidPaymentStatus(\''. $list->id . '\')"><span class="mt-2 badge badge-pill badge-warning">Partial Payment</span></a>';
                             break;
                     }
                 })
@@ -218,6 +218,19 @@ class LaundryController extends Controller
                 ->rawColumns(['full_name','payment_status','created_at','action'])
                 ->with('total_amount', number_format($paid_laundry_cost))
                 ->make(true);
+        }
+
+        public function update_not_paid_payment_status(Request $request){
+            if($request->not_paid){
+                $not_paid = LaundryCost::where('laundry_details_id', $request->id)->first();
+                $not_paid->payment_status = 'Paid';
+                $not_paid->update();
+
+                $data = ['type' => 'success', 'title' => 'Successful', 'text' => 'Payment Status updated successful'];
+                return \Request::ajax() ? response()->json($data) : redirect()->back()->with('data', $data);
+
+
+            }
         }
 
 

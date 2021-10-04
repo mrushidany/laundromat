@@ -229,7 +229,7 @@
 
     function updateLaundryPayment(id){
         if(id != null){
-            main_modal.modal('show')
+
         }
     }
 

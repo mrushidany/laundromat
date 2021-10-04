@@ -38,15 +38,42 @@
                 </div>
             </div>
         </div>
-
     </div>
+    <div class="modal fade modal-md" id="not_paid_modal" tabindex="-1" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title offset-5">Update Not Paid Status</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="total_cost" class="control-label">Total Cost</label>
+                            <input type="text" name="total_cost" class="form-control text-blue font-size-14" readonly value="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="initial_payment" class="control-label">Partial Payment</label>
+                            <input  type="text" name="initial_payment" class="form-control text-blue font-size-14" value="">
+                        </div>
 
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Verify Partial Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 @section('scripts')
     <script type="application/javascript">
         let main_datatable = '';
-        default_datatable();
 
+        default_datatable();
         function default_datatable(recent_laundry = '', from_specific_date = '', to_desired_date = '' ){
             main_datatable = $('.laundromat_table').DataTable({
                 processing: true,
@@ -93,7 +120,6 @@
                 }
             });
         }
-
         function yesterday(){
             var yesterday = new Date();
             var dd = String(yesterday.getDate()-1).padStart(2, '0');
@@ -114,7 +140,7 @@
             }
 
         })
-           $('.date_laundry_details_filter').on('click', function (e){
+        $('.date_laundry_details_filter').on('click', function (e){
                if(!$('input[name="from_specific_date"]').val()){
                     Swal.fire({
                         title: 'Error!',
@@ -133,15 +159,78 @@
                    default_datatable(recent_laundry = '', from_specific_date = $('input[name="from_specific_date"]').val(), to_desired_date = $('input[name="to_desired_date"]').val() )
                }
            })
-           $('.date_laundry_details_refresh').on('click', function (e){
+        $('.date_laundry_details_refresh').on('click', function (e){
                $('input[name="from_specific_date"]').val('');
                $('input[name="to_desired_date"]').val('');
                $('select[name="recent_laundry"]').val('recent_laundry');
                $('.laundromat_table').DataTable().destroy();
                default_datatable();
-
            })
+        function updateNotPaidPaymentStatus(id){
+            Swal.fire({
+                title: 'Update Payment Status',
+                showCancelButton: true,
+                confirmButtonText: 'Update',
+                showLoaderOnConfirm: true,
 
+                preConfirm: function (){
+                    return new Promise(function (resolve) {
+                        $.ajax({
+                            url: '{{route('update_not_paid_payment_status')}}',
+                            type: 'GET',
+                            data : {
+                                id: id,
+                                not_paid : 'Not Paid'
+                            }
+                        }).done(function (data) {
+                            swal.insertQueueStep(data.text)
+                            resolve()
+                            main_datatable.draw()
+                        })
+                    })
+                }
+
+
+            })
+        }
+        $('.laundromat_table').DataTable().on('click','.not_paid', function (e){
+            Swal.fire({
+                title: 'Update Payment Status',
+                showCancelButton: true,
+                confirmButtonText: 'Update',
+                showLoaderOnConfirm: true,
+                preConfirm : function (){
+
+                },
+                preConfirm: (login) => {
+                    return fetch(`//api.github.com/users/${login}`)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(response.statusText)
+                            }
+                            return response.json()
+                        })
+                        .catch(error => {
+                            Swal.showValidationMessage(
+                                `Request failed: ${error}`
+                            )
+                        })
+                },
+                allowOutsideClick: () => !Swal.isLoading()
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: `${result.value.login}'s avatar`,
+                        imageUrl: result.value.avatar_url
+                    })
+                }
+            })
+            e.preventDefault()
+        })
+        $('.laundromat_table').DataTable().on('click','.partial_payment', function (e){
+            e.preventDefault()
+
+        })
     </script>
 
 @endsection
