@@ -48,7 +48,7 @@
         default_datatable();
 
         function default_datatable(recent_laundry = '', from_specific_date = '', to_desired_date = '' ){
-            main_datatable += $('.laundromat_table').DataTable({
+            main_datatable = $('.laundromat_table').DataTable({
                 processing: true,
                 serverSide: true,
                 order: [5, 'desc'],
@@ -109,7 +109,7 @@
                 $('.laundromat_table').DataTable().destroy()
                 default_datatable(recent_laundry)
             }else{
-                $('.laundromat_table').DataTable().destroy()
+                $('.laundromat_table').DataTable().destroy();
                 default_datatable()
             }
 

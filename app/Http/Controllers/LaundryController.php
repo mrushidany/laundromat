@@ -206,8 +206,6 @@ class LaundryController extends Controller
                 ->rawColumns(['full_name','payment_status','created_at','action'])
                 ->with('total_amount', number_format($paid_laundry_cost))
                 ->make(true);
-
-
         }
 
 
