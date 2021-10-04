@@ -115,6 +115,20 @@
 
         })
            $('.date_laundry_details_filter').on('click', function (e){
+               if(!$('input[name="from_specific_date"]').val()){
+                    Swal.fire({
+                        title: 'Error!',
+                        text : 'From Input Date Field is empty',
+                        icon : 'error'
+                    })
+               } else if(!$('input[name="to_desired_date"]').val()){
+                   Swal.fire({
+                       title: 'Error!',
+                       text : 'To Input Date Field is empty',
+                       icon : 'error'
+                   })
+               }
+
            })
            $('.date_laundry_details_refresh').on('click', function (e){
                $('input[name="from_specific_date"]').val('');
