@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Mike42\Escpos\CapabilityProfile;
+use Mike42\Escpos\EscposImage;
 use Mike42\Escpos\ImagickEscposImage;
 use Mike42\Escpos\PrintConnectors\FilePrintConnector;
 use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
@@ -310,14 +311,36 @@ class LaundryController extends Controller
         }
 
     public function test_printing(){
-        $profile = CapabilityProfile::load("default");
-        $connector = new WindowsPrintConnector("POS58 Printer");
-        $printer = new Printer($connector, $profile);
-
-        /* Text */
-        $printer -> text("Nkeno Nacte Credentials:------username: S3747/0010/2017 password: vFBx8gJ5");
-        $printer->feed(4);
-        $printer -> cut();
+//        $profile = CapabilityProfile::load("default");
+//        $connector = new WindowsPrintConnector("POS58 Printer");
+//        $printer = new Printer($connector, $profile);
+//
+//        /* Text */
+//        $printer -> text("Nkeno Nacte Credentials:------username: S3747/0010/2017 password: vFBx8gJ5");
+//        $printer->feed(4);
+//        $printer -> cut();
+//        $printer->close();
+        $connector = new FilePrintConnector("php://stdout");
+        $printer = new Printer($connector);
+        try {
+            $tux = EscposImage::load("storage/app/documents/easywash_logo.jpeg", false);
+            $printer->text("These example images are printed with the older\nbit image print command. You should only use\n\$p -> bitImage() if \$p -> graphics() does not\nwork on your printer.\n\n");
+            $printer->bitImage($tux);
+            $printer->text("Regular Tux (bit image).\n");
+            $printer->feed();
+            $printer->bitImage($tux, Printer::IMG_DOUBLE_WIDTH);
+            $printer->text("Wide Tux (bit image).\n");
+            $printer->feed();
+            $printer->bitImage($tux, Printer::IMG_DOUBLE_HEIGHT);
+            $printer->text("Tall Tux (bit image).\n");
+            $printer->feed();
+            $printer->bitImage($tux, Printer::IMG_DOUBLE_WIDTH | Printer::IMG_DOUBLE_HEIGHT);
+            $printer->text("Large Tux in correct proportion (bit image).\n");
+        } catch (Exception $e) {
+            /* Images not supported on your PHP, or image file not found */
+            $printer->text($e->getMessage() . "\n");
+        }
+        $printer->cut();
         $printer->close();
     }
 
