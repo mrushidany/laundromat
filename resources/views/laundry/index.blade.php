@@ -20,54 +20,19 @@
                             <li class="nav-item">
                                 <a class="nav-link active" id="home-tab-three" data-toggle="tab" href="#laundry_tab" role="tab" aria-controls="home" aria-selected="true">Laundry</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab-three" data-toggle="tab" href="#payments_and_receipts_tab" role="tab" aria-controls="profile" aria-selected="false">Payments & Receipts</a>
-                            </li>
                         </ul>
                         <div class="tab-content" id="myTabContent-4">
                             <div class="tab-pane fade show active" id="laundry_tab" role="tabpanel" aria-labelledby="home-tab-three">
                                 @include('laundry.tabs.laundry_tab')
                             </div>
-                            <div class="tab-pane fade" id="payments_and_receipts_tab" role="tabpanel" aria-labelledby="profile-tab-three">
-                                @include('laundry.tabs.payment_and_receipt_tab')
-                            </div>
                             <div class="iq-loader"></div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade modal-md" id="not_paid_modal" tabindex="-1" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title offset-5">Update Not Paid Status</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <label for="total_cost" class="control-label">Total Cost</label>
-                            <input type="text" name="total_cost" class="form-control text-blue font-size-14" readonly value="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="initial_payment" class="control-label">Partial Payment</label>
-                            <input  type="text" name="initial_payment" class="form-control text-blue font-size-14" value="">
-                        </div>
 
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Verify Partial Payment</button>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 @section('scripts')
     <script type="application/javascript">
