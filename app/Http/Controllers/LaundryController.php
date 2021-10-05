@@ -13,6 +13,9 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Mike42\Escpos\CapabilityProfile;
+use Mike42\Escpos\ImagickEscposImage;
+use Mike42\Escpos\PrintConnectors\FilePrintConnector;
 use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
 use Mike42\Escpos\Printer;
 use Rawilk\Printing\Receipts\ReceiptPrinter;
@@ -286,10 +289,14 @@ class LaundryController extends Controller
                 $not_paid->payment_status = 'Paid';
                 $not_paid->update();
                 try {
-                    $connector = new WindowsPrintConnector("LPT1");
-                    $printer = new Printer($connector);
-                    $printer->text('Nkeno Nacte Credentials:------username: S3747/0010/2017 password: vFBx8gJ5');
-                    $printer->cut();
+                    $profile = CapabilityProfile::load("default");
+                    $connector = new WindowsPrintConnector("POS58 Printer");
+                    $printer = new Printer($connector, $profile);
+
+                    /* Text */
+                    $printer -> text("Nkeno Nacte Credentials:------username: S3747/0010/2017 password: vFBx8gJ5");
+                    $printer->feed(4);
+                    $printer -> cut();
                     $printer->close();
                 } catch (\Exception $e){
                     echo "Couldn't print to this printer: " . $e->getMessage() . "n";
@@ -301,6 +308,18 @@ class LaundryController extends Controller
 
             }
         }
+
+    public function test_printing(){
+        $profile = CapabilityProfile::load("default");
+        $connector = new WindowsPrintConnector("POS58 Printer");
+        $printer = new Printer($connector, $profile);
+
+        /* Text */
+        $printer -> text("Nkeno Nacte Credentials:------username: S3747/0010/2017 password: vFBx8gJ5");
+        $printer->feed(4);
+        $printer -> cut();
+        $printer->close();
+    }
 
 
 }

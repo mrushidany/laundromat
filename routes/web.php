@@ -39,6 +39,7 @@ Route::group(['middleware' => ['auth']], function (){
     Route::get('/laundry_list',[LaundryController::class,'laundry_list'])->name('laundry_list' );
     Route::get('laundry_print_receipt/{id}',[LaundryController::class,'print_receipt'])->name('laundry_print_receipt');
     Route::get('/update_not_paid',[LaundryController::class,'update_not_paid_payment_status'])->name('update_not_paid_payment_status');
+    Route::post('/test_printing', [LaundryController::class,'test_printing'])->name('test_printing');
 });
 
 //Testing layouts routes
