@@ -112,8 +112,17 @@ class LaundryController extends Controller
      */
     public function edit($id)
     {
-        dd('We are about to go editing');
-        return view('laundry.form.create');
+        $laundry_detail = LaundryDetail::find($id);
+        $client_id = $laundry_detail->routine_client_id;
+        $client = RoutineClient::find($client_id);
+        $laundry_cost = LaundryCost::where('laundry_details_id','=', $laundry_detail->id)->first();
+
+        $data = [
+            'laundry_detail' => $laundry_detail,
+            'client' => $client,
+            'laundry_cost' => $laundry_cost,
+        ];
+        return view('laundry.form.create')->with($data);
     }
 
     /**
@@ -125,7 +134,48 @@ class LaundryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        try {
+            DB::beginTransaction();
+            $laundry = LaundryDetail::find($id);
+            $client = RoutineClient::where('id',$laundry->routine_client_id)->first();
+            $client->full_name = $request->full_name;
+            $client->phone = $request->phone;
+            $client->update();
+            if(isset($client)){
+                $laundry->routine_client_id = $client->id;
+                $laundry->quantity = $request->laundry_quantity;
+                $laundry->selected_machines = $request->all_machines_selected;
+                $laundry->issued_by = Auth::user()->id;
+                $laundry->update();
 
+            }
+            if(isset($laundry->id)){
+                $laundry_cost = LaundryCost::where('laundry_details_id',$laundry->id)->first();
+                $laundry_cost->laundry_details_id = $laundry->id;
+                $laundry_cost->amount = $request->total_cost;
+                $laundry_cost->payment_status = $request->payment_status;
+                $laundry_cost->update();
+                switch ($request->payment_status) {
+                    case 'Partial Payment' :
+                        $partial = InitialPayment::where('laundry_cost_id',$laundry_cost->id)->first();
+                        $partial->laundry_cost_id = $laundry_cost->id;
+                        $partial->initial_payment = $request->initial_payment.' /=';
+                        $partial->update();
+                        break;
+                }
+            }
+            DB::commit();
+            if (isset($laundry_cost)) {
+                $data = ['state' => 'Done', 'title' => 'Successful', 'msg' => 'Record created successful'];
+                return \Request::ajax() ? response()->json($data) : redirect()->route('laundry.index')->with('data', $data);
+            }
+            $data = ['state'=>'Fail', 'title'=>'Fail', 'msg'=>'Record could not be created'];
+            return \Request::ajax() ? response()->json($data) : redirect()->route('laundry.index')->withInput()->with('data', $data);
+        }catch (QueryException $queryException){
+            DB::rollback();
+            $data = ['state'=>'Error', 'title'=>'Database error', 'msg'=>'Something went wrong!<br />' . $queryException->errorInfo[2]];
+            return \Request::ajax() ? response()->json($data) : redirect()->back()->with('data', $data);
+        }
     }
 
     /**

@@ -1,3 +1,15 @@
+<?php
+
+if(isset($laundry_detail)){
+    $action = route('laundry.update',$laundry_detail->id);
+    $method = 'PUT';
+} else {
+    $action = route('laundry.store');
+    $method = 'POST';
+
+
+}
+?>
 @extends('layouts.easywash.main')
 
 @section('content')
@@ -17,12 +29,13 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
                 <div class="col-sm-12 col-lg-12">
                     <div class="iq-card">
                         <div class="iq-card-body">
-                            <form id="form-wizard1" method='post' action="{{route('laundry.store')}}" class="text-center mt-4">
-                               {{method_field('POST')}}
+                            <form id="form-wizard1" method='post' action="{{$action}}" class="text-center mt-4">
+                               {{method_field($method)}}
                                 {{csrf_field()}}
                                 <ul id="top-tab-list" class="p-0">
                                     <li class="active" id="account">
@@ -67,7 +80,7 @@
                                         </div>
                                     </div>
                                         <input type="hidden" name="all_machines_selected">
-                                        <button type="submit" name="save" class="btn btn-primary save_laundry next action-button float-right" value="Save">Save</button>
+                                        <button type="submit" name="save" class="btn btn-primary save_laundry next action-button float-right" value="Save">@if (!empty($laundry_detail)) Update @else Save @endif</button>
                                         <button type="button" name="previous" class="btn btn-dark previous_payment_status previous action-button-previous float-right mr-3" value="Previous">Previous</button>                                    </div>
                                 </fieldset>
                             </form>

@@ -12,10 +12,18 @@
             <div class="form-group">
                 <label>Select the Payment Status</label>
                 <select class="form-control mb-3 payment_status" name="payment_status">
-                    <option disabled selected>Select the Laundry Payment Status</option>
-                    <option value="Paid" >Paid</option>
-                    <option value="Not Paid">Not Paid</option>
-                    <option value="Partial Payment">Partial Payment</option>
+                    @if (isset($laundry_cost))
+                        <option disabled selected>Select the Laundry Payment Status</option>
+                        <option value="Paid" @if ($laundry_cost->payment_status == 'Paid') selected @endif>Paid</option>
+                        <option value="Not Paid" @if ($laundry_cost->payment_status == 'Not Paid') selected @endif>Not Paid</option>
+                        <option value="Partial Payment" @if ($laundry_cost->payment_status == 'Partial Payment') selected @endif>Partial Payment</option>
+                    @else
+                        <option disabled selected>Select the Laundry Payment Status</option>
+                        <option value="Paid">Paid</option>
+                        <option value="Not Paid">Not Paid</option>
+                        <option value="Partial Payment">Partial Payment</option>
+                    @endif
+
                 </select>
             </div>
         </div>
