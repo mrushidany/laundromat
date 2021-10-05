@@ -156,6 +156,9 @@ class LaundryController extends Controller
         return $request->ajax() ? response()->json($data) : redirect()->back()->with($data);
     }
 
+    /**
+     * Laundry List Datatable.
+     */
     public function laundry_list(Request $request){
 
         if($request->ajax()){
@@ -214,7 +217,7 @@ class LaundryController extends Controller
                 ->addColumn('action', function ($list) {
                     $div = '<div class="flex align-items-center list-user-action">';
                     if (Auth::user()->hasRole('owner')) {
-                        $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-original-title="Edit" href="\''. route('laundry.edit',$list->id) . '\'"><i class="ri-pencil-line"></i></a>&nbsp;&nbsp;';
+                        $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-original-title="Edit" href="'.route('laundry.edit', $list->id) .'"><i class="ri-pencil-line"></i></a>&nbsp;&nbsp;';
                         $div .= '<a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="Delete" data-original-title="Delete" href="javascript:destroy(\''. route('laundry.destroy', $list->id).'\')"><i class="ri-delete-bin-line"></i></a></div>';
                     }
                     return '<nobr>' . $div . '</nobr>';
@@ -224,7 +227,10 @@ class LaundryController extends Controller
                 ->make(true);
         }
 
-        public function update_not_paid_payment_status(Request $request){
+    /**
+     * Updating the Not Paid and Partial Payment Status
+     */
+    public function update_not_paid_payment_status(Request $request){
             if($request->not_paid){
                 $not_paid = LaundryCost::where('laundry_details_id', $request->id)->first();
                 $not_paid->payment_status = 'Paid';
