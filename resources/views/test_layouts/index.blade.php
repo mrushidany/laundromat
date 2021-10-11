@@ -15,7 +15,10 @@
         function test_print(){
             $.ajax({
                 url : '{{route('test_printing')}}',
-                type : 'POST'
+                type : 'POST',
+                headers : {
+                    'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+                }
             })
         }
     </script>
