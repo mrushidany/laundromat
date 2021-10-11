@@ -13,13 +13,14 @@
 @section('scripts')
     <script type="application/javascript">
         function test_print(){
-            $.ajax({
-                url : '{{route('test_printing')}}',
-                type : 'POST',
-                headers : {
-                    'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-                }
-            })
+            window.print();
+            {{--$.ajax({--}}
+            {{--    url : '{{route('test_printing')}}',--}}
+            {{--    type : 'POST',--}}
+            {{--    headers : {--}}
+            {{--        'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')--}}
+            {{--    }--}}
+            {{--})--}}
         }
     </script>
 
