@@ -310,16 +310,8 @@ class LaundryController extends Controller
             }
         }
 
-    public function test_printing(){
-        $profile = CapabilityProfile::load("default");
-        $connector = new WindowsPrintConnector("POS58 Printer");
-        $printer = new Printer($connector, $profile);
+    public function test_printing(Request $request){
 
-        /* Text */
-        $printer -> text("Nkeno Nacte Credentials:------username: S3747/0010/2017 password: vFBx8gJ5");
-        $printer->feed(4);
-        $printer -> cut();
-        $printer->close();
 
     }
 

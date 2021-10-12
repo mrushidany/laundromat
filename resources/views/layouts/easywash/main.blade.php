@@ -1,6 +1,7 @@
 
 <!doctype html>
 <html>
+
 @include('layouts.stylesheet_link')
 
 <body class="sidebar-double-icon  ">
