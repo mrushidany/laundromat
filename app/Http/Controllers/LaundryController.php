@@ -289,23 +289,9 @@ class LaundryController extends Controller
                 $not_paid = LaundryCost::where('laundry_details_id', $request->id)->first();
                 $not_paid->payment_status = 'Paid';
                 $not_paid->update();
-                try {
-                    $profile = CapabilityProfile::load("default");
-                    $connector = new WindowsPrintConnector("POS58 Printer");
-                    $printer = new Printer($connector, $profile);
-
-                    /* Text */
-                    $printer -> text("Nkeno Nacte Credentials:------username: S3747/0010/2017 password: vFBx8gJ5");
-                    $printer->feed(4);
-                    $printer -> cut();
-                    $printer->close();
-                } catch (\Exception $e){
-                    echo "Couldn't print to this printer: " . $e->getMessage() . "n";
-                }
 
                 $data = ['type' => 'success', 'title' => 'Successful', 'text' => 'Payment Status updated successful'];
                 return \Request::ajax() ? response()->json($data) : redirect()->back()->with('data', $data);
-
 
             }
         }
