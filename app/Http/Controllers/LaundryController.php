@@ -161,10 +161,10 @@ class LaundryController extends Controller
                 $laundry_cost->update();
                 switch ($request->payment_status) {
                     case 'Partial Payment' :
-                        $partial = InitialPayment::where('laundry_cost_id',$laundry_cost->id)->first();
+                        $partial = new InitialPayment();
                         $partial->laundry_cost_id = $laundry_cost->id;
                         $partial->initial_payment = $request->initial_payment.' /=';
-                        $partial->update();
+                        $partial->save();
                         break;
                 }
             }
