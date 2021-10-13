@@ -234,12 +234,12 @@ class LaundryController extends Controller
 
                 $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
                     ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
-                    ->where('laundry_details.created_at','>=', $request->from_specific_date)
-                    ->where('laundry_details.created_at','<=', $request->to_desired_date)
+                    ->whereDate('laundry_details.created_at','>=', $request->from_specific_date)
+                    ->whereDate('laundry_details.created_at','<=', $request->to_desired_date)
                     ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status']);
                 $paid_laundry_cost = LaundryCost::where('payment_status','Paid')
-                    ->where('created_at','>=', $request->from_specific_date)
-                    ->where('created_at','<=', $request->to_desired_date)
+                    ->whereDate('created_at','>=', $request->from_specific_date)
+                    ->whereDate('created_at','<=', $request->to_desired_date)
                     ->sum('amount');
             }
             else{
