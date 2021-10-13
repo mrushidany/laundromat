@@ -44,7 +44,7 @@
                 processing: true,
                 serverSide: true,
                 order: [5, 'desc'],
-                lengthMenu: [[10,25,50],[10,25,50]],
+                lengthMenu: [[100,150,200],[100,150,200]],
                 ajax: {
                     url : '{{ route('laundry_list') }}',
                     data : {
