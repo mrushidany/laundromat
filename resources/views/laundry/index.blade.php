@@ -84,7 +84,7 @@
                     var api = this.api();
                     $(api.column(4).footer()).html('Tshs : ' + total_amount + ' Paid')
                     $(api.column(5).footer()).html('Tshs : ' + partial_payments + ' Partial Payments')
-                    $(api.column(6).footer()).html('Tshs : ' + ' ' + ' Cash at Draw')
+
                 }
             });
         }

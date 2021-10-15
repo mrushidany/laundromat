@@ -72,7 +72,6 @@
                             <th colspan="4" class="text-center">Total</th>
                             <th class="bg-blue font-size-14" id="laundry_table_total_cost"></th>
                             <th class="font-size-14" style="background-color: rgb(254, 114, 28);" id="laundry_table_partial_payment_cost"></th>
-                            <th class="bg-green font-size-14" id="laundry_table_cashdraw_cost"></th>
                         </tr>
                         </tfoot>
                     </table>
