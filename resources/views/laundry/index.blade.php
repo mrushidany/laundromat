@@ -82,8 +82,8 @@
                 @endif
                 drawCallback: function (settings){
                     var api = this.api();
-                    $(api.column(4).footer()).html('Total Cost to be Paid  Tshs: ' + total_cost_to_be_paid )
-                    $(api.column(6).footer()).html('Cash at Drawer Tshs : ' + cash_draw )
+                    $(api.column(4).footer()).html('Total Cost to be Paid : ' + total_cost_to_be_paid + ' /=' )
+                    $(api.column(6).footer()).html('Cash at Drawer : ' + cash_draw  + ' /=')
 
                 }
             });
