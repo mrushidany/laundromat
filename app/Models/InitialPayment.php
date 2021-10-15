@@ -14,4 +14,8 @@ class InitialPayment extends Model
         'laundry_cost_id',
         'initial_payment'
     ];
+
+    public function laundry_cost(){
+        return $this->belongsTo(LaundryCost::class);
+    }
 }

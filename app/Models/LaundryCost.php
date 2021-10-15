@@ -15,4 +15,9 @@ class LaundryCost extends Model
       'amount',
       'payment_status'
     ];
+
+    public function initial_payment(){
+        return $this->hasOne(InitialPayment::class);
+    }
+
 }
