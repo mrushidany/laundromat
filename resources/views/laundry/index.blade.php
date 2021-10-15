@@ -55,6 +55,7 @@
                     dataSrc : function (data){
                         total_amount  = data.total_amount;
                         partial_payments = data.partial_payments;
+                        cash_draw = data.cash_draw;
                         return data.data;
                     },
                 },
@@ -84,6 +85,7 @@
                     var api = this.api();
                     $(api.column(4).footer()).html('Tshs : ' + total_amount + ' Paid')
                     $(api.column(5).footer()).html('Tshs : ' + partial_payments + ' Partial Payments')
+                    $(api.column(6).footer()).html('Tshs : ' + cash_draw + ' Cash at Draw')
 
                 }
             });
