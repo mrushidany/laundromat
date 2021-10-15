@@ -53,8 +53,7 @@
                         to_desired_date : to_desired_date
                     },
                     dataSrc : function (data){
-                        total_amount  = data.total_amount;
-                        partial_payments = data.partial_payments;
+                        total_cost_to_be_paid  = data.total_cost_to_be_paid;
                         cash_draw = data.cash_draw;
                         return data.data;
                     },
@@ -83,9 +82,8 @@
                 @endif
                 drawCallback: function (settings){
                     var api = this.api();
-                    $(api.column(4).footer()).html('Tshs : ' + total_amount + ' Paid')
-                    $(api.column(5).footer()).html('Tshs : ' + partial_payments + ' Partial Payments')
-                    $(api.column(6).footer()).html('Tshs : ' + cash_draw + ' Cash at Draw')
+                    $(api.column(4).footer()).html('Total Cost to be Paid  Tshs: ' + total_cost_to_be_paid )
+                    $(api.column(6).footer()).html('Cash at Drawer Tshs : ' + cash_draw )
 
                 }
             });

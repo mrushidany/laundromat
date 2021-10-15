@@ -225,6 +225,7 @@ class LaundryController extends Controller
                         ->whereDate('laundry_details.created_at', Carbon::yesterday()->format('Y-m-d') )
                         ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status','laundry_costs.id as laundry_cost_id']);
                     $paid_laundry_cost = LaundryCost::where('payment_status','Paid')->whereDate('created_at', Carbon::yesterday()->format('Y-m-d') )->sum('amount');
+                    $cost_to_be_paid = LaundryCost::where('payment_status','!=',null)->whereDate('created_at', Carbon::yesterday()->format('Y-m-d') )->sum('amount');
                     $partial_payments = LaundryCost::join('initial_payments','initial_payments.laundry_cost_id','=','laundry_costs.id')
                         ->where('laundry_cost_id','!=',null)
                         ->where('laundry_costs.payment_status','=','Partial Payment')
@@ -237,6 +238,7 @@ class LaundryController extends Controller
                         ->whereDate('laundry_details.created_at', Carbon::today()->format('Y-m-d') )
                         ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status','laundry_costs.id as laundry_cost_id']);
                     $paid_laundry_cost = LaundryCost::where('payment_status','Paid')->whereDate('created_at', Carbon::today()->format('Y-m-d') )->sum('amount');
+                    $cost_to_be_paid = LaundryCost::where('payment_status','!=', null)->whereDate('created_at', Carbon::today()->format('Y-m-d') )->sum('amount');
                     $partial_payments = LaundryCost::join('initial_payments','initial_payments.laundry_cost_id','=','laundry_costs.id')
                         ->where('laundry_cost_id','!=',null)
                         ->where('laundry_costs.payment_status','=','Partial Payment')
@@ -254,6 +256,10 @@ class LaundryController extends Controller
                     ->whereDate('created_at','>=', $request->from_specific_date)
                     ->whereDate('created_at','<=', $request->to_desired_date)
                     ->sum('amount');
+                $cost_to_be_paid = LaundryCost::where('payment_status','!=', null)
+                    ->whereDate('created_at','>=', $request->from_specific_date)
+                    ->whereDate('created_at','<=', $request->to_desired_date)
+                    ->sum('amount');
                 $partial_payments = LaundryCost::join('initial_payments','initial_payments.laundry_cost_id','=','laundry_costs.id')
                     ->where('laundry_cost_id','!=',null)
                     ->where('laundry_costs.payment_status','=','Partial Payment')
@@ -268,6 +274,7 @@ class LaundryController extends Controller
                     ->whereDate('laundry_details.created_at', Carbon::today()->format('Y-m-d') )
                     ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status','laundry_costs.id as laundry_cost_id']);
                 $paid_laundry_cost = LaundryCost::where('payment_status','Paid')->whereDate('updated_at', Carbon::today()->format('Y-m-d') )->sum('amount');
+                $cost_to_be_paid = LaundryCost::where('payment_status','!=', null)->whereDate('updated_at', Carbon::today()->format('Y-m-d') )->sum('amount');
                 $partial_payments = LaundryCost::join('initial_payments','initial_payments.laundry_cost_id','=','laundry_costs.id')
                     ->where('laundry_cost_id','!=',null)
                     ->where('laundry_costs.payment_status','=','Partial Payment')
@@ -308,8 +315,7 @@ class LaundryController extends Controller
                 })
                 ->rawColumns(['full_name','payment_status','created_at','action'])
                 ->with([
-                    'total_amount' => number_format($paid_laundry_cost),
-                    'partial_payments' => number_format($partial_payments),
+                    'total_cost_to_be_paid' => number_format($cost_to_be_paid),
                     'cash_draw' => number_format($cash_draw)
                 ])
                 ->make(true);
