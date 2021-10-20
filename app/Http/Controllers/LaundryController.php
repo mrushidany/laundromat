@@ -328,8 +328,8 @@ class LaundryController extends Controller
             }
         }
 
-    public function test_printing(Request $request){
-        print_r($request->name);
+    public function test_printing(){
+        return view('test_layouts.index');
 
     }
 
