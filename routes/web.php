@@ -43,7 +43,8 @@ Route::group(['middleware' => ['auth']], function (){
 });
 
 //Testing layouts routes
-Route::get('/test_layout', function (){return view('test_layouts.index');})->name('test');
+use App\Http\Controllers\TestController;
+Route::get('/test_layout',[TestController::class, 'index'])->name('test');
 
 //Printing Receipt Routes
 use App\Http\Controllers\PrintingReceiptController;

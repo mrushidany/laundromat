@@ -12,14 +12,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
-use Mike42\Escpos\CapabilityProfile;
-use Mike42\Escpos\EscposImage;
-use Mike42\Escpos\ImagickEscposImage;
-use Mike42\Escpos\PrintConnectors\FilePrintConnector;
-use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
-use Mike42\Escpos\Printer;
-use Rawilk\Printing\Receipts\ReceiptPrinter;
 use Yajra\DataTables\Facades\DataTables;
 use function PHPUnit\Framework\isNull;
 
@@ -337,7 +329,7 @@ class LaundryController extends Controller
         }
 
     public function test_printing(Request $request){
-
+        print_r($request->name);
 
     }
 

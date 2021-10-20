@@ -72,6 +72,7 @@
             total_cost = number_of_machines * 4000;
             $('input[name="laundry_quantity"]').val(laundry_quantity + ' Kgs').trigger('change');
             $('input[name="total_cost"]').val(total_cost + ' /=').trigger('change');
+
             return laundry_quantity, total_cost;
         })
         $('input[name="drying_machine"]').change(function (){
@@ -80,12 +81,20 @@
               var cost = total_cost * 2;
               $('input[name="laundry_quantity"]').val(total_quantity + ' Kgs').trigger('change');
               $('input[name="total_cost"]').val(cost + ' /=').trigger('change');
+
             }else if (!$(this).is(':checked')){
                 total_quantity = laundry_quantity;
                 cost = total_cost;
                 $('input[name="laundry_quantity"]').val(total_quantity + ' Kgs').trigger('change');
                 $('input[name="total_cost"]').val(cost + ' /=').trigger('change');
+
             }
         })
+        $('input[name="total_cost"]').on('input', function () {
+            total_cost = $(this).val();
+            $('input[name="total_cost"]').val(total_cost).trigger('change')
+
+        })
+
     })
 </script>

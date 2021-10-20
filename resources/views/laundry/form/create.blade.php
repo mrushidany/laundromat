@@ -80,6 +80,7 @@ if(isset($laundry_detail)){
                                         </div>
                                     </div>
                                         <input type="hidden" name="all_machines_selected">
+                                        <input type="hidden" name="edited_total_cost">
                                         <button type="submit" name="save" class="btn btn-primary save_laundry next action-button float-right" value="Save">@if (!empty($laundry_detail)) Update @else Save @endif</button>
                                         <button type="button" name="previous" class="btn btn-dark previous_payment_status previous action-button-previous float-right mr-3" value="Previous">Previous</button>                                    </div>
                                 </fieldset>
@@ -117,7 +118,9 @@ if(isset($laundry_detail)){
                         $(this).find('.drying_machine_selected').empty().append('Not Selected');
                         $('input[name="all_machines_selected"]').val(values.machine_selected.join(", ")).trigger('change');
                     }
-                    $(this).find('.total_cost').empty().append(values.total_cost)
+
+                        $(this).find('.total_cost').empty().append(values.total_cost);
+
                 })
                 $('.laundry_and_payment_status_summary_2').each(function (){
                     $(this).find('.phone_number').empty().append(values.phone)
