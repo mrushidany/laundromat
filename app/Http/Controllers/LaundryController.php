@@ -265,8 +265,8 @@ class LaundryController extends Controller
                     ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
                     ->whereDate('laundry_details.created_at', Carbon::today()->format('Y-m-d') )
                     ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status','laundry_costs.id as laundry_cost_id']);
-                $paid_laundry_cost = LaundryCost::where('payment_status','Paid')->whereDate('updated_at', Carbon::today()->format('Y-m-d') )->sum('amount');
-                $cost_to_be_paid = LaundryCost::where('payment_status','!=', null)->whereDate('updated_at', Carbon::today()->format('Y-m-d') )->sum('amount');
+                $paid_laundry_cost = LaundryCost::where('payment_status','Paid')->whereDate('created_at', Carbon::today()->format('Y-m-d') )->sum('amount');
+                $cost_to_be_paid = LaundryCost::where('payment_status','!=', null)->whereDate('created_at', Carbon::today()->format('Y-m-d') )->sum('amount');
                 $partial_payments = LaundryCost::join('initial_payments','initial_payments.laundry_cost_id','=','laundry_costs.id')
                     ->where('laundry_cost_id','!=',null)
                     ->where('laundry_costs.payment_status','=','Partial Payment')
