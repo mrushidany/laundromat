@@ -156,6 +156,7 @@ class LaundryController extends Controller
                         $partial = new InitialPayment();
                         $partial->laundry_cost_id = $laundry_cost->id;
                         $partial->initial_payment = $request->initial_payment.' /=';
+                        $partial->created_at = $laundry->created_at;
                         $partial->save();
                         break;
                 }
