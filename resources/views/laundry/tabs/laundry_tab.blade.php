@@ -17,7 +17,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-md-6">
+                    <div class="col-lg-8 col-md-6">
                         <div class="form-row">
                             <div class="col">
                                 <div class="input-group input-group-sm mb-4">
@@ -40,6 +40,16 @@
                                     <button type="button" class="btn btn-success btn-sm mt-2 date_laundry_details_filter" style="line-height: 12px;"><i class="ri-settings-4-fill pr-0"></i>Filter</button>&nbsp;&nbsp;
                                     <button type="button" class="btn btn-primary btn-sm mt-2 date_laundry_details_refresh" style="line-height: 12px;"><i class="ri-loader-4-fill pr-0"></i>Refresh</button>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col offset-6">
+                                <div class="input-group input-group-sm mb-4">
+                                    <input type="text" class="form-control" placeholder="Search" aria-label="spinners" aria-describedby="basic-addon7">
+                                    <div class="input-group-append">
+                                       <span class="input-group-text" id="basic-addon7"><i class="fa fa-spinner fa-spin"></i></span>
+                                    </div>
+                                 </div>
                             </div>
                         </div>
                     </div>

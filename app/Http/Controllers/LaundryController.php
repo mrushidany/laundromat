@@ -312,6 +312,11 @@ class LaundryController extends Controller
                     }
                     return '<nobr>' . $div . '</nobr>';
                 })
+                ->filter(function ($query) {
+                    if(request()->has('full_name')){
+                        $query->where('full_name', 'like', "%" . request('full_name') . "%");
+                    }
+                }, true)
                 ->rawColumns(['full_name','payment_status','created_at','action'])
                 ->with([
                     'total_cost_to_be_paid' => number_format($cost_to_be_paid),
