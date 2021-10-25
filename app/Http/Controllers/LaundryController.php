@@ -225,6 +225,7 @@ class LaundryController extends Controller
                         ->whereDate('initial_payments.created_at', Carbon::yesterday()->format('Y-m-d') )
                         ->sum('initial_payment');
                     $cash_draw = $paid_laundry_cost + $partial_payments;
+                    //Today filter triggered
                 } else if($request->recent_laundry == Carbon::today()->format('d/m/Y')){
                     $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
                         ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
@@ -239,6 +240,7 @@ class LaundryController extends Controller
                         ->sum('initial_payment');
                     $cash_draw = $paid_laundry_cost + $partial_payments;
                 }
+                //Custom filter triggered
             }else if(!empty($request->from_specific_date) && !empty($request->to_desired_date)) {
                 $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
                     ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
@@ -261,6 +263,7 @@ class LaundryController extends Controller
                     ->sum('initial_payment');
                 $cash_draw = $paid_laundry_cost + $partial_payments;
             }
+            //Default Datatable preview without custom filter triggered
             else{
                 $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
                     ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
