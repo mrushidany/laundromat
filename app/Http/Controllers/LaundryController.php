@@ -358,10 +358,12 @@ class LaundryController extends Controller
                     }
 
                 }
+
+
                 $data = ['type' => 'success', 'title' => 'Successful', 'text' => 'Payment Status updated successful'];
                 return \Request::ajax() ? response()->json($data) : redirect()->back()->with('data', $data);
 
-            }
+
         }
 
     public function test_printing(){
