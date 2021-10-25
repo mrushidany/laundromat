@@ -265,6 +265,21 @@ class LaundryController extends Controller
                     ->whereDate('initial_payments.created_at','<=', $request->to_desired_date)
                     ->sum('initial_payment');
                 $cash_draw = $paid_laundry_cost + $partial_payments;
+            }else if(!empty($request->custom_search)){
+                $laundry_list = LaundryDetail::join('routine_clients','routine_clients.id','=','laundry_details.routine_client_id')
+                    ->join("laundry_costs",'laundry_costs.laundry_details_id','=','laundry_details.id')
+                    ->where('full_name', 'like', "%" . $request->custom_search . "%")
+                    ->orWhere('phone', 'like', "%" . $request->custom_search . "%")
+                    ->get(['laundry_details.id','routine_clients.full_name','routine_clients.phone','laundry_details.selected_machines','laundry_details.quantity','laundry_costs.amount','laundry_details.created_at','laundry_costs.payment_status','laundry_costs.id as laundry_cost_id']);
+                $paid_laundry_cost = LaundryCost::where('payment_status','Paid')
+                    ->sum('amount');
+                $cost_to_be_paid = LaundryCost::where('payment_status','!=', null)
+                    ->sum('amount');
+                $partial_payments = LaundryCost::join('initial_payments','initial_payments.laundry_cost_id','=','laundry_costs.id')
+                    ->where('laundry_cost_id','!=',null)
+                    ->where('laundry_costs.payment_status','=','Partial Payment')
+                    ->sum('initial_payment');
+                $cash_draw = $paid_laundry_cost + $partial_payments;
             }
             //Default Datatable preview without custom filter triggered
             else{
@@ -333,12 +348,23 @@ class LaundryController extends Controller
                 $not_paid = LaundryCost::where('laundry_details_id', $request->id)->first();
                 $created_date = $not_paid->created_at;
                 $laundry_detail = LaundryDetail::find($not_paid->laundry_details_id);
-                $laundry_detail->created_at = Carbon::now()->format('Y-m-d H:i:s');
-                $laundry_detail->update();
+                if($laundry_detail->created_at == Carbon::today()->format('Y-m-d H:i:s')){
+                    $laundry_detail->update();
+                }else {
+                    $laundry_detail->created_at = Carbon::now()->format('Y-m-d H:i:s');
+                    $laundry_detail->update();
+                }
+
                 if($laundry_detail){
-                    $not_paid->payment_status = 'Paid';
-                    $not_paid->created_at = $laundry_detail->created_at;
-                    $not_paid->update();
+                    if($not_paid->created_at == Carbon::today()->format('Y-m-d H:i:s')){
+                        $not_paid->payment_status = 'Paid';
+                        $not_paid->update();
+                    }else {
+                        $not_paid->payment_status = 'Paid';
+                        $not_paid->created_at = $laundry_detail->created_at;
+                        $not_paid->update();
+                    }
+
 
                     if($not_paid){
                         $updated_cost = new UpdatedCost();

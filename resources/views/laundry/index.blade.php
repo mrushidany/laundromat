@@ -39,7 +39,7 @@
         let main_datatable = '';
 
         default_datatable();
-        function default_datatable(recent_laundry = '', from_specific_date = '', to_desired_date = '' ){
+        function default_datatable(recent_laundry = '', from_specific_date = '', to_desired_date = '', custom_search = '' ){
             main_datatable = $('.laundromat_table').DataTable({
                 processing: true,
                 serverSide: true,
@@ -50,7 +50,8 @@
                     data : {
                         recent_laundry : recent_laundry,
                         from_specific_date : from_specific_date,
-                        to_desired_date : to_desired_date
+                        to_desired_date : to_desired_date,
+                        custom_search : custom_search,
                     },
                     dataSrc : function (data){
                         total_cost_to_be_paid  = data.total_cost_to_be_paid;
@@ -134,6 +135,11 @@
                $('.laundromat_table').DataTable().destroy();
                default_datatable();
            })
+        $('input[name="custom_search"]').on('keyup', function(){
+            $('.laundromat_table').DataTable().destroy();
+            default_datatable(recent_laundry = '', from_specific_date = '', to_desired_date = '', custom_search = $('input[name="custom_search"]').val())
+        })
+
         function updateNotPaidPaymentStatus(id){
             Swal.fire({
                 title: 'Update Payment Status',

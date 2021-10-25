@@ -45,7 +45,7 @@
                         <div class="form-row">
                             <div class="col offset-6">
                                 <div class="input-group input-group-sm mb-4">
-                                    <input type="text" class="form-control" placeholder="Search" aria-label="spinners" aria-describedby="basic-addon7">
+                                    <input type="text" name="custom_search" class="form-control" placeholder="Search" aria-label="spinners" aria-describedby="basic-addon7">
                                     <div class="input-group-append">
                                        <span class="input-group-text" id="basic-addon7"><i class="fa fa-spinner fa-spin"></i></span>
                                     </div>
