@@ -7,6 +7,9 @@ use App\Models\LaundryCost;
 use App\Models\LaundryDetail;
 use App\Models\LaundryMachineDetail;
 use App\Models\RoutineClient;
+use App\Models\UpdatedCost;
+use App\Models\User;
+use Carbon\Carbon as CarbonCarbon;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -323,8 +326,25 @@ class LaundryController extends Controller
     public function update_not_paid_payment_status(Request $request){
             if($request->not_paid){
                 $not_paid = LaundryCost::where('laundry_details_id', $request->id)->first();
-                $not_paid->payment_status = 'Paid';
-                $not_paid->update();
+                $created_date = $not_paid->created_at;
+                $laundry_detail = LaundryDetail::find($not_paid->laundry_details_id);
+                $laundry_detail->created_at = Carbon::now()->format('Y-m-d H:i:s');
+                $laundry_detail->update();
+                if($laundry_detail){
+                    $not_paid->payment_status = 'Paid';
+                    $not_paid->created_at = $laundry_detail->created_at;
+                    $not_paid->update();
+
+                    if($not_paid){
+                        $updated_cost = new UpdatedCost();
+                        $updated_cost->laundry_cost_id = $not_paid->id;
+                        $updated_cost->updated_by = Auth::user()->id;
+                        $updated_cost->created_at = $created_date;
+                        $updated_cost->save();
+                    }
+
+                }
+
 
                 $data = ['type' => 'success', 'title' => 'Successful', 'text' => 'Payment Status updated successful'];
                 return \Request::ajax() ? response()->json($data) : redirect()->back()->with('data', $data);
