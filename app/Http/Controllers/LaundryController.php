@@ -347,25 +347,8 @@ class LaundryController extends Controller
             if($request->not_paid){
                 $not_paid = LaundryCost::where('laundry_details_id', $request->id)->first();
                 $created_date = $not_paid->created_at;
-                $laundry_detail = LaundryDetail::find($not_paid->laundry_details_id);
-                if($laundry_detail->created_at == Carbon::today()->format('Y-m-d H:i:s')){
-                    $laundry_detail->update();
-                }else {
-                    $laundry_detail->created_at = Carbon::now()->format('Y-m-d H:i:s');
-                    $laundry_detail->update();
-                }
-
-                if($laundry_detail){
-                    if($not_paid->created_at == Carbon::today()->format('Y-m-d H:i:s')){
-                        $not_paid->payment_status = 'Paid';
-                        $not_paid->update();
-                    }else {
-                        $not_paid->payment_status = 'Paid';
-                        $not_paid->created_at = $laundry_detail->created_at;
-                        $not_paid->update();
-                    }
-
-
+                $not_paid->payment_status = 'Paid';
+                $not_paid->update();
                     if($not_paid){
                         $updated_cost = new UpdatedCost();
                         $updated_cost->laundry_cost_id = $not_paid->id;
@@ -375,8 +358,6 @@ class LaundryController extends Controller
                     }
 
                 }
-
-
                 $data = ['type' => 'success', 'title' => 'Successful', 'text' => 'Payment Status updated successful'];
                 return \Request::ajax() ? response()->json($data) : redirect()->back()->with('data', $data);
 
