@@ -1,0 +1,13 @@
+@These example images are printed with the older
+bit image print command. You should only use
+$p -> bitImage() if $p -> graphics() does not
+work on your printer.
+
+Regular Tux (bit image).
+
+Wide Tux (bit image).
+
+Tall Tux (bit image).
+
+Large Tux in correct proportion (bit image).
+VA

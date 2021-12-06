@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class RoutineClient extends Model
 {
+    protected $table = 'routine_clients';
     use HasFactory;
 
     protected $fillable = [

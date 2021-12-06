@@ -33,6 +33,9 @@
         $.ajax({
             url: url,
             type: method,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             beforeSend: function() {
                 startSpinner();
             },
@@ -53,21 +56,6 @@
     }
 
     function destroy(url) {
-        // swal({
-        //         title: "Are you sure?",
-        //         text: "You won't be able to revert this!",
-        //         type: "warning",
-        //         showCancelButton: true,
-        //         cancelButtonText: 'No, cancel!',
-        //         confirmButtonText: "Yes, delete it!",
-        //         confirmButtonColor: "#d33",
-        //         closeOnConfirm: true,
-        //         allowOutsideClick: true
-        //     },
-        //     function () {
-        //         mainAjax(url, 'DELETE');
-        //     });
-
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -81,6 +69,7 @@
                 if (willDelete.value) {
                     // Swal.fire("Deleted ");
                     mainAjax(url, 'DELETE');
+                    main_datatable.draw()
                 } else {
                     // Swal.fire("Fail to delete");
                 }
@@ -213,9 +202,6 @@
     }
     function onModalShown() {
         $('.select2s').select2({'width':'100%'});
-        // $('input, textarea').focusin(function() {
-        //     return $(this).select();
-        // });
 
         if ( typeof modalScripts === 'function' ) {
             modalScripts();
@@ -239,5 +225,11 @@
         let btn = main_modal.find('button[type=submit]');
         btn.prop('disabled', true).text('Saving, Please wait...');
     }
+<<<<<<< HEAD
     // $('.select2search').select2({'width': '100%'});
+=======
+    $('.select2search').select2({'width': '100%'});
+
+
+>>>>>>> master
 </script>

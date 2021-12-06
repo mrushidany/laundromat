@@ -13,7 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Default page location
-Route::get('/', function () {return view('home.landing_page');})->name('home');
+use App\Http\Controllers\LandingPageController;
+Route::get('/', [LandingPageController::class, 'index'])->name('home');
+
+//Landing page routes
+Route::get('/about', [LandingPageController::class, 'about'])->name('about');
+Route::get('/contact/{request}', [LandingPageController::class, 'contact'])->name('contact');
+Route::get('/pricing', [LandingPageController::class, 'pricing'])->name('pricing');
+Route::get('/services', [LandingPageController::class, 'services'])->name('services');
+Route::post('/save_contact', [LandingPageController::class, 'save_contact'])->name('save_contact');
 
 //Login authentication routes
 Route::get('/login', function () {return view('auth.login');})->name('login');
@@ -29,18 +37,17 @@ Route::group(['middleware' => ['auth']], function (){
 //Laundry Controller Routes
     Route::resource('/laundry',LaundryController::class)->name('*', 'laundry' );
     Route::get('/laundry_list',[LaundryController::class,'laundry_list'])->name('laundry_list' );
+    Route::get('laundry_print_receipt/{id}',[LaundryController::class,'print_receipt'])->name('laundry_print_receipt');
+    Route::get('/update_not_paid',[LaundryController::class,'update_not_paid_payment_status'])->name('update_not_paid_payment_status');
+    Route::get('/test_printing', [LaundryController::class,'test_printing'])->name('test_printing');
 });
 
-//Landing page routes
-Route::get('/about', function () {return view('home.about');})->name('about');
-Route::get('/contact', function () {return view('home.contact');})->name('contact');
-Route::get('/pricing', function () {return view('home.pricing');})->name('pricing');
-Route::get('/services', function () {return view('home.services');})->name('services');
-
 //Testing layouts routes
-Route::get('/test_layout', function (){return view('test_layouts.index');})->name('test');
+use App\Http\Controllers\TestController;
+Route::get('/test_layout',[TestController::class, 'index'])->name('test');
 
-
-
+//Printing Receipt Routes
+use App\Http\Controllers\PrintingReceiptController;
+Route::get('/printing_receipt', [PrintingReceiptController::class,'print_receipt'])->name('print_receipt');
 
 require __DIR__.'/auth.php';

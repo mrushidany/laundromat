@@ -558,14 +558,14 @@ var DayGridFillRenderer = /** @class */ (function (_super) {
             '</div>');
         trEl = skeletonEl.getElementsByTagName('tr')[0];
         if (startCol > 0) {
-            appendToElement(trEl, 
+            appendToElement(trEl,
             // will create (startCol + 1) td's
             new Array(startCol + 1).join(EMPTY_CELL_HTML));
         }
         seg.el.colSpan = endCol - startCol;
         trEl.appendChild(seg.el);
         if (endCol < colCnt) {
-            appendToElement(trEl, 
+            appendToElement(trEl,
             // will create (colCnt - endCol) td's
             new Array(colCnt - endCol + 1).join(EMPTY_CELL_HTML));
         }
@@ -1276,7 +1276,7 @@ var DayGrid = /** @class */ (function (_super) {
 var WEEK_NUM_FORMAT$1 = createFormatter({ week: 'numeric' });
 /* An abstract class for the daygrid views, as well as month view. Renders one or more rows of day cells.
 ----------------------------------------------------------------------------------------------------------------------*/
-// It is a manager for a DayGrid subcomponent, which does most of the heavy lifting.
+// It is a easywash for a DayGrid subcomponent, which does most of the heavy lifting.
 // It is responsible for managing width/height.
 var DayGridView = /** @class */ (function (_super) {
     __extends(DayGridView, _super);

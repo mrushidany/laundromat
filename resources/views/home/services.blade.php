@@ -1,6 +1,5 @@
 @extends('home.main')
 
-
 @section('navbar')
     <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
         <div class="navbar-nav ml-auto py-0">
@@ -8,7 +7,8 @@
             <a href="{{route('about')}}" class="nav-item nav-link">About</a>
             <a href="{{route('services')}}" class="nav-item nav-link active">Services</a>
             <a href="{{route('pricing')}}" class="nav-item nav-link">Pricing</a>
-            <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
+            <a href="{{route('contact','easywash')}}" class="nav-item nav-link">Contact</a>
+            <a href="{{route('login')}}" class="nav-item nav-link">Login</a>
         </div>
     </div>
 @endsection
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-6 text-center text-md-right">
                     <div class="d-inline-flex align-items-center">
-                        <a class="btn text-white" href="">Home</a>
+                        <a class="btn text-white" href="{{route('home')}}">Home</a>
                         <i class="fas fa-angle-right text-white"></i>
                         <a class="btn text-white disabled" href="">Services</a>
                     </div>
@@ -30,41 +30,35 @@
             </div>
         </div>
     </div>
+
     <div class="container-fluid pt-5 pb-3">
         <div class="container">
             <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Our Services</h6>
             <h1 class="display-4 text-center mb-5">What We Offer</h1>
             <div class="row">
-                <div class="col-lg-3 col-md-6 pb-1">
-                    <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
-                        <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
-                            <i class="fa fa-3x fa-cloud-sun text-secondary"></i>
-                        </div>
-                        <h4 class="font-weight-bold m-0">Dry Cleaning</h4>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 pb-1">
+                <div class="col-lg-4 col-md-6 pb-1">
                     <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
                             <i class="fas fa-3x fa-soap text-secondary"></i>
                         </div>
-                        <h4 class="font-weight-bold m-0">Wash &amp; Laundry</h4>
+                        <h4 class="font-weight-bold m-0">Wash & Rinse</h4>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 pb-1">
+                <div class="col-lg-4 col-md-6 pb-1">
                     <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
-                            <i class="fa fa-3x fa-burn text-secondary"></i>
+                            <i class="fa fa-3x fa-cloud-sun text-secondary"></i>
                         </div>
-                        <h4 class="font-weight-bold m-0">Curtain Laundry</h4>
+                        <h4 class="font-weight-bold m-0">Spin & Dry</h4>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 pb-1">
+
+                <div class="col-lg-4 col-md-6 pb-1">
                     <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
                             <i class="fa fa-3x fa-tshirt text-secondary"></i>
                         </div>
-                        <h4 class="font-weight-bold m-0">Suits Cleaning</h4>
+                        <h4 class="font-weight-bold m-0">Fold</h4>
                     </div>
                 </div>
             </div>
@@ -72,48 +66,45 @@
     </div>
 
     <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Testimonial</h6>
-            <h1 class="display-4 text-center mb-5">Our Clients Say</h1>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item">
-                    <img class="position-relative rounded-circle bg-white shadow mx-auto" src="{{asset('home/img/testimonial-1.jpg')}}" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
-                    <div class="bg-light text-center p-4 pt-0">
-                        <h5 class="font-weight-medium mt-5">Client Name</h5>
-                        <p class="text-muted font-italic">Profession</p>
-                        <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor ipsum clita</p>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <img class="position-relative rounded-circle bg-white shadow mx-auto" src="{{asset('home/img/testimonial-2.jpg')}}" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
-                    <div class="bg-light text-center p-4 pt-0">
-                        <h5 class="font-weight-medium mt-5">Client Name</h5>
-                        <p class="text-muted font-italic">Profession</p>
-                        <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor ipsum clita</p>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <img class="position-relative rounded-circle bg-white shadow mx-auto" src="{{asset('home/img/testimonial-3.jpg')}}" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
-                    <div class="bg-light text-center p-4 pt-0">
-                        <h5 class="font-weight-medium mt-5">Client Name</h5>
-                        <p class="text-muted font-italic">Profession</p>
-                        <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor ipsum clita</p>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <img class="position-relative rounded-circle bg-white shadow mx-auto" src="{{asset('home/img/testimonial-4.jpg')}}" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">
-                    <div class="bg-light text-center p-4 pt-0">
-                        <h5 class="font-weight-medium mt-5">Client Name</h5>
-                        <p class="text-muted font-italic">Profession</p>
-                        <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor ipsum clita</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="container-fluid py-5">--}}
+{{--        <div class="container">--}}
+{{--            <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Testimonial</h6>--}}
+{{--            <h1 class="display-4 text-center mb-5">Our Clients Say</h1>--}}
+{{--            <div class="owl-carousel testimonial-carousel">--}}
+{{--                <div class="testimonial-item">--}}
+{{--                    <img class="position-relative rounded-circle bg-white shadow mx-auto" src="{{asset('home/img/testimonial-1.jpg')}}" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">--}}
+{{--                    <div class="bg-light text-center p-4 pt-0">--}}
+{{--                        <h5 class="font-weight-medium mt-5">Client Name</h5>--}}
+{{--                        <p class="text-muted font-italic">Profession</p>--}}
+{{--                        <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor ipsum clita</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="testimonial-item">--}}
+{{--                    <img class="position-relative rounded-circle bg-white shadow mx-auto" src="{{asset('home/img/testimonial-2.jpg')}}" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">--}}
+{{--                    <div class="bg-light text-center p-4 pt-0">--}}
+{{--                        <h5 class="font-weight-medium mt-5">Client Name</h5>--}}
+{{--                        <p class="text-muted font-italic">Profession</p>--}}
+{{--                        <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor ipsum clita</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="testimonial-item">--}}
+{{--                    <img class="position-relative rounded-circle bg-white shadow mx-auto" src="{{asset('home/img/testimonial-3.jpg')}}" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">--}}
+{{--                    <div class="bg-light text-center p-4 pt-0">--}}
+{{--                        <h5 class="font-weight-medium mt-5">Client Name</h5>--}}
+{{--                        <p class="text-muted font-italic">Profession</p>--}}
+{{--                        <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor ipsum clita</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="testimonial-item">--}}
+{{--                    <img class="position-relative rounded-circle bg-white shadow mx-auto" src="{{asset('home/img/testimonial-4.jpg')}}" style="width: 100px; height: 100px; padding: 12px; margin-bottom: -50px; z-index: 1;" alt="">--}}
+{{--                    <div class="bg-light text-center p-4 pt-0">--}}
+{{--                        <h5 class="font-weight-medium mt-5">Client Name</h5>--}}
+{{--                        <p class="text-muted font-italic">Profession</p>--}}
+{{--                        <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor ipsum clita</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <!-- Testimonial End -->
-
-
-
 @endsection

@@ -18,40 +18,11 @@ class DashBoardController extends Controller
 
     public function index()
     {
-        if(Auth::user()->hasRole('admin')) {
-            $role = DB::table('roles')->where('name','=','admin')->first();
-            $data = [
-                'company_name' => 'CompTech Company Limited',
-                'role' => $role->display_name,
-                'greeting' => $this->greeting()
-            ];
-            return view('dashboard.administrator.administrator_dashboard')->with($data);
-        }
-        elseif(Auth::user()->hasRole('manager')){
-            $role = DB::table('roles')->where('name','=','manager')->first();
-            $data = ['role'=> $role->display_name];
-            return view('dashboard.manager.manager_dashboard')->with($data);
-        }
-        elseif(Auth::user()->hasRole('dry_man')){
-            $role = DB::table('roles')->where('name','=','dry_man')->first();
-            $data = ['role'=> $role->display_name];
-            return view('dashboard.manager.manager_dashboard')->with($data);
-        }
-        elseif(Auth::user()->hasRole('wash_man')){
-            $role = DB::table('roles')->where('name','=','wash_man')->first();
-            $data = ['role'=> $role->display_name];
-            return view('dashboard.manager.manager_dashboard')->with($data);
-        }
-        elseif(Auth::user()->hasRole('owner')){
-            $role = DB::table('roles')->where('name','=','owner')->first();
-            $data = [
-                'company_name' => 'Valar Technology Solutions',
-                'role' => $role->display_name,
-                'greeting' => $this->greeting()
-            ];
-            return view('dashboard.administrator.administrator_dashboard')->with($data);
-        }
-        echo "Welcome to the Dashboard";
+        $data = [
+           'role' => $this->display_role_names(),
+            'company_name' => 'Valar Technology Solutions'
+        ];
+        return view('dashboard.main_dashboard')->with($data);
     }
      public function administrator_profile(){
        return view('dashboard.administrator.profile');
@@ -65,5 +36,20 @@ class DashBoardController extends Controller
          }else {
              return 'Good Evening';
          }
+     }
+
+     public function display_role_names(){
+        $role = '';
+        if(Auth::user()->hasRole('owner')){
+            $owner = DB::table('roles')->where('name','=','owner')->first();
+            $role = $owner->display_name;
+        }else if(Auth::user()->hasRole('washman')){
+            $washman = DB::table('roles')->where('name','=','wash_man')->first();
+            $role = $washman->display_name;
+        }else if(Auth::user()->hasRole('dryman')){
+            $dryman = DB::table('roles')->where('name','=','dry_man')->first();
+            $role = $dryman->display_name;
+        }
+        return $role;
      }
 }

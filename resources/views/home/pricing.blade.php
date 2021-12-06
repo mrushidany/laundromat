@@ -1,6 +1,5 @@
 @extends('home.main')
 
-
 @section('navbar')
     <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
         <div class="navbar-nav ml-auto py-0">
@@ -8,7 +7,8 @@
             <a href="{{route('about')}}" class="nav-item nav-link">About</a>
             <a href="{{route('services')}}" class="nav-item nav-link">Services</a>
             <a href="{{route('pricing')}}" class="nav-item nav-link active">Pricing</a>
-            <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
+            <a href="{{route('contact','easywash')}}" class="nav-item nav-link">Contact</a>
+            <a href="{{route('login')}}" class="nav-item nav-link">Login</a>
         </div>
     </div>
 @endsection
@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-md-6 text-center text-md-right">
                     <div class="d-inline-flex align-items-center">
-                        <a class="btn text-white" href="">Home</a>
+                        <a class="btn text-white" href="{{route('home')}}">Home</a>
                         <i class="fas fa-angle-right text-white"></i>
                         <a class="btn text-white disabled" href="">Pricing</a>
                     </div>
@@ -33,7 +33,6 @@
     </div>
     <!-- Page Header Start -->
 
-
     <!-- Pricing Plan Start -->
     <div class="container-fluid pt-5 pb-3">
         <div class="container">
@@ -42,58 +41,51 @@
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <div class="bg-light text-center mb-2 pt-4">
-                        <div class="d-inline-flex flex-column align-items-center justify-content-center bg-secondary rounded-circle shadow mt-2 mb-4" style="width: 200px; height: 200px; border: 15px solid #ffffff;">
-                            <h3 class="text-white">Basic</h3>
-                            <h1 class="display-4 text-white mb-0">
-                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>49<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
+                        <div class="d-inline-flex flex-column align-items-center justify-content-center bg-easywash rounded-circle shadow mt-2 mb-4" style="width: 200px; height: 200px; border: 15px solid #ffffff;">
+                            <h3 class="text-blue">Washing</h3>
+                            <h1 class="display-4 text-blue mb-0">
+                                <small class="align-top" style="font-size: 22px; line-height: 45px;">T<sub>shs</sub></small><small class="align-middle">4000</small><small class="align-bottom" style="font-size: 12px; line-height: 40px;">/ 8Kg</small>
                             </h1>
                         </div>
                         <div class="d-flex flex-column align-items-center py-3">
-                            <p>HTML5 & CSS3</p>
-                            <p>Bootstrap 4</p>
-                            <p>Responsive Layout</p>
-                            <p>Compatible With All Browsers</p>
+
+
                         </div>
-                        <a href="" class="btn btn-secondary py-2 px-4">Signup Now</a>
+                        <a href="{{route('contact','easywash')}}" class="btn btn-secondary py-2 px-4">Book Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-4">
                     <div class="bg-light text-center mb-2 pt-4">
-                        <div class="d-inline-flex flex-column align-items-center justify-content-center bg-primary rounded-circle shadow mt-2 mb-4" style="width: 200px; height: 200px; border: 15px solid #ffffff;">
-                            <h3 class="text-white">Standard</h3>
-                            <h1 class="display-4 text-white mb-0">
-                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>99<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
+                        <div class="d-inline-flex flex-column align-items-center justify-content-center bg-easywash rounded-circle shadow mt-2 mb-4" style="width: 200px; height: 200px; border: 15px solid #ffffff;">
+                            <h3 class="text-blue">Drying</h3>
+                            <h1 class="display-4 text-blue mb-0">
+                                <small class="align-top" style="font-size: 22px; line-height: 45px;">T<sub>shs</sub></small><small class="align-middle">4000</small><small class="align-bottom" style="font-size: 12px; line-height: 40px;">/ 8Kg</small>
                             </h1>
                         </div>
                         <div class="d-flex flex-column align-items-center py-3">
-                            <p>HTML5 & CSS3</p>
-                            <p>Bootstrap 4</p>
-                            <p>Responsive Layout</p>
-                            <p>Compatible With All Browsers</p>
+
+
                         </div>
-                        <a href="" class="btn btn-primary py-2 px-4">Signup Now</a>
+                        <a href="{{route('contact','easywash')}}" class="btn btn-primary py-2 px-4">Book Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-4">
                     <div class="bg-light text-center mb-2 pt-4">
-                        <div class="d-inline-flex flex-column align-items-center justify-content-center bg-secondary rounded-circle shadow mt-2 mb-4" style="width: 200px; height: 200px; border: 15px solid #ffffff;">
-                            <h3 class="text-white">Premium</h3>
-                            <h1 class="display-4 text-white mb-0">
-                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>149<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
+                        <div class="d-inline-flex flex-column align-items-center justify-content-center bg-easywash rounded-circle shadow mt-2 mb-4" style="width: 200px; height: 200px; border: 15px solid #ffffff;">
+                            <h3 class="text-blue">Delivery</h3>
+                            <h1 class="display-4 text-blue mb-0">
+                                <small class="align-top" style="font-size: 22px; line-height: 45px;">T<sub>shs</sub></small><small class="align-middle">2000</small>
                             </h1>
                         </div>
                         <div class="d-flex flex-column align-items-center py-3">
-                            <p>HTML5 & CSS3</p>
-                            <p>Bootstrap 4</p>
-                            <p>Responsive Layout</p>
-                            <p>Compatible With All Browsers</p>
+
+
                         </div>
-                        <a href="" class="btn btn-secondary py-2 px-4">Signup Now</a>
+                        <a href="{{route('contact','easywash')}}" class="btn btn-secondary py-2 px-4">Book Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Pricing Plan End -->
-
-    @endsection
+@endsection

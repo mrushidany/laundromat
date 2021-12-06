@@ -5485,7 +5485,7 @@ a.close.disabled {
 .modal-header {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem 1rem;
   border-bottom: 1px solid #dee2e6;
 }
@@ -6178,6 +6178,9 @@ button.bg-dark:focus {
 
 .bg-white {
   background-color: #fff !important;
+}
+.bg-easywash {
+    background-color: #ffff00 !important;
 }
 
 .bg-transparent {

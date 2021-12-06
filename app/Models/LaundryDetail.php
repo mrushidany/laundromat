@@ -7,12 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class LaundryDetail extends Model
 {
+    protected $table = 'laundry_details';
     use HasFactory;
 
     protected $fillable = [
         'routine_client_id',
         'quantity',
-        'pickup_date',
+        'selected_machines',
         'issued_by'
     ];
 }
