@@ -22,6 +22,9 @@ class DashBoardController extends Controller
            'role' => $this->display_role_names(),
             'company_name' => 'Valar Technology Solutions'
         ];
+        if(Auth::user()->hasRole('admin')){
+            return view('dashboard.admin_dashboard')->with($data);
+        }
         return view('dashboard.main_dashboard')->with($data);
     }
      public function administrator_profile(){
