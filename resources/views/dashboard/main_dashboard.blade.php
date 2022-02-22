@@ -8,7 +8,7 @@
 
             </div>
         </div>
-    @if (Auth::user()->hasRole('owner'))
+    @if (Auth::user()->hasRole('owner') || Auth::user()->hasRole('admin'))
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-md-6 col-lg-6">
