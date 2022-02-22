@@ -72,22 +72,6 @@
                                                         </x-responsive-nav-link>
                                                     </form>
                                                 </div>
-                                                @if (Auth::user()->hasRole('admin'))
-                                                <div class="profile-details my-4">
-                                                    <a href="" class="iq-sub-card bg-success-light rounded-small p-2">
-                                                        <div class="media align-items-center">
-                                                            <div class="rounded iq-card-icon-small">
-                                                                <i class="ri-account-box-line"></i>
-                                                            </div>
-                                                            <div class="media-body ml-3">
-                                                                <h6 class="mb-0 ">Account settings</h6>
-                                                                <p class="mb-0 font-size-12">Manage your account parameters.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                @endif
                                             </div>
                                             <div class="p-3"></div>
                                         </div>
@@ -132,6 +116,24 @@
                                                         </x-responsive-nav-link>
                                                     </form>
                                                 </div>
+                                                @if (Auth::user()->hasRole('admin'))
+                                                <div class="profile-details my-4">
+                                                    <a href=""
+                                                       class="iq-sub-card bg-success-light rounded-small p-2">
+                                                        <div class="media align-items-center">
+                                                            <div class="rounded iq-card-icon-small">
+                                                                <i class="ri-account-box-line"></i>
+                                                            </div>
+                                                            <div class="media-body ml-3">
+                                                                <h6 class="mb-0 ">Account settings</h6>
+                                                                <p class="mb-0 font-size-12">Manage your account parameters.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                @endif
+
                                             </div>
                                             <div class="p-3"></div>
                                         </div>
