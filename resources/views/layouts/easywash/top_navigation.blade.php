@@ -125,8 +125,8 @@
                                                                 <i class="ri-account-box-line"></i>
                                                             </div>
                                                             <div class="media-body ml-3">
-                                                                <h6 class="mb-0 ">Account settings</h6>
-                                                                <p class="mb-0 font-size-12">Manage your account parameters.
+                                                                <h6 class="mb-0 ">System settings</h6>
+                                                                <p class="mb-0 font-size-12">Manage your system settings.
                                                                 </p>
                                                             </div>
                                                         </div>
