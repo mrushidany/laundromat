@@ -72,6 +72,7 @@
                                                         </x-responsive-nav-link>
                                                     </form>
                                                 </div>
+                                                @if (Auth::user()->hasRole('admin'))
                                                 <div class="profile-details my-4">
                                                     <a href=""
                                                        class="iq-sub-card bg-success-light rounded-small p-2">
@@ -87,6 +88,8 @@
                                                         </div>
                                                     </a>
                                                 </div>
+                                                @endif
+
                                             </div>
                                             <div class="p-3"></div>
                                         </div>
