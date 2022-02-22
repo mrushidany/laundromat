@@ -1,0 +1,1349 @@
+[33mcommit f017e907331a0181acd470d025af7b082d793f93[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Feb 22 15:16:12 2022 +0300
+
+    Made AdminController
+
+[33mcommit 06f44ba25456aa0133cd47dad5ae276838cbdcbd[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Feb 22 15:12:31 2022 +0300
+
+    System settings
+
+[33mcommit 12a02b3e285bae7d659db1a0613787061cf10c24[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Feb 22 14:49:44 2022 +0300
+
+    Top navigation customization
+
+[33mcommit c5d35e8ff0b6bf4836bc4e213af57ab28489a99f[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Feb 22 14:41:41 2022 +0300
+
+    Customize the top navigation
+
+[33mcommit f10eed4a1ea6cea8d6eb3f028d9a4de84e74161a[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Feb 22 14:33:21 2022 +0300
+
+    Customizing the admin dashboard
+
+[33mcommit c37e88869b2c53b3623083980dac7b4fac4ff43b[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Feb 22 14:28:48 2022 +0300
+
+    Image link click to dashboard
+
+[33mcommit 3f6470d752dd0ce3bd8b58907d0e949a2350ef83[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Feb 22 14:28:06 2022 +0300
+
+    Link to dashboard update
+
+[33mcommit b5339901da7b7ff04950ee6245b2e3f8eb5a4a3d[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Feb 22 14:24:44 2022 +0300
+
+    Re render the admin dashboard
+
+[33mcommit c24a7e916b3f2a7829626c42208ae5d37ed926d0[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Feb 22 13:33:20 2022 +0300
+
+    Admin role priviledge
+
+[33mcommit 03536ffebbca251f79595aec87058ba644a1593c[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Feb 22 13:31:23 2022 +0300
+
+    Add admin priviledge
+
+[33mcommit 3b28ef9f6bbab3457b8a70fca6a895d3fcab11ef[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Feb 22 13:28:10 2022 +0300
+
+    Admin option
+
+[33mcommit 2588a0e9a265ee47dbe3fa33deac177059c4584e[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Jan 4 11:39:36 2022 +0300
+
+    Changed the deployment path
+
+[33mcommit ba18f55fe763c7edbb96429a09967af616a5ca48[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Oct 28 19:53:55 2021 +0300
+
+    Update cash draw payments
+
+[33mcommit 8afa672544a1c877d1b31d2b95daacc70439e419[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Oct 28 19:24:05 2021 +0300
+
+    Update the cashdraw according to the date it was updated
+
+[33mcommit 138f23cef5dfee345e47ccbaa98edac6569753db[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 25 19:05:23 2021 +0300
+
+    Parentheses error rectification
+
+[33mcommit 074f159fcf3b16a277310f064fbdbe9c39f29579[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 25 18:59:11 2021 +0300
+
+    Update feature rectification
+
+[33mcommit 9efa78b5f6cab77ca716a5927d424af3c4a94702[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 25 18:15:05 2021 +0300
+
+    Rectified the not paid updation with dates
+
+[33mcommit 4c6beb6d2d33ff07248201e5027008b872df6f84[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 25 17:01:43 2021 +0300
+
+    Customizing the search input field for laundry datatable
+
+[33mcommit 2fb30126aa93339285d737a8cec74412645e97c9[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 25 13:00:33 2021 +0300
+
+    Update feature from previous payments to be displayed today
+
+[33mcommit 8433564b8f68e69dc5de08a4739ca4b7870df968[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 25 12:36:14 2021 +0300
+
+    Created a database migration file for the laundry costs information
+
+[33mcommit 03132da8e421123989b52caf8a7341cb64f4d143[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Oct 21 11:40:21 2021 +0300
+
+    Rectified the update into partial payment
+
+[33mcommit 18d58cec3e53406dd75ba9ab5330ce8136efb872[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Oct 20 19:30:21 2021 +0300
+
+    Fixing the total bug
+
+[33mcommit bdd8e89ecbc5fbf96e3a660aa35e2e31377fbd57[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Oct 20 19:19:43 2021 +0300
+
+    Added the test printing feature for testing
+
+[33mcommit 26977717203f55f3fb97afda78fa7c2dffd3eff8[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Oct 20 16:12:16 2021 +0300
+
+    Editable total cost in creating laundry
+
+[33mcommit fb21cc9bf1df58044acf2b992df930845ef59422[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Oct 15 18:10:40 2021 +0300
+
+    Added the currency sign for shilling
+
+[33mcommit 52208d9a4119e4ed12c960239a0e58d90c09261b[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Oct 15 18:07:52 2021 +0300
+
+    Updated cost displaying
+
+[33mcommit 69f496f138c8cc7d91c899f6e3103afaa849a4c6[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Oct 15 17:30:49 2021 +0300
+
+    Reverted to normal settings
+
+[33mcommit 06871e620de720416252c2e8c472f43a366adbd7[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Oct 15 12:44:27 2021 +0300
+
+    Rectified the partial payment bug
+
+[33mcommit 495b3523d8617a92b287d1ad8bc1bc8ed4436bd8[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Oct 15 11:23:49 2021 +0300
+
+    Cash at draw feature updated
+
+[33mcommit 3e7fd7fbe9da2bcaa9f1c695da10af9c6a859109[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Oct 15 11:15:31 2021 +0300
+
+    Removed the cashdraw first until tested
+
+[33mcommit f925bc818dd8ac1536e259663b31b9a42284fd3a[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Oct 15 11:11:11 2021 +0300
+
+    Partial Payments total amount incorporated in the footer of the datatable
+
+[33mcommit d228a53b6e5f11376f1165a50ede51b50079c129[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Oct 13 09:41:47 2021 +0300
+
+    Increased the length menu in datatable
+
+[33mcommit 7060bff3b35eae98967335b41cf29d24b8a03479[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Oct 13 09:32:50 2021 +0300
+
+    Partial Payment to be paid value displayed
+
+[33mcommit 5a482fb70fb96a674eebedc314bb279110df784f[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Oct 13 08:19:25 2021 +0300
+
+    Where Date for custom date filtering
+
+[33mcommit c5f37d61a648edbae67039c7802d3654882c7e38[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Oct 12 20:49:48 2021 +0300
+
+    Partial payment feature or bug rectified
+
+[33mcommit 7667a6d4cd11bd916e5b15f80877b412baf726db[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Oct 12 11:12:15 2021 +0300
+
+    Print Feature for paid and updating payment status for paid
+
+[33mcommit 33c9a95b1a49566671b1b8cc7ba5f6d15aed5005[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Oct 12 10:33:18 2021 +0300
+
+    Uploading the test print feature
+
+[33mcommit 1daaf8ebadda680a54b6c2df1598e9396ebb0721[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 11 14:02:02 2021 +0300
+
+    Client side printing
+
+[33mcommit 7ea93e57418c12071bfcb746c4371f9fa447ab37[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 11 11:43:15 2021 +0300
+
+    Passed the csrf header token for the server testing the printing
+
+[33mcommit d31cefb8541f2f57b75d60249fad1a0583c2b68e[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Oct 5 18:32:06 2021 +0300
+
+    Testing Printing Again
+
+[33mcommit 5f46328306ef87fb7e6284c3a4b213ec7927697e[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Oct 5 17:54:54 2021 +0300
+
+    Updated the composer
+
+[33mcommit b76c3f5194f5cedbaf8540e6e778255c9e45a7ce[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Oct 5 16:03:19 2021 +0300
+
+    Testing the printing
+
+[33mcommit 015915b4a12eb130126e0c0840669f043560a5dc[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Oct 5 11:47:51 2021 +0300
+
+    Removed the remember me radio button from the login page
+
+[33mcommit 84d2b47ad89cc38b7d0918fc819e2e25f0e11ff1[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Oct 5 11:44:34 2021 +0300
+
+    Update Laundry working pretty fine
+
+[33mcommit e5d088092c10cae2a34f151e7f99dfa847994ac3[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Oct 5 08:57:59 2021 +0300
+
+    Navigated the edit button to the edit function/method
+
+[33mcommit 887c20d9b02e1fd4c827754aa5d34ea5a100a004[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Oct 5 08:44:02 2021 +0300
+
+    Removed the Payment and Receipts Tab for now
+
+[33mcommit 5dce0cc76c8e1f780a585576e97cde00b103613f[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 4 19:12:24 2021 +0300
+
+    Removed the link from the full name Client Name column
+
+[33mcommit 2fd9de4a372eae971907ccc944ac36ad3b0f3dd8[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 4 18:54:22 2021 +0300
+
+    Removed required from drying machine validation
+
+[33mcommit a33677fa8c631c61fc1bceebda4db08fa0fedb1f[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 4 18:34:32 2021 +0300
+
+    Removed the receipt action when submit button is clickec
+
+[33mcommit 05f68b9c261109a28354edf57b27142205c8df1e[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 4 14:57:33 2021 +0300
+
+    NOt Paid and Partial Payment update status
+
+[33mcommit 87b273c913a84bd12bb3166a5aa8b2580185555c[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 4 12:20:01 2021 +0300
+
+    Refresh filter button working
+
+[33mcommit 9af1c6805d63d91de40210d7da5354a744df0010[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 4 12:12:49 2021 +0300
+
+    Filtration works perfect
+
+[33mcommit 69a9f781b404f13563b9e16ec218396d6864c273[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 4 11:28:18 2021 +0300
+
+    Added the sweet alert from empty date fields before filtration
+
+[33mcommit eadfdb1a03d4920bf451ab657901b97cc8d439f9[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 4 10:49:57 2021 +0300
+
+    ServerSide delete operation
+
+[33mcommit 4ec09b8cc978c749a122633e457f041a3f2e2593[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Oct 4 10:21:34 2021 +0300
+
+    Recent Laundry feature is working pretty fine
+
+[33mcommit 3ee4d2ea2c0e6cf65c9ab84426e431756d573add[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sun Oct 3 16:58:48 2021 +0300
+
+    Laundry Details to be listed for a specific date
+
+[33mcommit 481079c458512f155791c736b8132e4cd723947c[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sun Oct 3 16:32:16 2021 +0300
+
+    Rectified the table into the main datatable defined variable and the delete worked pretty fine
+
+[33mcommit 785f1c76236a001474f55de353c1821475d14f55[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Oct 1 15:25:50 2021 +0300
+
+    serverSide footerCallback for total amount
+
+[33mcommit d06e8f90ded24bba1ea4a11a970868442a955f77[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 30 14:14:45 2021 +0300
+
+    Changed the avatar different for Frida because she is female
+
+[33mcommit 2a015c8bb794b78565754b919cbd260143339fbc[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 29 11:52:07 2021 +0300
+
+    Today and yesterday filteration working
+
+[33mcommit ea355651f42ed97b1f1a5da6f7a7109ea7c1dd4f[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 29 08:54:20 2021 +0300
+
+    Removed the serverside option as total column should be counting all pages
+
+[33mcommit 2cd99843909db1160bf6227647fdff229ca6aaee[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 29 08:09:06 2021 +0300
+
+    Datatable retrieves data of a specific day only
+
+[33mcommit bd48283f8b997b9f320c034d22a5ab4081b3b189[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 27 12:35:10 2021 +0300
+
+    Removed the receiptprinter dependency
+
+[33mcommit 5fbca535a2396f37081a7ad80f2fc6c1ce27709b[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 27 11:24:06 2021 +0300
+
+    Action column differentiation between owner and other users
+
+[33mcommit 0fdeeb3dd8c8443e659fa0ff821cb0f5a149b5b8[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 27 11:14:52 2021 +0300
+
+    Delete the laundry details granted to owner
+
+[33mcommit e0274a055090dfa1964027743a713d99aea0e3b6[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 27 09:45:36 2021 +0300
+
+    All users to see the laundry details
+
+[33mcommit 12bff553ae1bee2cd7f8bc47e7603e2ae74ffd4b[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sun Sep 26 16:41:02 2021 +0300
+
+    Added the login link in the website landing page
+
+[33mcommit 69b26513e14c0241175c0d965c5775c31b56aa76[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sun Sep 26 16:36:30 2021 +0300
+
+    Also the same as the previous one
+
+[33mcommit 6d2070ad199b488d268b3f8ba0f03e05746e1602[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sun Sep 26 16:34:44 2021 +0300
+
+    Laundry and DryCleaning heading remove from landing page
+
+[33mcommit 43023c1e95ac8445383c20e71e5e1ee433364f31[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sun Sep 26 15:59:00 2021 +0300
+
+    Still testing the naming space for ReceiptPrinter
+
+[33mcommit 1ea2f405b70f1b10451cd7feac96ac5ef06f0dad[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sun Sep 26 15:54:23 2021 +0300
+
+    Change the namespace for ReceiptPrinter
+
+[33mcommit 1de469aa70abab79202fa2f4fd286d9ce1ad3636[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sun Sep 26 15:51:18 2021 +0300
+
+    Fixing the Print Receipt bug
+
+[33mcommit 5e2a74c6c4a7d7d055ca22e609be23bbf4a7afed[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sun Sep 26 15:37:40 2021 +0300
+
+    update Receipt Printer
+
+[33mcommit b91a6ceae984d9d3cf1389c4eeeb785490a42cc7[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 20 15:17:19 2021 +0300
+
+    Print Receipt feature for testing
+
+[33mcommit c99c4c162d588e13b479a92317d3cf03003b594a[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 20 11:52:22 2021 +0300
+
+    Receipt Printer Library Setup and initialisation
+
+[33mcommit 6e9345ea2e78738c72af2a84515c77de096935d1[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Sep 17 09:39:54 2021 +0300
+
+    Added the action buttons
+
+[33mcommit f370c0127a40c4ddf886a8a5186dd2b82a181a8a[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 16 18:01:01 2021 +0300
+
+    Action Column added to all users but will have different priviledges
+
+[33mcommit 99f4edd75934c538fc27a02a30baab931363734f[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 16 17:57:53 2021 +0300
+
+    Added the action column in owner's datatable
+
+[33mcommit 24ce0d163c46009095be61cff305646e62382097[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 16 17:40:12 2021 +0300
+
+    Updating last changes
+
+[33mcommit cbcea979653cb4153d15b886d4fd49e0b8e68dac[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 16 15:20:21 2021 +0300
+
+    Changed the tab id to be realistic
+
+[33mcommit b5206504aa03cd5309becb11fa551407397a8970[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 16 15:18:34 2021 +0300
+
+    Laundry Tabs and Payment Tabs for mobility
+
+[33mcommit fb6f2002bd6bdac25a032cd89172e1b2fa0c2a71[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 16 10:36:23 2021 +0300
+
+    Filtering is work under progress
+
+[33mcommit 5f05eba2720d78a869536fcc9a36662012a97320[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 16 09:38:46 2021 +0300
+
+    Added the refresh button in the Custom filter
+
+[33mcommit d7422ce10db974f0e6a1e2425be36a24791a6a3c[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 15 13:12:29 2021 +0300
+
+    Added the filter button in the custom filter in Laundry Details Datatable
+
+[33mcommit 2b130851e9863a13019ff3ef0336f0c39b05b299[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 15 12:51:28 2021 +0300
+
+    Custom filtering options customisations
+
+[33mcommit 88b2c059095640bae3fae821b78f3bb23fb7b1a0[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 15 09:43:44 2021 +0300
+
+    Dryman and Washman to specific to retrieve their entries only while Owner sees all
+
+[33mcommit db556b48476998270e5a1f122ac245e7533fcc3f[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 15 09:20:41 2021 +0300
+
+    Removed the forgot password link from the login page
+
+[33mcommit 16097016b67a7b17c1d5729ad0d5a5b7b39b465a[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 15 09:15:54 2021 +0300
+
+    Removed the logout button from the sidebar layout
+
+[33mcommit 4b0a54e7581357b0928b889f9e730fbea5578770[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 14 12:09:28 2021 +0300
+
+    The total cost in the footer is functional and is converted to locale String for better viewing
+
+[33mcommit c65ed663422d3f837fcb5b9b641bc0981e41a5a9[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 14 11:11:02 2021 +0300
+
+    Ordering of the data according to their dates of registration
+
+[33mcommit 24939667e51b3d181e5aa1b5a4889602609e021d[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 13 16:28:56 2021 +0300
+
+    Added the total cost row in the datatable footer
+
+[33mcommit 2dad7f0dc103eaf51e0e0b2d1d4287b900aa4f5a[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 13 16:12:02 2021 +0300
+
+    Structured the datatable
+
+[33mcommit 211a444122d429ca3102f9ef582fe530fb98f398[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 13 15:46:15 2021 +0300
+
+    Laundry list Datatable initially functional
+
+[33mcommit 9d4de28110c50a31f8cd5ca5ceed44b3fc729303[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 13 14:32:21 2021 +0300
+
+    Laundry Datatable revisit
+
+[33mcommit 29be7f587e7050356c853698b773cc8bc51002e1[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 13 13:19:50 2021 +0300
+
+    Initial Payment saving if exists
+
+[33mcommit 4888f312238f09c36795e350b8edb269e53c55a5[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 13 12:14:01 2021 +0300
+
+    Created the InitialPaymentStatus model
+
+[33mcommit 82162297e84018b325ea74282ef9717906ad7b8f[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 13 12:12:31 2021 +0300
+
+    Initial Payment table created migration and payment status in laundry costs as new column
+
+[33mcommit c3c925e64f210f567c633fbe48ec8608184dd6ce[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 13 11:56:52 2021 +0300
+
+    Added the payment status column into the laundry costs table
+
+[33mcommit f265e666d666a41d81f40b4e38a9e2d536493492[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 13 11:48:16 2021 +0300
+
+    Deleted the laundry_machine_details table and it's Model as changes into the database
+
+[33mcommit f23a7aa94b6db1a8c375cc0700208d2f387785c1[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 13 11:32:56 2021 +0300
+
+    Input hidden bailing out all selected machines and the selected machines column migration in laundry details table
+
+[33mcommit 0d40151adb8a23a63708b5bc21fad10be1622468[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 13 09:20:06 2021 +0300
+
+    Drying Machine selection status updated
+
+[33mcommit dcf6ad3581af057b32968bb3c37fda3a0dd756bf[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Sep 13 07:36:58 2021 +0300
+
+    Navigation link address to home updated
+
+[33mcommit 60379a6cb5db8020c18fa4dc5bed49f70483dc86[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Sep 11 15:25:03 2021 +0300
+
+    Font settings in the laundry details form
+
+[33mcommit 063b4c34af06e918664c3f3e51bb5cb71c411e9a[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Sep 11 15:17:50 2021 +0300
+
+    Changes in the layouts between the manager and administrator dashboard have the same page
+
+[33mcommit 8547c25edbbccf065e69fa16421656d6fe5393ae[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Sep 10 18:43:35 2021 +0300
+
+    Multiple machine display in summary when selected
+
+[33mcommit 35f85b7939a95fb97450d08ef1dcfa0bfd299b46[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Sep 10 16:06:43 2021 +0300
+
+    Added empty feature when laundry form is reversed and forward movement
+
+[33mcommit 30fba2d3d0e854e6343a1d36591feed1a6184820[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Sep 10 15:55:51 2021 +0300
+
+    Modifications in the administrator dashboard
+
+[33mcommit 45677d1ec5d02c30920e94d9a1363f3addfb66e3[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Sep 10 15:43:26 2021 +0300
+
+    Laundry Detail and Payment Summary Adjacements
+
+[33mcommit fa6ee7e5fc6e4aad66aae5956751d76fef2a23fc[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Sep 10 11:51:38 2021 +0300
+
+    Removed the message link from the sidebar
+
+[33mcommit b8f49f20a304d39efa94e602c8fc5efca871c196[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Sep 10 11:49:57 2021 +0300
+
+    Still Working on the laundry and payment status summary page
+
+[33mcommit adb7da263465ef04c82c9f5a51b14804f9212d89[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Sep 10 11:07:17 2021 +0300
+
+    Laundry Summary Page updated
+
+[33mcommit 0bae58af33464c4a1b04c8430a47931b1e14b92a[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 9 20:23:02 2021 +0300
+
+    Payment Status Verification especially the partial payment status verification
+
+[33mcommit 06d502c04723721490a91cd62a1aa1c732b45adf[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 9 18:52:56 2021 +0300
+
+    Applied the dynamism also in owner laundry details form
+
+[33mcommit 53366bdf9cc73e7c25f486e4c50c60a497e5caa6[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 9 18:39:21 2021 +0300
+
+    Dynamic calculator in laundry details form for quantity and total cost
+
+[33mcommit 6d14b8797e626634e2ddf25ce4797a2768455ca9[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 9 11:33:42 2021 +0300
+
+    Removed temporarily the testimonial part in the website till further notice
+
+[33mcommit c02e8db18a69faf3817678eb80d38e05fb4c5315[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 8 17:33:49 2021 +0300
+
+    Modified the owner create new laundry pages
+
+[33mcommit f266ca17c9e1b6015a677673435fe31817c7095d[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 8 17:24:07 2021 +0300
+
+    Owner Unique Laundry Page
+
+[33mcommit 358d571b6dc12b222a5174fa26a8c398be1f507e[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 8 17:16:56 2021 +0300
+
+    Mobile view rendering and change of layout in owner pages and dashboard
+
+[33mcommit d0ffcfce9fef56d9ce2b154987376ce5ec5404e3[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 8 13:09:21 2021 +0300
+
+    Changed the owner dashboard to normal layout
+
+[33mcommit 16daecba623d3c7280ab8bd273e3332feba8a561[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 8 11:41:01 2021 +0300
+
+    Updated the pricing booking links
+
+[33mcommit 233ea76a23e3ef2640fc5263f384b8cb8f8745fe[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 8 11:36:45 2021 +0300
+
+    Solved the navigation links to contact page bug
+
+[33mcommit 5ee4813cc13eba87dcd2b43ef3adf7525df898c4[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 8 11:33:11 2021 +0300
+
+    Removed the redundant contact javascript file and server file
+
+[33mcommit 71619b15273c6190c64c4f95c1fe7603179a7792[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 8 11:27:43 2021 +0300
+
+    Contact Message feature is working through the website
+
+[33mcommit ad214f7762d856408c2ba90b5737925285e6c65d[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 15:13:33 2021 +0300
+
+    Deleted the news_letter_table migration
+
+[33mcommit 5054fde7f409ca6331ef6fd563f463d1a401f316[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 15:05:30 2021 +0300
+
+    Removed the newsletter feature
+
+[33mcommit dce82920032140ed5fc06ef3e75682940b5cf531[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 14:26:30 2021 +0300
+
+    Updated the pricing
+
+[33mcommit a913927be69d49bbf1dd97b401bbeb8ecdeccf72[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 13:03:53 2021 +0300
+
+    Pricing page customisation
+
+[33mcommit 391d7af40438ee6c1f2d93b149614be0b7385fa2[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 13:00:09 2021 +0300
+
+    Controller methods definitions and service page customization
+
+[33mcommit d19dc34427dda17c75f7e98a23df6104c59a7ea4[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 12:51:37 2021 +0300
+
+    About and Landing page customisation
+
+[33mcommit 26b7ee379f80517df586e8215b7a1e4caecaf366[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 12:33:50 2021 +0300
+
+    About us updated
+
+[33mcommit 66f5e9b547a1b468aa86dfdbfe5737d43daa1e95[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 12:28:34 2021 +0300
+
+    Pricing simply rectified
+
+[33mcommit 9a1864aa9ba8759a57121e8945184e60eb032dd9[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 11:59:00 2021 +0300
+
+    How we work modifications
+
+[33mcommit 3a23296c1d952177840b4f6c38ff1c577dde64c2[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 11:51:54 2021 +0300
+
+    Changed the round layouts on how we work to yellow
+
+[33mcommit a59f57cfccb2dd7a19ad9f3161d76f95453f628c[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 11:35:44 2021 +0300
+
+    Customised the main landing page layout
+
+[33mcommit ff04d81fad6e33db8ac71d1e40e8f5b9d7ddc6ae[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 11:06:04 2021 +0300
+
+    Established the easywash logo in the landing page
+
+[33mcommit d5728de9055f5d26a33f457b7d9f7a9ac8a2bbc8[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 10:59:56 2021 +0300
+
+    Updated the facebook and instagram links
+
+[33mcommit 71f92a9affbf9ae84e58dc99513edebd64239b6c[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Sep 7 09:59:47 2021 +0300
+
+    Adjancements in the landing page
+
+[33mcommit 85f8b54e7c40b468171e74124b2216dd9c14dadc[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 2 10:31:24 2021 +0300
+
+    Laundry Form Adjacements and improvements
+
+[33mcommit 8fc11aa479893e60331314f5ef7b42a77b71b836[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Sep 2 09:12:43 2021 +0300
+
+    Changed the Laundry button to navigational link
+
+[33mcommit 188456675d5984b8fe29568ff81b747e90467856[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 1 08:03:18 2021 +0300
+
+    Deleted the multiple select 2 and test layout page content
+
+[33mcommit 4324579409c1f9ca2af6a311c74529da2968579e[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Sep 1 08:01:56 2021 +0300
+
+    Multiple Select 2 and Test page implementation
+
+[33mcommit 2a592a092f301af1778f0123c3a07514464aca3d[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 31 09:51:01 2021 +0300
+
+    Drying Machine checkbox button and washine machine listed from 1 - 10 in select option
+
+[33mcommit 847b8830ff11793f17723cd854f7beb5d8d049d6[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 31 09:30:21 2021 +0300
+
+    Phone number input field changed into normal input field
+
+[33mcommit 506c985e55c2ba7ac762a34ff0624abf701f4231[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 31 09:23:05 2021 +0300
+
+    Changed the clients full name into optional in the database
+
+[33mcommit e093dc235a6ca81e895d25ddde96a8f718ec2fb5[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 31 09:13:15 2021 +0300
+
+    Removed the pickupdate input field and payment status select option is implemented
+
+[33mcommit c9dc578a297fcc8f6bd1baf9e7df108f7268a334[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 31 09:06:25 2021 +0300
+
+    Dropped the pickup_date column from laundry details
+
+[33mcommit 6214264915c82348c44fc74cd060d8e00e99490e[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 23 15:32:39 2021 +0300
+
+    Changed the footer from Comptech to Valar company
+
+[33mcommit 9c36dfc6f775d3ab72b062c9100e04e3c8ebac1f[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 23 14:17:21 2021 +0300
+
+    Removed the dummy data from the owner dashboard
+
+[33mcommit cc3b2dd1ad45a1fc8e25b7e2a836027bf937b958[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 15:18:57 2021 +0300
+
+    Modifiied Washman Dashboard
+
+[33mcommit 5861a7ceed771bb6dfa3278cbc705e4d74995844[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 13:50:33 2021 +0300
+
+    Laundry datatable in the owner's dashboard
+
+[33mcommit 361b63ca861b327686e2bd35ac27f2a27251a64c[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 13:14:42 2021 +0300
+
+    Reverted to a stable version
+
+[33mcommit 52500e4be8bfc2f7d54ab816f052ee79b3d83afe[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 12:17:41 2021 +0300
+
+    Solved the dashboard bug
+
+[33mcommit 25bf800fa472f2bb409f6539d805e61bf94b45c1[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 05:15:10 2021 +0300
+
+    Added +255 when saving phone number of a client
+
+[33mcommit 7f71fdf37cebbc47da878a38b34d1f20781b1832[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 05:12:42 2021 +0300
+
+    Added a clickable link to datatable column
+
+[33mcommit 656463e650d623eade4e30eb40e4ee48ecab92a5[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 05:04:16 2021 +0300
+
+    Removed the edit and delete buttons from the dryman workspace
+
+[33mcommit 9d69e58e199719901fcd9bbab3292fecae8eb4eb[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 04:58:12 2021 +0300
+
+    Laundry List Datatable implementation
+
+[33mcommit 4e7a9c1e8bd14be6f364833789c651adf15ccb07[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 03:59:16 2021 +0300
+
+    Solved the laundry creation bug
+
+[33mcommit 2b3aadb951983bfc168de580f6cfb1b25b42d12a[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 03:41:05 2021 +0300
+
+    Add Laundry Data and save
+
+[33mcommit bf1bb33a42c2ccb8eff3efe6041544d4562b119f[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 02:59:52 2021 +0300
+
+    dropped the machine_id column, added washine_machine_id and drying_machine_id columns
+
+[33mcommit ce1b605205c801b7298d31e2b807a853b9ff8891[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 02:42:15 2021 +0300
+
+    Database seeded the Drying Machine information into the machines database table
+
+[33mcommit adef3576eee208fb847f0a53072936283a941f37[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 02:39:49 2021 +0300
+
+    Created and MachinesTableSeeder and seeded the washing machine data into the database
+
+[33mcommit 4bafa4796a883bd397cf375d4091777bf31bdb8a[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Sat Aug 21 02:25:26 2021 +0300
+
+    Added the Pickup Date input field and increased the number of washing and drying machines in the dropdown menu
+
+[33mcommit a32cce377e00f4e66cee8363b9214afa4f59a641[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 19 14:12:49 2021 +0300
+
+    Easywash gif
+
+[33mcommit 22882cd4ce7d1a3b3210244045a60f76a13f8a25[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 19 14:00:35 2021 +0300
+
+    Added a easywash logo gif file
+
+[33mcommit 0bfe4c65b31c4cc40fdd9c64ac4a541b46b3fe4e[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 19 13:48:04 2021 +0300
+
+    Change the aaplication logo into EasyWash Logo in mobile view compatibility
+
+[33mcommit 8bdbff0d6880264c8a07300c46069a6d43a8ed71[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 19 13:36:42 2021 +0300
+
+    Changed the loading icon into Easywash Laundromat
+
+[33mcommit 3fcb1b75e003b486d4762283ed82c8b45b6a719c[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 19 13:09:46 2021 +0300
+
+    Rectified the button toggle occupied the 12 columns in Laundry Workspace
+
+[33mcommit ac4287d6f1106f21b58697ec8125bb69da1910c5[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 17 14:45:14 2021 +0300
+
+    Updated the contact, email, and location details in the contact page
+
+[33mcommit 32f4d3d5616938360b236dda1a4772c3eaa46e2b[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 17 14:41:54 2021 +0300
+
+    Updated the footer email, contact and location details
+
+[33mcommit e270b9c223bab1a16e75380d059c44cf02892506[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 17 14:36:44 2021 +0300
+
+    Updated easywash contact, email and location details
+
+[33mcommit 28692899d64f2fe8cbab5770487739333c3e7d62[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 17 14:27:10 2021 +0300
+
+    Updated the deploypath and all files should be deployed
+
+[33mcommit 57370c00e622d654228d7978d425ef112c9da11f[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 17 14:19:33 2021 +0300
+
+    Rectified the yaml file
+
+[33mcommit f9eff3635baa899607e8aea98d61b2a5d14ed806[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 17 12:51:25 2021 +0300
+
+    Added the yml file
+
+[33mcommit 5597076c5b05ba60433f83e636927af5ef97d27b[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 17 12:46:38 2021 +0300
+
+    Updated the phone number
+
+[33mcommit 008d682678756e36ce1844683655dbc3ed87a50c[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 16 14:25:58 2021 +0300
+
+    Making the navigation bar links active once clicked
+
+[33mcommit 14c49055b3b0930a848d8323086ce425801cec76[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 16 14:19:52 2021 +0300
+
+    Customized the contact page
+
+[33mcommit 9e7f5042a4a1c9045513b3c2bb32d750f8d8e5b1[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 16 14:16:57 2021 +0300
+
+    Customized the pricing page
+
+[33mcommit 85642f19608d745eb01504db2be3942eefbe7696[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 16 14:13:28 2021 +0300
+
+    Customized the services page
+
+[33mcommit 3c30dc39bd9bec231322a4afb4b6849597f0feb5[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 16 13:50:30 2021 +0300
+
+    Customized the about page
+
+[33mcommit 5fed4cc7f396b242f86f13a63444672923d8a715[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 16 13:42:12 2021 +0300
+
+    Deleted the blog part
+
+[33mcommit f0f6368b48ea93c41ea778556846b9376f8ebf45[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 16 13:39:36 2021 +0300
+
+    Updated the links with their respective routes
+
+[33mcommit b1ca772ac2c5bb6a172283a1cad5433e330b6cb1[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 16 13:35:27 2021 +0300
+
+    Registered the web routes for the landing page
+
+[33mcommit 0bbe6e1ec77b8f18114572b925b7c53483362449[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 16 13:22:17 2021 +0300
+
+    Created the about, contact, pricing and services layout files
+
+[33mcommit e9801c8ee70c0fc526e6b6b7f5804c4f74c3e18b[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 16 13:19:55 2021 +0300
+
+    EasyWash default landing page customization
+
+[33mcommit 1787959432c51f1ffbe895f48f31cebc00a74b87[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 16 08:47:07 2021 +0300
+
+    Rectified the route naming for the Authentication process
+
+[33mcommit db8d14365a240b934befeb843e7be1864e6ccd92[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Aug 13 10:04:31 2021 +0300
+
+    Landing Page for EasyWash
+
+[33mcommit 7f858bfe0d6e7a4def4c7818ff063ba372e26ae3[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 12 16:04:52 2021 +0300
+
+    Removed the page search input
+
+[33mcommit a9505386d1c32340fe117f5fbd20240b9ce6be1a[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 12 16:03:01 2021 +0300
+
+    Inserted the easywash logo and removed the notifications button from the top navigation
+
+[33mcommit 5fde0bc2c7596273cea07038462cddcb9e3c9438[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 12 15:33:18 2021 +0300
+
+    Models, Controller and Laundry Format development of the CRUD part
+
+[33mcommit 0d980d33530fe4f60ab2d7184b52458c0ba5ba59[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 12 02:26:26 2021 +0300
+
+    Installation of Yajra Datatable into the system
+
+[33mcommit 174b2a0a16756be6a29c8f6c25701aa9684f67d9[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 12 02:13:34 2021 +0300
+
+    Dynamic total cost calculator in laundry input form
+
+[33mcommit b233f6e81754dfd02eab6bebdbffa3c4ea119431[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 10 17:54:12 2021 +0300
+
+    Price Calculator
+
+[33mcommit 7293fd56222cd32fd180714ab6d0aecc148fa629[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 10 15:12:45 2021 +0300
+
+    DateTime Picker Integration
+
+[33mcommit 4649cae03c70c7f22302acfc9e689a1275984768[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 10 15:10:48 2021 +0300
+
+    Toastr javascript library integration
+
+[33mcommit 18232324670c4f207e9c3da90912992c313a5b89[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 10 15:08:33 2021 +0300
+
+    Jquery integration into the laundromat
+
+[33mcommit b77008964fbe69e7eeea74e82286c62de7780c14[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 10 14:27:03 2021 +0300
+
+    Granting priviledges to dryman and washman
+
+[33mcommit 477c5605f5c67bbad1644b4fecaf0b09f0a76f7b[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 10 12:11:17 2021 +0300
+
+    Added EasyWash Logo
+
+[33mcommit 6fad5afb01580e3f8132a4b68078fdc9b8fefb5e[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 10 11:55:41 2021 +0300
+
+    Relocate the users according to their roles
+
+[33mcommit d3299aa7e76a196760652c3cb4aa2a9f3294c3f5[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 10 11:46:11 2021 +0300
+
+    Removed the phone number and rectified the default type not to be null
+
+[33mcommit f561057cfaa7e7c9447c20d6f6d682a02a7c6605[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 10 11:08:23 2021 +0300
+
+    Dropped the email column from the users database table
+
+[33mcommit 53a35cf38bdfdfdbe0d1d1cc64ab231293fe8341[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 10 11:00:21 2021 +0300
+
+    Added phone number column to users table
+
+[33mcommit 7ddbe8d533c52fee3291dd4dcb719dd370543330[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 10 10:55:40 2021 +0300
+
+    Added Issued by column to laundry details table
+
+[33mcommit 2bc8d601c6a896df315628517f377ba19124db87[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Aug 10 10:44:56 2021 +0300
+
+    Laundry Input Form and solved Greeting Bug in Owner Dashboard
+
+[33mcommit 03de448124d54cbf9df24d4cae39bb5bfead0fb3[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 9 15:28:06 2021 +0300
+
+    Laundry Create and Laundry related database migrations
+
+[33mcommit 723271bf2ce97d2da7782c5cbecb9a2a168fa350[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 9 13:46:36 2021 +0300
+
+    Checking if the laundry link is working properly
+
+[33mcommit e7593089c878a63ce25d101fa6584d612277e937[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 9 13:18:28 2021 +0300
+
+    Laundry Resource Controller creation and routes configuration
+
+[33mcommit b229fc675356470d8995b784f71dfc8226eea06a[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Mon Aug 9 12:51:06 2021 +0300
+
+    Customized the manager dashboard
+
+[33mcommit 93497d65357dcb1e7a91d4da145427148e98721e[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 5 17:05:58 2021 +0300
+
+    Date to string format in dashboard
+
+[33mcommit 1586933e2455802043fd47a49acfe575c16d82c2[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 5 16:57:09 2021 +0300
+
+    Greeting feature in dashboard
+
+[33mcommit bb104cd8dac11bd434bafbdb9d04503526ebaf2c[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Aug 5 15:36:30 2021 +0300
+
+    Removed the laravel logo from the login page
+
+[33mcommit 78d8391b4277540c4cce30e82502160660f1e1ae[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Jul 9 14:09:05 2021 +0300
+
+    Customized the icons to match the realism of the links
+
+[33mcommit 5d2a0e9499f398777f23642cc3243efddfd48e0e[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Jul 9 13:56:47 2021 +0300
+
+    Customizing the header
+
+[33mcommit d5bde5a00601edfc2e7ed9680fff53c30a643eca[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Jul 9 12:14:10 2021 +0300
+
+    Customization of these layouts to match the user preference
+
+[33mcommit 90854207b21debcb2a1004a3cbb31678c6fa967f[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Jul 9 12:13:20 2021 +0300
+
+    Redirecting the administrator and owner to the same dashboard
+
+[33mcommit 262076da016dd7ee0a6f9bf01ba85888d2536969[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Jul 9 10:06:19 2021 +0300
+
+    Customized the footer
+
+[33mcommit 269e4b9363a8e985f08e1e69731b09f4b21c6c77[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Fri Jul 9 09:17:11 2021 +0300
+
+    Administrator Dashboard Customization
+
+[33mcommit c08de73963748f348b467770c159b4307d43a7b2[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Jul 7 10:32:48 2021 +0300
+
+    Configured the Application Name into Laundromat
+
+[33mcommit a442e8d905c557ae4c262bb37af0bdc91a73c03d[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Jul 7 10:31:43 2021 +0300
+
+    Customization of the administrator or owner dashboard
+
+[33mcommit 723ae7fc9b57d161d1b9e46e7cdbde2650789a82[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Thu Jul 1 20:31:58 2021 +0300
+
+    Separating views for different user depnding on their roles and permissions
+
+[33mcommit 7d9300d28c4a47b57fc27c9dc41a589c01cc6ce1[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Jun 30 01:19:13 2021 +0300
+
+    LaraTrust Seeder
+
+[33mcommit 32bc8e52e0aa8b290b3777a642551576b647ddae[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Jun 29 17:20:15 2021 +0300
+
+    Database Seeder and UsersTableSeeder seeding into the database successfully
+
+[33mcommit c443b59284306870f34854c579998a6ba8b5a217[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Jun 29 16:53:07 2021 +0300
+
+    Authentication Scaffolding using Laravel Breeze
+
+[33mcommit 3a67e5158ff152b427a563a07de18933189cea77[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Jun 29 12:16:31 2021 +0300
+
+    Database migration setup
+
+[33mcommit cf373060543735a73aa00fa78f939f7c74434a88[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Tue Jun 29 11:52:28 2021 +0300
+
+    LaraTrust Setup and Installation
+
+[33mcommit 8a997995c8f60d7ca3bfa4426d2de8bad6058185[m
+Author: mrushidany <mrushidany@gmail.com>
+Date:   Wed Jun 23 11:20:40 2021 +0300
+
+    Laundromat Project Setup and Installation
