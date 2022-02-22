@@ -44,6 +44,7 @@ Route::group(['middleware' => ['auth']], function (){
 
 //AdminController Routes
     Route::resource('/admin', AdminController::class)->name('*', 'admin');
+    Route::get('/admin/system_settings', [AdminController::class, 'system_settings'])->name('system_settings');
 });
 
 //Testing layouts routes
