@@ -11,8 +11,8 @@
         <div class="iq-menu-horizontal">
             <nav class="iq-sidebar-menu">
                 <ul id="iq-sidebar-toggle" class="iq-menu d-flex">
-                    <li class="{{route('dashboard')}}">
-                        <a href="" class="active" >
+                    <li class="">
+                        <a href="{{route('dashboard')}}" class="active" >
                             <i class="las la-home iq-arrow-left"></i><span>Dashboard</span>
                         </a>
                     </li>
